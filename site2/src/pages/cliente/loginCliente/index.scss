@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
-}
+#pagina-login {
+  background-color: lightgray;
+  background-image: url('../../../../public/assets/image/login.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  header {
+    background-color: #020032;
+    height: 10vh;
+    width: 100%;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  #container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80vh;
   }
-  to {
-    transform: rotate(360deg);
+
+  main {
+    background-color: #222222;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    width: 50vw;
   }
+
+  #enunciado {
+    background-color: #020032;
+    border-radius: 20px 20px 0px 0px;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .caixa-senha {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+    margin: 30px;
+    height: 50px;
+  }
+
+  label {
+    text-indent: 10px;
+    margin-bottom: 3px;
+  }
+
+  input {
+    font-size: 16px;
+    border-radius: 20px;
+    border: none;
+    padding: 10px;
+    width: 40vw;
+  }
+
+  input:focus {
+    box-shadow: 0;
+    outline: 0;
+  }
+
+  input::placeholder {
+    color: #535353d5;
+  }
+
+  #btn-entrar {
+    margin-bottom: 20px;
+
+  }
+
+  button {
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 10px;
+    width: 15vw;
+  }
+
+  button:hover {
+    background-color: lightgray;
+  }
+
+  #nav-cadastro {
+    padding: 10px;
+  }
+
+  #nav-cadastro p {
+    color: white;
+    text-decoration: none;
+  }
+
+  span {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    
+  }
+
 }

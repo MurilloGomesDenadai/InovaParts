@@ -10,22 +10,31 @@ export default function Login() {
       </header>
 
       <div id='container'>
-        <div>Login</div>
+        <main>
+          <div id='enunciado'>
+            Login
+          </div>
 
-        <form>
-          <label>Digite sua Senha</label>
-          <input type='text'/>
-          <label>Confirme seu Senha</label>
-          <input type='text'/>
-        </form>
+          <form>
+            <div className='caixa-senha'>
+              <label>Digite sua Senha</label>
+              <input type='text' placeholder='Senha'/>
+            </div>
 
-      <div id='btn-entrar'>
-        <button>Entrar</button>
-      </div>
-
-      <div>
-        <p>Não possui cadastro? <Link to='/'>Cadastre-se</Link></p>
-      </div>
+            <div className='caixa-senha'>
+              <label>Confirme seu Senha</label>
+              <input type='text' placeholder='Confirme'/>
+            </div>
+          </form>
+          
+          <div id='btn-entrar'>
+            <button>Entrar</button>
+          </div>
+    
+          <div id ='nav-cadastro'>
+            <p>Não possui cadastro? <Link to='/'><span>Cadastre-se</span></Link></p>
+          </div>
+        </main>
       </div>
     </div>
   );
