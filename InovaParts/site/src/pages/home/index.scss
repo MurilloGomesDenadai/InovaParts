@@ -1,0 +1,142 @@
+.App {
+  text-align: center;
+
+  .App-header {
+    background-color: #020032;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    width: 98.9vw;
+  
+  }
+  
+ .text1{
+     margin-left: 40px;
+     align-self: flex-start;
+     margin-top: 20px;
+     color: white;
+  }
+   .logo{
+    align-content: end;
+    margin-left: 20px;
+    margin-top: 5px;
+    width: 5vw;
+  }
+
+  
+.s1_conteiner{
+   background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 0.1rem 1.5rem;
+    max-width: 100%;
+    min-height: 82.9vh;
+    background-image: url('../../../public/assets/image/fundo1.svg');
+    background-repeat: no-repeat;
+ 
+   .text2,h2{
+    margin-bottom: 7vh;
+    margin-left: 4rem;
+    margin-top: 60px;
+    align-content: flex-start;
+
+
+    color: black;
+    max-width: 330px;
+  }
+   
+  button{
+    background-color: #020032;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 10px 10px 10px;
+    margin: 10px;
+  }
+}
+
+     .s2_conteiner{
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: white;
+      padding: 0.1rem 1.5rem;
+      max-width: 100%;
+      min-height: 83.9vh;
+      background-image: url('../../../public/assets/image/turbina\ 1.svg');
+    
+
+
+      .text3,h2{
+        margin-bottom: 7vh;
+        margin-left: 50rem;
+        margin-top: 60px;
+        
+        color: black;
+        max-width: 330px;
+      }
+     }
+    
+    .s3_conteiner{
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: white;
+      padding: 0.1rem 1.5rem;
+      max-width: 100%;
+      min-height: 83.9vh;
+      background-image: url('../../../public/assets/image/fundo2.svg');
+
+      .text4,h2{
+        margin-bottom: 7vh;
+        margin-left: 4rem;
+        margin-top: 60px;
+        
+        color: black;
+        max-width: 330px;
+      }
+
+
+       
+    }
+  
+    .rodape{
+      display: flex;
+      flex-direction: row;
+      align-items: start;
+      background-color: #020032;
+      width: 98.9vw;
+    
+
+      .rodape_1 h5{
+         margin-left: 5px;
+         color: white;
+         margin-top: 4px;
+      }
+      .rodape_2{
+        color: white;
+        margin-left: 160px;
+        margin-top: 4px;
+
+      }
+     
+      
+    }
+   
+   
+    .s4_conteiner{
+       background-color: #020032;
+       font-size: 1.5rem;
+       color: white;
+    }
+
+
+   
+}
+
+
+
+
+
+
+
+
+
