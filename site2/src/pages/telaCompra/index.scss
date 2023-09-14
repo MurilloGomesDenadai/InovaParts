@@ -1,0 +1,17 @@
+#pagina-compra {
+    background-color: lightgray;
+    height: 100vh;
+
+    header {
+        background-image: url('../../../public/assets/image/fundo-tela-produto.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    nav {
+        background-color: #020032;
+        height: 10vh;
+        width: 100%;
+    }
+}
