@@ -1,11 +1,11 @@
-.pagina-veiculo {
-  background-color: #242121;
+.pagina-config {
+  background-color: #565656;
   display: flex;
   height: 100%;
   width: 100%;
   
   #menu {
-    background-color: black;
+    background-color: #020032;
     color: white;
     display: flex;
     flex-direction: column;
@@ -56,21 +56,27 @@
   }
 
   #menu .menu-div:hover {
-    background-color: #8837C7;
+    background-color: #222222;
+  }
+
+  .menu-div img {
+    height: 20px;
+    width: 20px;
   }
 
   .nav-nome {
     text-align: start;
-    width: 6vw;
+    margin-left: 5px;
+    width: 8vw;
   }
 
   #container {
-    background-color: rgb(255, 255, 255);
+    background-color: #565656;
     height: 100%;
   }
 
   header {
-    background-color: white;
+    background-color: #404040;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.308);
     padding: 10px;
     width: 84.5vw;
@@ -82,10 +88,11 @@
   }
 
   #enunciado {
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 20vh;
+    height: 15vh;
     max-width: 39vw;
     min-width: 38vw;
   }
@@ -95,11 +102,6 @@
     text-indent: 50px;
   }
 
-  #enunciado p {
-    font-size: 14px;
-    color: #CF5B00;
-    text-indent: 55px;
-  }
 
   main {
     display: flex;
@@ -110,27 +112,64 @@
     width: 100%;
   }
 
-  
-
   #inserir {
     background-color: white;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.308);
     border-radius: 3px;
     padding: 30px;
     margin-bottom: 10px;
-    width: 75vw;
+    width: 80vw;
     
     
   }
 
 
   #enunciado-inserir {
-    color: #242121;
+    color: black;
     text-indent: 7px;
     margin-bottom: 20px;
   }
 
+  #area-cadastro {
+    display: flex;
+  }
+
+  
+
+  form > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: 15px;
+    width: 45vw;
+  }
+
+  #group {
+    display: flex;
+
+  }
+
+  #group .caixa-inserir {
+    width: 9vw;
+  }
+
+  #group input {
+    width: 8vw;
+  }
+
+  .caixa-descricao {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    border: 1px solid black;
+    padding: 4px;
+    margin: 10px;
+    width: 43vw;
+  }
+
   .caixa-inserir {
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -172,13 +211,82 @@
     outline: 0;
   }
 
+  
+  #area-img {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  #img-g {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 4px;
+    height: 20vh;
+    width: 20vw;
+  }
+
+  #img-g p {
+    font-size: 12px;
+    font-weight: 700;
+    color: #747474;
+  }
+
+  #img-g > div{
+    text-align: center;
+    padding-left: 20px;
+    height: 15vh;
+    width: 15vw;
+  }
+
+  #img-g > div img{
+    height: 100%;
+    width: 100%;
+  }
+
+  #img-p > div {
+    background-color: white;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    height: 39px;
+    width: 39px;
+  }
+
+
+
+  #btn-duplo {
+    display: flex;
+    width: 28vw;
+  }
+
+  .btn-img button{
+    background-color: #333075;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 10px;
+    width: 125px;
+  }
+
+  .btn-img button:hover {
+    background-color: #4d4a9e;
+    transition: 0.5s;
+  }
+
   #btn-salvar {
-    width: 10.7vw;
+    display: flex;
+    align-items: end;
+    justify-content: end;
     margin-left: 10px;
+    height: 10vh;
+    width: 26.5vw;
   }
 
   #btn-salvar button {
-    background-color: #7A14C0;
+    background-color: #333075;
     color: white;
     border: none;
     border-radius: 5px;
@@ -188,8 +296,8 @@
   }
 
   #btn-salvar button:hover {
-    background-color: #862fc0;
-
+    background-color: #4d4a9e;
+    transition: 0.5s;
   }
 
   button {
@@ -202,7 +310,7 @@
     border-radius: 3px;
     padding: 30px;
     margin-top: 10px;
-    width: 75vw;
+    width: 80vw;
   }
 
   #consulta > div {
@@ -216,10 +324,11 @@
     color: #242121;
     text-align: left;
     margin-bottom: 10px;
-    width: 20vw;
+    width: 22.3vw;
   }
 
   .caixa-consulta {
+    background-color: white;
     font-size: 16px;
     display: flex;
     align-items: start;
@@ -270,6 +379,22 @@
 
   td {
     height: 3vh;
+  }
+
+  .interacao {
+    display: flex;
+    align-items: end;
+    height: 7vh;
+  }
+
+  td > div {
+    margin: 5px;
+  }
+
+  td img {
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
   }
 
   @media (max-width: 912px) {

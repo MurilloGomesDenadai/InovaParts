@@ -6,6 +6,7 @@ import Login from './pages/cliente/loginCliente';
 import Cadastro from './pages/cliente/cadastroCliente';
 import Compra from './pages/telaCompra';
 import Admin from './pages/admin/loginAdmin';
+import Config from './pages/admin/configAdmin';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -19,6 +20,7 @@ root.render(
         <Route path='/cadastroCliente' element = {<Cadastro/>} />
         <Route path='/telaCompra' element = {<Compra/>} />
         <Route path='/loginAdmin' element = {<Admin/>} />
+        <Route path='/configAdmin' element = {<Config/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
