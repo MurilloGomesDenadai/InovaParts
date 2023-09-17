@@ -1,7 +1,18 @@
 import './index.scss';
 import {Link} from 'react-router-dom'
+import { useState } from 'react';
+import axios from 'axios'
 
 export default function Config() {
+  const [listarTodos, setListarTodos] = useState ([])
+
+  async function Listar() {
+    let url = 'http://localhost:5000/produto';
+    let resp = await axios.get(url)
+
+    setListarTodos(resp.data)
+  }
+
   return (
     <div className="pagina-config">
       
@@ -22,11 +33,11 @@ export default function Config() {
 
           <Link to='/'>
             <div className='menu-div'  style={{background: '#222222'}}>
-              <div><img src='../../assets/icon/produto.png'/></div>
-              <div className='nav-nome'>
-              <p>Produto</p>
-            </div>
-          </div> 
+                <div><img src='../../assets/icon/produto.png'/></div>
+                <div className='nav-nome'>
+                <p>Produto</p>
+              </div>
+            </div> 
           </Link>
 
           <div className='menu-div'>
@@ -176,10 +187,10 @@ export default function Config() {
               <div className='caixa-consulta'>
                   <div>
                     <label>Nome do produto</label>
-                    <input />
+                    <input type='text'/>
                   </div>
                   <div id='img-consulta'>
-                    <button><img src='../../assets/icon/lupa.png'/></button>
+                    <button onClick={Listar}><img src='../../assets/icon/lupa.png'/></button>
                   </div>
                 </div>
             </div>
@@ -191,63 +202,23 @@ export default function Config() {
                     <th>Disponível</th>
                     <th>QTD</th>
                     <th>Promoção</th>
-                    <th>Promoção</th>
+                    <th>Valor</th>
                     <th>Promoção</th>
                   </tr>
                 </thead>
 
                 <tbody>
-                  <tr>
-                    <td>CB1000</td>
-                    <td>Honda</td>
-                    <td>2019</td>
-                    <td>Moto</td>
-                    <td>abc-123</td>
-                    <td>abc-123</td>
-                    <td className='interacao'>
-                        <div><img src='../../assets/icon/alterar.png'/></div>
-                        <div><img src='../../assets/icon/lixeira.png'/></div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td>CB1000</td>
-                      <td>Honda</td>
-                      <td>2019</td>
-                      <td>Moto</td>
-                      <td>abc-123</td>
-                      <td>abc-123</td>
-                      <td className='interacao'>
-                        <div><img src='../../assets/icon/alterar.png'/></div>
-                        <div><img src='../../assets/icon/lixeira.png'/></div>
-                      </td>
-                  </tr>
-
-                  <tr>
-                    <td>CB1000</td>
-                      <td>Honda</td>
-                      <td>2019</td>
-                      <td>Moto</td>
-                      <td>abc-123</td>
-                      <td>abc-123</td>
-                      <td className='interacao'>
-                        <div><img src='../../assets/icon/alterar.png'/></div>
-                        <div><img src='../../assets/icon/lixeira.png'/></div>
-                      </td>
-                  </tr>
-
-                  <tr>
-                    <td>CB1000</td>
-                    <td>Honda</td>
-                    <td>2019</td>
-                    <td>Moto</td>
-                    <td>abc-123</td>
-                    <td>abc-123</td>
-                    <td className='interacao'>
-                        <div><img src='../../assets/icon/alterar.png'/></div>
-                        <div><img src='../../assets/icon/lixeira.png'/></div>
-                    </td>
-                  </tr>
+                    {listarTodos.map(item =>
+                      <tr>
+                        <td>{item.Id}</td>
+                        <td>{item.Produto}</td>
+                        <td>{item.Marca}</td>
+                        <td>{item.Disponivel}</td>
+                        <td>{item.Quantidade}</td>
+                        <td>{item.Valor}</td>
+                      </tr>           
+                  )}
+                  
                 </tbody>
               </table>
           </div>
