@@ -7,7 +7,7 @@ export default function Config() {
   const [listarTodos, setListarTodos] = useState ([])
 
   async function Listar() {
-    let url = 'http://localhost:5000/produto';
+    let url = 'http://localhost:3001/tarefa';
     let resp = await axios.get(url)
 
     setListarTodos(resp.data)
