@@ -5,12 +5,28 @@ import axios from 'axios'
 
 export default function Config() {
   const [listarTodos, setListarTodos] = useState ([])
+  const [nome, setNome] = useState ('')
 
   async function Listar() {
-    let url = 'http://localhost:3001/tarefa';
-    let resp = await axios.get(url)
+    
+    if (setNome == '') {
+      let url = 'http://localhost:5000/produto';
+      let resp = await axios.get(url)
 
-    setListarTodos(resp.data)
+      setListarTodos(resp.data)
+    } else {
+      let url = `http://localhost:5000/produto/busca?nome= ${nome}`
+      let resp = await axios.get(url)
+
+      setListarTodos(resp.data)
+    }
+    
+    
+
+    
+    
+    
+    
   }
 
   return (
@@ -187,7 +203,7 @@ export default function Config() {
               <div className='caixa-consulta'>
                   <div>
                     <label>Nome do produto</label>
-                    <input type='text'/>
+                    <input type='text' onChange={e => setNome(e.target.value)}value={nome}/>
                   </div>
                   <div id='img-consulta'>
                     <button onClick={Listar}><img src='../../assets/icon/lupa.png'/></button>
@@ -197,6 +213,7 @@ export default function Config() {
               <table>
                 <thead>
                   <tr>
+                    <th>#ID</th>
                     <th>Peça</th>
                     <th>Marca</th>
                     <th>Disponível</th>
@@ -215,7 +232,14 @@ export default function Config() {
                         <td>{item.Marca}</td>
                         <td>{item.Disponivel}</td>
                         <td>{item.Quantidade}</td>
+                        <td>{item.Promocao}</td>
                         <td>{item.Valor}</td>
+                        <td>
+                          <div className='interacao'>
+                            <div><img src='../../assets/icon/alterar.png' /></div>
+                            <div><img src='../../assets/icon/lixeira.png' /></div>
+                          </div>
+                        </td>
                       </tr>           
                   )}
                   
