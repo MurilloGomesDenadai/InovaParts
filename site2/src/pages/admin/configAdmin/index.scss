@@ -313,7 +313,7 @@
     width: 80vw;
   }
 
-  #consulta > div {
+  #conjunto {
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -356,6 +356,8 @@
   }
 
   table {
+    border-collapse: collapse;
+
     margin-left: 10px;
     width: 70vw;
     height: 40vh;
@@ -369,21 +371,27 @@
   }
 
   tbody {
-    border-collapse: collapse;
+    margin-top: 10px;
   }
 
-  tr {
-    border: 1px solid black;
-  }
-
-  td {
-    height: 3vh;
+  tbody tr{
+    border: 1px solid rgba(71, 70, 70, 0.589);
+    border-radius: 5px;
+    padding: 5px;
   }
 
   .interacao {
     display: flex;
     align-items: end;
-    height: 4vh;
+    height: 6vh;
+  }
+
+  .interacao > div {
+    margin: 5px;
+  }
+
+  .td-center {
+    text-align: center;
   }
 
   td > div {
@@ -395,6 +403,13 @@
     height: 20px;
     width: 20px;
   }
+
+  #scroll-horizontal {
+    max-height: 300px;
+    overflow: auto;
+    width: 73vw;
+  }
+  
 
   @media (max-width: 912px) {
 
