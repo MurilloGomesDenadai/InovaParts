@@ -10,7 +10,7 @@ export async function cadastroCliente(cliente) {
     return cliente;
 }
 
-export async function alterarImgCliente(imagem, id) {
+export async function alterarImgCliente(imagem, id) { 
     const comando = 
     `UPDATE tb_cliente
         SET img_cliente = ?

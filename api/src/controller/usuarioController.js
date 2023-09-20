@@ -6,7 +6,7 @@ import multer from 'multer';
 const server = Router();
 const upload = multer({dest: 'storage/usuarioPerfil'});
 
-server.post('/usuario', async (req, resp) => {
+server.post('/usuario', async (req, resp) => { 
     try {
         const cadastrar = req.body;
         

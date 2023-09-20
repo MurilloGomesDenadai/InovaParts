@@ -1,8 +1,40 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import axios from 'axios'
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export default function Cadastro() {
+    const [nome, setNome] = useState ('');
+    const [email, setEmail] = useState ('');
+    const [telefone, setTelefone] = useState ('');
+    const [cpf, setCpf] = useState ('');
+    const [senha, setSenha] = useState ('');
+    const [confirmeSenha, setConfirmeSenha] = useState ('');
+    const [imagem, setimagem] = useState ('');
+
+    async function cadastrarCliente() {
+        let url = 'http://localhost:5000/usuario';
+        await axios.post(url, 
+        {
+            nome: nome,
+            cpf: cpf,
+            telefone: telefone,
+            email: email,
+            senha: senha,
+            imagem: imagem
+        } )
+
+        toast.success("Registro Salvo!")
+
+    }
+    
+
+    
+
     return (
         <div id='pagina-cadastro'>
             <header>
@@ -18,27 +50,27 @@ export default function Cadastro() {
                     <form id='caixa-texto'>
                     <div className='caixa-senha'>
                         <label>Digite seu Nome</label>
-                        <input type='text' placeholder='Nome Completo'/>
+                        <input type='text' placeholder='Nome Completo' value={nome} onChange={e => setNome(e.target.value)}/>
                     </div>
 
                     <div className='caixa-senha'>
                         <label>Email</label>
-                        <input type='text' placeholder='Email'/>
+                        <input type='text' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)}/>
                     </div>
 
                     <div className='caixa-senha'>
                         <label>Telefone</label>
-                        <input type='text' placeholder='Telefone'/>
+                        <input type='text' placeholder='Telefone' value={telefone} onChange={e => setTelefone(e.target.value)}/>
                     </div>
 
                     <div className='caixa-senha'>
                         <label>CPF</label>
-                        <input type='text' placeholder='CPF'/>
+                        <input type='text' placeholder='CPF' value={cpf} onChange={e => setCpf(e.target.value)}/>
                     </div>
 
                     <div className='caixa-senha'>
                         <label>Digite sua Senha</label>
-                        <input type='text' placeholder='Senha'/>
+                        <input type='text' placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)}/>
                     </div>
 
                     <div className='caixa-senha'>
@@ -49,11 +81,11 @@ export default function Cadastro() {
 
                     <form id='checkbox'>
                     <div className='caixa-check'>
-                        <input type='checkbox'/>
+                        <input type='checkbox' checked/>
                         <label>Li e concordo com a <span>Politica de Privacidade</span> <span>e Termos e Condições de Uso do Site.</span></label>
                     </div>
 
-                    <div className='caixa-check'>
+                    <div className='caixa-check' checked>
                         <input type='checkbox'/>
                         <label>Aceito receber novidades, ofertas e notícias do auopeças por e-mail.</label>
                     </div>
@@ -61,7 +93,7 @@ export default function Cadastro() {
                     
                     <div id='area-btn'>
                         <div id='btn-cadastrar'>
-                            <Link to='/telaCompra'><button>Cadastre-se</button></Link>
+                            <button onClick={cadastrarCliente}>Cadastre-se</button>
                         </div>
 
                         <div id='btn-entrar'>
@@ -69,6 +101,9 @@ export default function Cadastro() {
                         </div>
                     </div>
                 </main>
+                <div>
+                    <ToastContainer />
+                </div>
             </div>
         </div>
     );

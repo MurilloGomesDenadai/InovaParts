@@ -10,7 +10,7 @@
         "email": "catarina@gmail.com",
         "senha": "abc@321",
         "imagem": ""
-    }
+    } 
 
 (2) ALTERAR A IMAGEM DO USUARIO
     VERBO: PUT          CAMINHO: http://localhost:5000/usuario/:id/perfil
