@@ -82,3 +82,13 @@ export async function deletarCliente(id) {
     const [resposta] = await conexao.query(comando, [id]);
     return resposta.affectedRows;
 }
+
+export async function buscarCPF(cpf) {
+    const comando =
+    `SELECT ds_cpf
+        FROM tb_cliente
+            WHERE ds_cpf = ?`
+
+    const [resposta] = await conexao.query(comando, [cpf]);
+    return resposta;
+}
