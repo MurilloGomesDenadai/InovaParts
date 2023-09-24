@@ -20,6 +20,7 @@ export default function Config() {
   const [valor, setValor] = useState ('')
   const [detalhes, setDetalhes] = useState ('')
   const [quantidade, setQuantidade] = useState ('')
+  const [id, setId] = useState (0)
 
   const {idparams} = useParams ()
 

@@ -79,10 +79,23 @@ server.get('/produto/busca', async (req, resp) => {
     }
 })
 
- 
+
 server.get('/produto/busca/:id', async (req, resp) => {
     try {
         const {id} = req.params;
+        const porid = await listarPorId(id)
+
+        resp.send(porid)
+    } catch (error) {
+        resp.status(400).send({
+            erro: error.message
+        })
+    }
+})    
+
+server.get('/produto/buscar', async (req, resp) => {
+    try {
+        const {id} = req.query;
         const dados = await listarPorId(id);
 
         if(dados.length == 0)
@@ -96,7 +109,7 @@ server.get('/produto/busca/:id', async (req, resp) => {
         })
     }
 })
- 
+
 
 server.put('/produto/:id', async (req, resp) => {
     try {
