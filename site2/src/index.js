@@ -8,6 +8,10 @@ import Compra from './pages/telaCompra';
 import Admin from './pages/admin/loginAdmin';
 import Config from './pages/admin/configAdmin';
 
+import 'react-toastify/dist/ReactToastify.css';
+import 'react-confirm-alert/src/react-confirm-alert.css';
+
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -21,6 +25,7 @@ root.render(
         <Route path='/telaCompra' element = {<Compra/>} />
         <Route path='/loginAdmin' element = {<Admin/>} />
         <Route path='/configAdmin' element = {<Config/>} />
+        <Route path='/alterar/:idparams' element = {<Config/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

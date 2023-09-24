@@ -55,22 +55,22 @@ export async function listarPorNome(nome, categoria, marca) {
 
 export async function listarPorId(id) {
     const comando = 
-    `SELECT  id_produto,
-             ds_categoria	    as Categoria,
-             nm_produto		    as Produto,
-             ds_marca		    as Marca,
-             ds_modelo		    as Modelo,
-             vl_valor		    as Valor,
-             ds_detalhes		as Detalhes,
-             nr_quantidade	    as Quantidade,
-             bt_disponivel	    as Disponivel,
-             ds_promocao		as Promocao
+    `SELECT  id_produto         as id,
+             ds_categoria	    as categoria,
+             nm_produto		    as nome,
+             ds_marca		    as marca,
+             ds_modelo		    as modelo,
+             vl_valor		    as valor,
+             ds_detalhes		as detalhes,
+             nr_quantidade	    as quantidade,
+             bt_disponivel	    as disponivel,
+             ds_promocao		as promocao
                 FROM tb_produto
                     INNER JOIN tb_categoria ON tb_categoria.id_categoria = tb_produto.id_categoria
                         WHERE tb_produto.id_produto = ?`
 
     const [resposta] = await conexao.query(comando, [id]);
-    return resposta;
+    return resposta[0];
 }
 
 export async function alterarProduto(id, produto) {

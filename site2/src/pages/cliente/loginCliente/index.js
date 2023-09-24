@@ -1,8 +1,14 @@
 import './index.scss';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import {loginCliente } from '../../../api/clienteEndpoints'
+
+import {Link} from 'react-router-dom'
+import {useState } from 'react';
+
+import { ToastContainer, toast } from 'react-toastify';
+
 
 export default function Login() {
+  
   return (
     <div id='pagina-login'>
       <header>
@@ -18,7 +24,7 @@ export default function Login() {
           <form>
             <div className='caixa-senha'>
               <label>Digite seu Email</label>
-              <input type='text' placeholder='Email'/>
+              <input type='text' placeholder='Email' />
             </div>
 
             <div className='caixa-senha'>
@@ -28,13 +34,16 @@ export default function Login() {
           </form>
           
           <div id='btn-entrar'>
-            <Link to='/telaCompra'><button>Entrar</button></Link>
+            <button>Entrar</button>
           </div>
     
           <div id ='nav-cadastro'>
             <p>Não possui cadastro? <Link to='/cadastroCliente'><span>Cadastre-se</span></Link></p>
           </div>
         </main>
+        <div>
+          <ToastContainer />
+        </div>
       </div>
     </div>
   );
