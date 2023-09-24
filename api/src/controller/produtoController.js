@@ -1,4 +1,4 @@
-import { alterarImg, alterarProduto, cadastrarProdutos, deletarProduto, inserirCategoria, inserirImg, listarImg, listarImgInfo, listarPorNome, listarProdutos } from '../repository/produtoRepository.js';
+import { alterarImg, alterarProduto, cadastrarProdutos, deletarProduto, inserirCategoria, inserirImg, listarImg, listarImgInfo, listarPorNome, listarProdutos, listarPorId } from '../repository/produtoRepository.js';
 
 import Router from 'express';
 import multer from 'multer';
@@ -76,6 +76,23 @@ server.get('/produto/busca', async (req, resp) => {
             erro: err.message
         });
         
+    }
+})
+
+server.get('/produto/buscar', async (req, resp) => {
+    try {
+        const {id} = req.query;
+        const dados = await listarPorId(id);
+
+        if(dados.length == 0)
+            throw new Error('Produto não encontrado.');
+
+        resp.send(dados);
+
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
     }
 })
 
