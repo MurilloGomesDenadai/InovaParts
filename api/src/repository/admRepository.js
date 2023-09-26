@@ -45,7 +45,7 @@ export async function loginAdm(email, cpf, senha) {
                             AND ds_senha = ?`
 
     const [resposta] = await conexao.query(comando, [email, cpf, senha]);
-    return resposta;
+    return resposta[0];
 }
 
 export async function buscarPorCpf(cpf) {
