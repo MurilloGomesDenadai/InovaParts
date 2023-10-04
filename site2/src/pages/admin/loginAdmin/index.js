@@ -6,15 +6,17 @@ import {useState } from 'react';
 
 import axios from 'axios';
 
+
 export default function Admin () {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [erro, setErro] = useState('');
-    
+
     const navigate = useNavigate();
 
 
     async function enterClick() {
+
         try {
             const resposta = await axios.post('http://localhost:5000/adm/login', {
                 email: email,
@@ -29,6 +31,7 @@ export default function Admin () {
             }
         }
     }
+
     return (
         <div id='pagina-admin'>
             <header>
@@ -50,6 +53,7 @@ export default function Admin () {
                         <div className='caixa-senha'>
                             <label>Digite sua Senha</label>
                             <input type='text' placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)}/>
+
                         </div>
 
                         <div id='senha'>
@@ -57,10 +61,12 @@ export default function Admin () {
                         </div>
                     </form>
 
+                    <div>{erro}</div>
+
                     <div id='btn-entrar'>
                         <button onClick={enterClick}>Entrar</button>
                     </div>
-
+                    
                     <div id ='nav-cadastro'>
                         <p>Não possui cadastro? <Link to='/cadastroCliente'><span>Cadastre-se</span></Link></p>
                     </div>

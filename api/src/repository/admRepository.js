@@ -40,12 +40,11 @@ export async function loginAdm(email, cpf, senha) {
             nm_adm	as nome,
             ds_email as email
                 FROM tb_adm
-                    WHERE ds_email = ? 
-                        OR ds_cpf = ?
+                    WHERE ds_email = ?
                             AND ds_senha = ?`
 
-    const [resposta] = await conexao.query(comando, [email, cpf, senha]);
-    return resposta;
+    const [resposta] = await conexao.query(comando, [email, senha]);
+    return resposta[0];
 }
 
 export async function buscarPorCpf(cpf) {

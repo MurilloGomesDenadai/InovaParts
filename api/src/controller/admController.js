@@ -81,9 +81,12 @@ server.put('/adm/:id', async (req, resp) => {
 
 server.post('/adm/login', async (req, resp) => {
     try {
-        const {email, cpf, senha} = req.body;
-        const resposta = await loginAdm(email, cpf, senha);
+        const {email, senha} = req.body;
+        const resposta = await loginAdm(email, senha);
 
+        if(!resposta)
+            throw new Error('Credenciais inválidas.);
+        
         resp.send(resposta);
     } catch (err) {
         resp.status(400).send({

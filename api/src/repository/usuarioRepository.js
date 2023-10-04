@@ -30,7 +30,7 @@ export async function loginCliente(email, senha) {
 			            AND ds_senha 	= ?`
 
     const [resposta] = await conexao.query(comando, [email, senha]);
-    return resposta;
+    return resposta[0];
 }
 
 export async function listarclientes() {
