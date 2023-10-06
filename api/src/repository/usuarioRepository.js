@@ -125,16 +125,16 @@ export async function listarCartao(){
     const comando = 
    
     `SELECT tb_cliente.id_cliente 		as IdCliente,
-   nm_cliente		as Cliente,
-   ds_cpf			as CPF,
-   nm_titular		as Titular,
-   ds_cartao			as Cartao,
-   ds_validade  		as Validade,
-   nr_cod_seguranca 	as CodSeguranca,
-   nr_parcelas		as Parcelas
-   FROM tb_cartao
-    INNER JOIN  tb_cliente ON tb_cliente.id_cliente = tb_cartao.id_cliente
-      ORDER BY IdCliente;` 
+        nm_cliente		as Cliente,
+        ds_cpf			as CPF,
+        nm_titular		as Titular,
+        ds_cartao			as Cartao,
+        ds_validade  		as Validade,
+        nr_cod_seguranca 	as CodSeguranca,
+        nr_parcelas		as Parcelas
+        FROM tb_cartao
+            INNER JOIN  tb_cliente ON tb_cliente.id_cliente = tb_cartao.id_cliente
+            ORDER BY IdCliente;` 
 
       const [resposta] = await conexao.query(comando);
       return resposta;
