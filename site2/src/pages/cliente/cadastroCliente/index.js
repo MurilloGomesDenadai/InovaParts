@@ -87,7 +87,7 @@ export default function Cadastro() {
 
                     <div className='caixa-check' checked>
                         <input type='checkbox'/>
-                        <label>Aceito receber novidades, ofertas e notícias do auopeças por e-mail.</label>
+                        <label>Aceito receber novidades, ofertas e notícias do autopeças por e-mail.</label>
                     </div>
                     </form>
                     

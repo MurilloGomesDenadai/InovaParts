@@ -85,7 +85,7 @@ server.post('/adm/login', async (req, resp) => {
         const resposta = await loginAdm(email, senha);
 
         if(!resposta)
-            throw new Error('Credenciais inválidas.);
+            throw new Error('Credenciais inválidas.');
         
         resp.send(resposta);
     } catch (err) {

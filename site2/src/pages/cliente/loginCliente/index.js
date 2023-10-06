@@ -5,12 +5,14 @@ import { useNavigate } from 'react-router-dom';
 import {useState } from 'react';
 
 import axios from 'axios';
+
+import { ToastContainer, toast } from 'react-toastify';
+
   
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const [erro, setErro] = useState('');
   
   const navigate = useNavigate();
 
@@ -25,9 +27,7 @@ export default function Login() {
         navigate('/telaCompra');
 
       } catch (err) {
-        if(err.response.status === 401){
-          setErro(err.response.data.erro);
-        }
+        toast.error('Conta inválida')
       }
   }
 
@@ -55,7 +55,6 @@ export default function Login() {
             </div>
           </form>
 
-          <div>{erro}</div>
           
           <div id='btn-entrar'>
           <button onClick={enterClick}>Entrar</button>
@@ -65,6 +64,7 @@ export default function Login() {
             <p>Não possui cadastro? <Link to='/cadastroCliente'><span>Cadastre-se</span></Link></p>
           </div>
         </main>
+        <div><ToastContainer /></div>
       </div>
     </div>
   )
