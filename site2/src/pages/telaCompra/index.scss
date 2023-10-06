@@ -4,14 +4,52 @@
 
     header {
         background-image: url('../../../public/assets/image/fundo-tela-produto.png');
+        background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: center center;
+        height: 68vh;
     }
 
     nav {
         background-color: #020032;
-        height: 10vh;
+        font-size: 20px;
+        padding-left: 5px;
         width: 100%;
+        height: 10vh;
+    }
+
+    #menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 20vw;
+        height: 10vh;
+    }
+
+    nav img {
+        height: 70px;
+        width: 70px;
+    }
+
+    nav p {
+        color: white;
+    }
+
+    .txt-header {
+        color: white;
+        width: 22vw;
+    }
+
+    .txt-header h1 {
+        text-align: center;
+    }
+
+    .txt-header p {
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+    .txt-header span {
+        font-weight: bold;
     }
 }

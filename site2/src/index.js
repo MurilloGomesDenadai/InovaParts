@@ -8,11 +8,13 @@ import Compra from './pages/telaCompra';
 import Admin from './pages/admin/loginAdmin';
 import Config from './pages/admin/configAdmin';
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
