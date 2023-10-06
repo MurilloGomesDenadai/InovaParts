@@ -1,4 +1,4 @@
-import { alterarImgCliente, alterarInfoCliente, buscarPorNomeCpf, cadastroCliente, deletarCliente, listarclientes, loginCliente } from "../repository/usuarioRepository.js";
+import { alterarImgCliente, alterarInfoCliente, buscarPorNomeCpf, cadastroCliente, deletarCliente, listarclientes, loginCliente, inserirCartao } from "../repository/usuarioRepository.js";
 
 import { Router } from "express";
 import multer from 'multer';
@@ -141,6 +141,40 @@ server.delete('/usuario/:id', async (req, resp) => {
             erro: err.message
         });
     }
+})
+
+
+server.post('/cartao', async (req,resp) =>{
+
+      
+    try{
+         
+        const cadastrarCartao = req.body
+
+        if(!cadastrarCartao.titular)
+        throw new Error('Nome inválido.');
+
+        if(!cadastrarCartao.cartao)
+        throw new  Error('Numero inválido');
+
+        if(!cadastrarCartao.validade)
+        throw new Error('Validade inválida');
+
+        if(!cadastrarCartao.cod_seguranca)
+        throw new Error('Codigo de segurança inválido');
+
+        if(!cadastrarCartao.parcelas)
+        throw new Error('Parcelas inválidas');       
+        
+        const cartaoCadastrado  = await inserirCartao (cadastrarCartao);
+        resp.send(cartaoCadastrado);
+
+      } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+
 })
 
 
