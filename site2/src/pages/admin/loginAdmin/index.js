@@ -7,10 +7,12 @@ import {useState } from 'react';
 import axios from 'axios';
 
 
+import { ToastContainer, toast } from 'react-toastify';
+
+
 export default function Admin () {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
-    const [erro, setErro] = useState('');
 
     const navigate = useNavigate();
 
@@ -26,9 +28,7 @@ export default function Admin () {
             navigate('/configAdmin');
             
         } catch (err) {
-            if(err.response.status === 401){
-            setErro(err.response.data.erro);
-            }
+            toast.error('Conta Inválida')
         }
     }
 
@@ -61,8 +61,6 @@ export default function Admin () {
                         </div>
                     </form>
 
-                    <div>{erro}</div>
-
                     <div id='btn-entrar'>
                         <button onClick={enterClick}>Entrar</button>
                     </div>
@@ -71,6 +69,7 @@ export default function Admin () {
                         <p>Não possui cadastro? <Link to='/cadastroCliente'><span>Cadastre-se</span></Link></p>
                     </div>
                 </main>
+                <div><ToastContainer /></div>
             </div>
         </div>
     );
