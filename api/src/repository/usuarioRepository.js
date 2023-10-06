@@ -5,7 +5,15 @@ export async function cadastroCliente(cliente) {
     `INSERT INTO tb_cliente (nm_cliente, ds_cpf, ds_telefone, ds_email, ds_senha, img_cliente)
                     VALUES (?, ?, ?, ?, ?, ?)`
 
-    const [resposta] = await conexao.query(comando, [cliente.nome, cliente.cpf, cliente.telefone, cliente.email, cliente.senha, cliente.imagem]);
+    const [resposta] = await conexao.query(comando, 
+        [   cliente.nome, 
+            cliente.cpf,
+            cliente.telefone, 
+            cliente.email,
+            cliente.senha, 
+            cliente.imagem
+        
+        ]);
     cliente.id = resposta.insertId;
     return cliente;
 }
@@ -91,4 +99,22 @@ export async function buscarCPF(cpf) {
 
     const [resposta] = await conexao.query(comando, [cpf]);
     return resposta;
+}
+
+
+export async function inserirCartao(cartao){
+
+    const comando = 
+    `INSERT INTO tb_cartao (id_cliente, nm_titular, ds_cartao, ds_validade, nr_cod_seguranca, nr_parcelas)
+    VALUES (?, ?, ?, ?, ?, ?)`
+
+    const [resposta] = await conexao.query(comando, 
+        [   cartao.titular, 
+            cartao.cartao, 
+            cartao.validade, 
+            cartao.cod_seguranca, 
+            cartao.parcelas,
+        ]);
+    cartao.id = resposta.insertId;
+    return cartao;
 }
