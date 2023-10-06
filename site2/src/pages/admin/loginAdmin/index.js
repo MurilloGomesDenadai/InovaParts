@@ -1,8 +1,11 @@
 import './index.scss';
 
+import {Link} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import {useState } from 'react';
+
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+
 
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -13,15 +16,17 @@ export default function Admin () {
 
     const navigate = useNavigate();
 
-    async function entraClick() {
+
+    async function enterClick() {
+
         try {
             const resposta = await axios.post('http://localhost:5000/adm/login', {
                 email: email,
                 senha: senha
             });
-    
-            navigate('/configAdm');
-
+            
+            navigate('/configAdmin');
+            
         } catch (err) {
             toast.error('Conta Inválida')
         }
@@ -47,7 +52,8 @@ export default function Admin () {
 
                         <div className='caixa-senha'>
                             <label>Digite sua Senha</label>
-                            <input type='password' placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)}/>
+                            <input type='text' placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)}/>
+
                         </div>
 
                         <div id='senha'>
@@ -56,9 +62,9 @@ export default function Admin () {
                     </form>
 
                     <div id='btn-entrar'>
-                        <button onClick={entraClick}>Entrar</button>
+                        <button onClick={enterClick}>Entrar</button>
                     </div>
-
+                    
                     <div id ='nav-cadastro'>
                         <p>Não possui cadastro? <Link to='/cadastroCliente'><span>Cadastre-se</span></Link></p>
                     </div>

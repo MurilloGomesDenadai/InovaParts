@@ -3,7 +3,7 @@ import {cadastrarProduto, alterarProduto, listarProduto, listarporNome, deletarP
 
 import {Link} from 'react-router-dom'
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import { ToastContainer, toast } from 'react-toastify';
 import { confirmAlert } from 'react-confirm-alert';
@@ -22,7 +22,8 @@ export default function Config() {
   const [quantidade, setQuantidade] = useState ('')
   const [id, setId] = useState (0)
 
-  const {idparams} = useParams ()
+  const {idparams} = useParams ();
+  const navigate = useNavigate ();
 
 
   //Inserir Produto
@@ -36,7 +37,7 @@ export default function Config() {
         toast.success("Registro Salvo!")
 
       }else {
-        alterarProduto(id, categoria, nome, marca, modelo, disponivel, promocao, valor, detalhes, quantidade)
+        await alterarProduto(id, categoria, nome, marca, modelo, disponivel, promocao, valor, detalhes, quantidade)
         toast.success("Registro Alterado!")
       }
 
@@ -135,6 +136,14 @@ export default function Config() {
     setDetalhes(resposta.detalhes)
     setQuantidade(resposta.quantidade)
   }
+
+  function Editar(id) {
+    navigate(`/alterar/${id}`);
+    window.location.reload(false)
+
+  }
+
+  
 
   return (
     <div className="pagina-config">
@@ -350,7 +359,7 @@ export default function Config() {
                           <td className='td-center'>{item.Valor}</td>
                           <td>
                             <div className='interacao'>
-                              <div><button><img src='../../assets/icon/alterar.png' /></button></div>
+                              <div><button onClick={() => Editar(item.Id)}><img src='../../assets/icon/alterar.png' /></button></div>
                               <div><button onClick={() => Deletar(item.Id)}><img src='../../assets/icon/lixeira.png' /></button></div>
                             </div>
                           </td>
