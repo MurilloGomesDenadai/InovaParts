@@ -1,4 +1,4 @@
-import { alterarImgCliente, alterarInfoCliente, buscarPorNomeCpf, cadastroCliente, deletarCliente, listarclientes, loginCliente, inserirCartao } from "../repository/usuarioRepository.js";
+import { alterarImgCliente, alterarInfoCliente, buscarPorNomeCpf, cadastroCliente, deletarCliente, listarclientes, loginCliente, inserirCartao, listarCartao, alterarInfoCartao } from "../repository/usuarioRepository.js";
 
 import { Router } from "express";
 import multer from 'multer';
@@ -146,7 +146,6 @@ server.delete('/usuario/:id', async (req, resp) => {
 
 server.post('/cartao', async (req,resp) =>{
 
-      
     try{
          
         const cadastrarCartao = req.body
@@ -175,6 +174,50 @@ server.post('/cartao', async (req,resp) =>{
         });
     }
 
+})
+
+server.get('/cartao', async (req, resp) => {
+    try {
+        const dados = await listarCartao();
+        resp.send(dados);
+
+    } catch (err) {
+        resp.status(401).send({
+            erro: err.message
+        });
+    }
+})
+
+server.put('/cartao/:id', async (req, resp) => {
+    try {
+        const {id} = req.params;
+        const cartao = req.body;
+
+        if(!cartao.titular)
+            throw new Error('Titular inválido.');
+
+        if(!cartao.cartao)
+            throw new Error('Numero de cartão inválido')
+
+        if(!cartao.validade )
+            throw new Error('Validade inválida.');
+
+        if(!cartao.cod_seguranca)
+            throw new Error('Cod_seguranca inválido.');
+
+        if(!cartao.parcelas)
+            throw new Error('Suas parcelas estão inválida.');
+
+        const resposta = await alterarInfoCartao(id, cartao);
+        if(resposta != 1)
+            throw new Error('Cartao não pode ser alterardo.');
+        else
+            resp.status(200).send();
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
 })
 
 
