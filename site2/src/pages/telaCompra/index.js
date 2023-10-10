@@ -20,14 +20,15 @@ export default function Compra() {
 
               <div id='area-pesquisa'>
                 <div className='txt-header'>
-                <h1>Inovapartes</h1>
-                <p>
-                    Invista no seu veículo do conforto e com a segurança da sua <span>casa!</span>
-                </p>
+                    <h1>Inovapartes</h1>
+                    <p>
+                        Invista no seu veículo do conforto e com a segurança da sua <span>casa!</span>
+                    </p>
                 </div>
 
                 <div>
-
+                    <input type='text'><img src='../assets/icon/lupa.png'/></input>
+                        
                 </div>
               </div>
             </header>
