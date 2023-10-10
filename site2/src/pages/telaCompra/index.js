@@ -28,6 +28,7 @@ export default function Compra() {
 
                 <div>
                     <input type='text'><img src='../assets/icon/lupa.png'/></input>
+                    
                         
                 </div>
               </div>
