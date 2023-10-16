@@ -27,15 +27,14 @@ export default function Compra() {
                 </div>
 
                 <div>
-                    <input type='text'><img src='../assets/icon/lupa.png'/></input>
-                    
+                    <input type='text'></input>
+                    {/* <img src='../assets/icon/lupa.png'/> */}
                         
                 </div>
               </div>
             </header>
 
-            <main
-            >
+            <main>
 
             </main>
 
