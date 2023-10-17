@@ -1,0 +1,24 @@
+-- ENDPOINTS da tb_cartao --
+
+(1) CADASTRAR CARTÃO
+VERBO: POST            CAMINHO: http://localhost:5000/cartao
+
+    {
+        "cliente": 1,
+        "titular": "Yago de Souza Fonserca",
+        "numero": "0000.0000.0000.0000",
+        "validade": "23/10",
+        "codSeguranca": 123,
+        "parcelas": 2
+    }
+
+(2) ALTERAR INFO CARTÃO
+VERBO: PUT             CAMINHO: http://localhost:5000/cartao/:id
+
+    {
+        "titular": "Yago de Souza Fonserca",
+        "numero": "0000.0000.0000.0000",
+        "validade": "23/10",
+        "codSeguranca": 123,
+        "parcelas": 2
+    }
