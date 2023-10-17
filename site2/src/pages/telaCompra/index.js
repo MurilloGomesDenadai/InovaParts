@@ -36,34 +36,15 @@ export default function Compra() {
                         </div>
                     </div>
                 </div>
-<<<<<<< HEAD
             </header>
 
             <main>
                 <section>
                     
                 </section>
-=======
-              </nav>
+            
 
-              <div id='area-pesquisa'>
-                <div className='txt-header'>
-                    <h1>Inovapartes</h1>
-                    <p>
-                        Invista no seu veículo do conforto e com a segurança da sua <span>casa!</span>
-                    </p>
-                </div>
-
-                <div>
-                    <input type='text'></input>
-                    {/* <img src='../assets/icon/lupa.png'/> */}
-                        
-                </div>
-              </div>
-            </header>
-
-            <main>
->>>>>>> 800dbbaface72b5cbba0ad40dcb9cb5930d18954
+            
 
             </main>
 
