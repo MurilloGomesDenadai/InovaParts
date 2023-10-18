@@ -1,10 +1,10 @@
 
 
-export default function Popcard() {
+export default function popupCarrinho() {
     return (
-        <div id='popup-popcard'>
+        <div id='popup-carrinho'>
             <div id='container'>
-                <div className='popcard'>
+                <div className='card'>
                     <div><img src='../assets/image/fundo-home-1.png'/></div>
                     <div>
                         <p>
