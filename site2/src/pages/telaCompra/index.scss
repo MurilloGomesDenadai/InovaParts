@@ -1,5 +1,5 @@
 #pagina-compra {
-    background-color: lightgray;
+    background-color: #565656;
     height: 100%;
 
     header {
@@ -134,4 +134,40 @@
         margin-right: 10px;
         
     }
+
+    #faixa-departamento {
+        background-color: #020032;
+        color: white;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 5vh;
+        width: 100%;
+    }
+
+    #card-agrupamento {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .card-selecao {
+        background-color: white;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 5px;
+        margin: 20px;
+        width: 15vw;
+        height: 5vh;
+    }
+
+    .card-selecao:hover {
+        text-decoration: underline;
+    }
+
+    
 }

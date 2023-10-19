@@ -57,7 +57,7 @@ export default function Compra() {
 
             <main>
                 <section id='departamento'>
-                    <div id='faixa-departamento'>
+                    <div id='faixa-departamento'> 
                         <p>
                             Departamento
                         </p>
@@ -76,9 +76,29 @@ export default function Compra() {
                 </section>
             
                 <section id='area-produto'>
-                    <div id='filtro'>
-
-                    </div>
+                    <aside>
+                        <p>Filtros</p>
+                        <div id='ordenamento'>
+                            <div>
+                                <div className='circulo-opcao'>
+                                <img src=''/>
+                                </div>
+                                <div className='nome-opcao'></div>
+                            </div>
+                            <div>
+                                <div className='circulo-opcao'>
+                                <img src=''/>
+                                </div>
+                                <div className='nome-opcao'></div>
+                            </div>
+                            <div>
+                                <div className='circulo-opcao'>
+                                    <img src=''/>
+                                </div>
+                                <div className='nome-opcao'></div>
+                            </div>
+                        </div>
+                    </aside>
 
                     <article ClassName='lista-produtos'>
                         <div Classname='nome-area'>
