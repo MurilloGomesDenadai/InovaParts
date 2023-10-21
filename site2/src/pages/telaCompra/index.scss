@@ -1,6 +1,12 @@
 #pagina-compra {
     background-color: #565656;
+    min-width: 1000px;
     height: 100%;
+
+
+    // :root {
+    //     --blue: #020032;
+    // }
 
     header {
         background-image: url('../../../public/assets/image/fundo-tela-produto.png');
@@ -138,11 +144,12 @@
     #faixa-departamento {
         background-color: #020032;
         color: white;
+        font-size: 1.3em;
         font-weight: 500;
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 5vh;
+        height: 8vh;
         width: 100%;
     }
 
@@ -161,7 +168,7 @@
         cursor: pointer;
         border-radius: 5px;
         margin: 20px;
-        width: 15vw;
+        width: 13vw;
         height: 5vh;
     }
 
@@ -169,5 +176,143 @@
         text-decoration: underline;
     }
 
-    
+    .card-manutencao {
+        background-color: white;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 5px;
+        margin: 20px;
+        width: 20vw;
+        height: 5vh;
+    }
+
+    .card-manutencao:hover {
+        text-decoration: underline;
+    }
+
+    #area-produto {
+        display: flex;
+    }
+
+    #area-produto h2 {
+        margin: 13px;
+    }
+
+    aside {
+        background-color: #020032;
+        color: white;
+        border-radius: 0px 10px 10px 0px;
+        width: 30vw;
+    }
+
+    #ordenamento {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    #ordenamento > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .circulo-opcao {
+        background-color: white;
+        border-radius: 50px;
+        text-align: center;
+        cursor: pointer;
+        padding: 5px;
+        width: 5vw;
+    }
+
+    .circulo-opcao img {
+        width: 40px;
+        height: 40px;
+    }
+
+    #icon-menor-preco {
+        padding: 4px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .nome-opcao {
+        font-weight: 500;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    .linha-aside {
+        display: flex;
+        justify-content: center;
+    }
+
+    .linha-aside hr {
+        width: 28vw;
+
+    }
+
+    article {
+        width: 100%;
+    }
+
+    .nome-area {
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+        height: 5vh;
+    }
+
+    .produtos-agrupamento {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .produto {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        margin: 10px;
+        width: 15vw;
+        height: 35vh;
+    }
+
+    .ver-mais {
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+    }
+
+    .ver-mais button {
+        background-color: #D9D9D9;
+        font-weight: 500;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 8px;
+        width: 10vw;
+    }
+
+    .linha-produto {
+        display: flex;
+        justify-content: center;
+    }
+
+    .linha-produto hr {
+        width: 65vw;
+
+    }
+
 }

@@ -1,5 +1,5 @@
 import './index.scss';
-import Modal from '../../components/modal/modal.js';
+import Modal from '../../components/modal/popupCarrinho/popupCarrinho.js';
 import Footer from '../../components/rodape/footer.js';
 
 import { useState } from 'react';
@@ -71,88 +71,113 @@ export default function Compra() {
 
                         <div className='card-selecao'>fueltech</div>
 
-                        <div className='card-selecao'>Manutenção Preventiva</div>
+                        <div className='card-manutencao'>Manutenção Preventiva</div>
                     </div>
                 </section>
             
                 <section id='area-produto'>
                     <aside>
-                        <p>Filtros</p>
+                        <h2>Ordenar</h2>
                         <div id='ordenamento'>
                             <div>
                                 <div className='circulo-opcao'>
-                                <img src=''/>
+                                <img src='../assets/icon/icon-todos.svg'/>
                                 </div>
-                                <div className='nome-opcao'></div>
+
+                                <div className='nome-opcao'>Todos</div>
                             </div>
+
                             <div>
                                 <div className='circulo-opcao'>
-                                <img src=''/>
+                                <img id='icon-menor-preco' src='../assets/icon/icon-menor-preco.svg'/>
                                 </div>
-                                <div className='nome-opcao'></div>
+
+                                <div className='nome-opcao'>Menor preço</div>
                             </div>
+
                             <div>
                                 <div className='circulo-opcao'>
-                                    <img src=''/>
+                                    <img src='../assets/icon/icon-maior-preco.svg'/>
                                 </div>
-                                <div className='nome-opcao'></div>
+
+                                <div className='nome-opcao'>Maior preço</div>
                             </div>
                         </div>
+
+                        <div className='linha-aside'><hr/></div>
                     </aside>
 
-                    <article ClassName='lista-produtos'>
-                        <div Classname='nome-area'>
-                            Amortecedores
-                        </div>
+                    <article>
+                        <div className='lista-produtos'>
+                            <div className='nome-area'>
+                                Amortecedores
+                            </div>
 
-                        <div id='produtos-agrupamento-1'>
-                            <div className='produto'>1</div>
-                            <div className='produto'>2</div>
-                            <div className='produto'>3</div>
-                            <div className='produto'>4</div>
-                            <div className='produto'>5</div>
-                            <div className='produto'>6</div>
-                            <div className='produto'>7</div>
-                            <div className='produto'>8</div>
-                            <div className='produto'>9</div>
-                            <div className='produto'>10</div>
-                            <div className='produto'>11</div>
-                            <div className='produto'>12</div>
-                        </div>
+                            <div className='produtos-agrupamento'>
+                                <div className='produto'>1</div>
+                                <div className='produto'>2</div>
+                                <div className='produto'>3</div>
+                                <div className='produto'>4</div>
+                                <div className='produto'>5</div>
+                                <div className='produto'>6</div>
+                                <div className='produto'>7</div>
+                                <div className='produto'>8</div>
+                                <div className='produto'>9</div>
+                                <div className='produto'>10</div>
+                                <div className='produto'>11</div>
+                                <div className='produto'>12</div>
+                                <div className='produto'>13</div>
+                                <div className='produto'>14</div>
+                                <div className='produto'>15</div>
+                                <div className='produto'>16</div>
+                                <div className='produto'>17</div>
+                                <div className='produto'>18</div>
+                                <div className='produto'>19</div>
+                                <div className='produto'>20</div>
+                            </div>
 
-                        <div className='Ver-mais'>
-                            <button>Ver mais</button>
-                        </div>
+                            <div className='ver-mais'>
+                                <button>Ver mais</button>
+                            </div>
 
-                        <hr/>
+                            <div className='linha-produto'><hr/></div>
                         
-                    </article>
-
-                    <article Classname='lista-produto'>
-                    <div ClassName='nome-area'>
-                            Amortecedores
                         </div>
 
-                        <div id='produtos-agrupamento-2'>
-                            <div className='produto'>1</div>
-                            <div className='produto'>2</div>
-                            <div className='produto'>3</div>
-                            <div className='produto'>4</div>
-                            <div className='produto'>5</div>
-                            <div className='produto'>6</div>
-                            <div className='produto'>7</div>
-                            <div className='produto'>8</div>
-                            <div className='produto'>9</div>
-                            <div className='produto'>10</div>
-                            <div className='produto'>11</div>
-                            <div className='produto'>12</div>
-                        </div>
+                        <div className='lista-produto'>
+                            <div className='nome-area'>
+                                Amortecedores
+                            </div>
 
-                        <div className='Ver-mais'>
-                            <button>Ver mais</button>
-                        </div>
+                            <div className='produtos-agrupamento'>
+                                <div className='produto'>1</div>
+                                <div className='produto'>2</div>
+                                <div className='produto'>3</div>
+                                <div className='produto'>4</div>
+                                <div className='produto'>5</div>
+                                <div className='produto'>6</div>
+                                <div className='produto'>7</div>
+                                <div className='produto'>8</div>
+                                <div className='produto'>9</div>
+                                <div className='produto'>10</div>
+                                <div className='produto'>11</div>
+                                <div className='produto'>12</div>
+                                <div className='produto'>13</div>
+                                <div className='produto'>14</div>
+                                <div className='produto'>15</div>
+                                <div className='produto'>16</div>
+                                <div className='produto'>17</div>
+                                <div className='produto'>18</div>
+                                <div className='produto'>19</div>
+                                <div className='produto'>20</div>
+                            </div>
 
-                        <hr/>
+                            <div className='ver-mais'>
+                                <button>Ver mais</button>
+                            </div>
+
+                            <div className='linha-produto'><hr/></div>
+                        </div>
                     </article>
                 </section>
             
