@@ -25,8 +25,10 @@ export default function Cadastro() {
             telefone: telefone,
             email: email,
             senha: senha,
-            imagem: imagem
+            imagem: imagem,
+            
         } )
+        
 
         toast.success("Registro Salvo!")
 
@@ -75,7 +77,7 @@ export default function Cadastro() {
 
                     <div className='caixa-senha'>
                         <label>Confirme sua Senha</label>
-                        <input type='text' placeholder='Confirme'/>
+                        <input type='text' placeholder='Confirme' value={confirmeSenha} onChange={e => setConfirmeSenha(e.target.value)}/>
                     </div>
                     </form>
 

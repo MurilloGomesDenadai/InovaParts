@@ -1,6 +1,7 @@
 import './index.scss';
 import Modal from '../../components/modal/modal.js';
 import Footer from '../../components/rodape/footer.js';
+import Fueltech from '../../components/cardDpto/cardFueltech/fueltech.js';
 
 import { useState } from 'react';
 import {Link} from 'react-router-dom';
@@ -10,6 +11,7 @@ import {Link} from 'react-router-dom';
 
 export default function Compra() {
     const [open,  setOpen] = useState (false);
+    const [openfuel,  setOpenFuel] = useState (false);
 
     return (
         <div id='pagina-compra'>
@@ -69,11 +71,16 @@ export default function Compra() {
 
                         <div className='card-selecao'>Kit Turbo</div>
 
-                        <div className='card-selecao'>fueltech</div>
+                        <button onClick={() => setOpenFuel(true)}>
+                            <div className='card-selecao'>fueltech</div>
+                        </button>
 
                         <div className='card-selecao'>Manutenção Preventiva</div>
                     </div>
                 </section>
+
+                <Fueltech isOpen = {openfuel}
+                        setOpen = {setOpenFuel}/>
             
                 <section id='area-produto'>
                     <aside>
