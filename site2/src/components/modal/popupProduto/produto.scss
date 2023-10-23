@@ -1,0 +1,25 @@
+#popup-produto {
+    background-color: rgb(104, 104, 104);
+    display: flex;
+    padding: 0px;
+    margin: auto;
+    width: 50vw;
+    height: 50vh;
+
+    top: 1200px;
+    bottom: 0px;
+    right: -10px;
+    left: 100px;
+
+    #white {
+        background-color: white;
+        width: 50vw;
+        height: 100%;
+    }
+
+    #blue {
+        background-color: #020032;
+        width: 50vw;
+        height: 100%;
+    }
+}

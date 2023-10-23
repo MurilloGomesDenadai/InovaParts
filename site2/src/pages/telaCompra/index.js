@@ -3,6 +3,7 @@ import Modal from '../../components/modal/popupCarrinho/popupCarrinho.js';
 import Footer from '../../components/rodape/footer.js';
 
 import Manutencao from '../../components/modal/popupDpto/manutencao/manutencao.js';
+import { Produto } from '../../components/modal/popupProduto/produto';
 
 import { useState } from 'react';
 import {Link} from 'react-router-dom';
@@ -13,6 +14,7 @@ import {Link} from 'react-router-dom';
 export default function Compra() {
     const [open,  setOpen] = useState (false);
     const [openManutencao,  setOpenManutencao] = useState (false);
+    const [openProduto,  setOpenProduto] = useState (false);
     
     
 
@@ -76,15 +78,13 @@ export default function Compra() {
                         </p>
                     </div>
                     <div id='card-agrupamento'>
-                        <div className='card-selecao'>Performace</div>
+                        <div className='card-selecao'>Performance</div>
 
                         <div className='card-selecao'>Turbinas</div >
 
                         <div className='card-selecao'>Kit Turbo</div>
 
-                        <button onClick={() => setOpenFuel(true)}>
-                            <div className='card-selecao'>fueltech</div>
-                        </button>
+                        <div className='card-selecao'>fueltech</div>
 
                         <div onMouseEnter={() => setOpenManutencao(true)} className='card-manutencao'>Manutenção Preventiva</div>
 
@@ -98,8 +98,7 @@ export default function Compra() {
                     </div>
                 </section>
 
-                <Fueltech isOpen = {openfuel}
-                        setOpen = {setOpenFuel}/>
+                
             
                 <section id='area-produto'>
                     <aside>
@@ -215,7 +214,7 @@ export default function Compra() {
                                 
                                 <div className='topico-selecao'>
                                     <p>Direção</p>
-                                    <img src='../assetss/icon/seta-baixo.png'/>
+                                    <img src='../assets/icon/seta-baixo.png'/>
                                 </div>
 
                                 <div className='topico-selecao'>
@@ -239,7 +238,7 @@ export default function Compra() {
                             <div className='selecao'>
                                 <div className='topico-selecao'>
                                     <p>Carro</p>
-                                    <img src='../assets/icon/seta-baixo.png'/>
+                                    <img src='../assets/icon/seta-baixo.png'/> 
                                 </div>
 
                                 <div className='topico-selecao'>
@@ -263,27 +262,27 @@ export default function Compra() {
                             </div>
 
                             <div className='produtos-agrupamento'>
-                                <div className='produto'>1</div>
-                                <div className='produto'>2</div>
-                                <div className='produto'>3</div>
-                                <div className='produto'>4</div>
-                                <div className='produto'>5</div>
-                                <div className='produto'>6</div>
-                                <div className='produto'>7</div>
-                                <div className='produto'>8</div>
-                                <div className='produto'>9</div>
-                                <div className='produto'>10</div>
-                                <div className='produto'>11</div>
-                                <div className='produto'>12</div>
+                                <div onClick={() => setOpenProduto(true)} className='produto'>1</div>
+                                <div onClick={() => setOpenProduto(true)} className='produto'>2</div>
+                                <div onClick={() => setOpenProduto(true)} className='produto'>3</div>
+                                <div onClick={() => setOpenProduto(true)} className='produto'>4</div>
+                                <div onClick={() => setOpenProduto(true)} className='produto'>5</div>
+                                <div onClick={() => setOpenProduto(true)} className='produto'>6</div>
+                                <div onClick={() => setOpenProduto(true)} className='produto'>7</div>
+                                <div onClick={() => setOpenProduto(true)} className='produto'>8</div>
+                                <div onClick={() => setOpenProduto(true)} className='produto'>9</div>
+                                <div onClick={() => setOpenProduto(true)} className='produto'>10</div>
+                                <div onClick={() => setOpenProduto(true)} className='produto'>11</div>
+                                <div onClick={() => setOpenProduto(true)} className='produto'>12</div>
                                 <span style={openVermais ? null : vermaisStyle}>
-                                    <div className='produto'>13</div>
-                                    <div className='produto'>14</div>
-                                    <div className='produto'>15</div>
-                                    <div className='produto'>16</div>
-                                    <div className='produto'>17</div>
-                                    <div className='produto'>18</div>
-                                    <div className='produto'>19</div>
-                                    <div className='produto'>20</div>
+                                    <div onClick={() => setOpenProduto(true)} className='produto'>13</div>
+                                    <div onClick={() => setOpenProduto(true)} className='produto'>14</div>
+                                    <div onClick={() => setOpenProduto(true)} className='produto'>15</div>
+                                    <div onClick={() => setOpenProduto(true)} className='produto'>16</div>
+                                    <div onClick={() => setOpenProduto(true)} className='produto'>17</div>
+                                    <div onClick={() => setOpenProduto(true)} className='produto'>18</div>
+                                    <div onClick={() => setOpenProduto(true)} className='produto'>19</div>
+                                    <div onClick={() => setOpenProduto(true)} className='produto'>20</div>
                                 </span>
                             </div>
 
@@ -297,32 +296,37 @@ export default function Compra() {
 
                         <div className='lista-produto'>
                             <div className='nome-area'>
-                                Amortecedores
+                                Freios
                             </div>
 
                             <div className='produtos-agrupamento'>
-                                <div className='produto'>1</div>
-                                <div className='produto'>2</div>
-                                <div className='produto'>3</div>
-                                <div className='produto'>4</div>
-                                <div className='produto'>5</div>
-                                <div className='produto'>6</div>
-                                <div className='produto'>7</div>
-                                <div className='produto'>8</div>
-                                <div className='produto'>9</div>
-                                <div className='produto'>10</div>
-                                <div className='produto'>11</div>
-                                <div className='produto'>12</div>
+                                <div onClick={() => setOpenProduto(true)} className='produto'>1</div>
+                                <div onClick={() => setOpenProduto(true)}  className='produto'>2</div>
+                                <div onClick={() => setOpenProduto(true)} className='produto'>3</div>
+                                <div onClick={() => setOpenProduto(true)} className='produto'>4</div>
+                                <div onClick={() => setOpenProduto(true)} className='produto'>5</div>
+                                <div onClick={() => setOpenProduto(true)}  className='produto'>6</div>
+                                <div onClick={() => setOpenProduto(true)} className='produto'>7</div>
+                                <div onClick={() => setOpenProduto(true)}  className='produto'>8</div>
+                                <div onClick={() => setOpenProduto(true)} className='produto'>9</div>
+                                <div onClick={() => setOpenProduto(true)} className='produto'>10</div>
+                                <div onClick={() => setOpenProduto(true)} className='produto'>11</div>
+                                <div onClick={() => setOpenProduto(true)} className='produto'>12</div>
                                 <span style={openVermais2 ? null : vermaisStyle}>
-                                    <div className='produto'>13</div>
-                                    <div className='produto'>14</div>
-                                    <div className='produto'>15</div>
-                                    <div className='produto'>16</div>
-                                    <div className='produto'>17</div>
-                                    <div className='produto'>18</div>
-                                    <div className='produto'>19</div>
-                                    <div className='produto'>20</div>
+                                    <div onClick={() => setOpenProduto(true)} className='produto'>13</div>
+                                    <div onClick={() => setOpenProduto(true)} className='produto'>14</div>
+                                    <div onClick={() => setOpenProduto(true)} className='produto'>15</div>
+                                    <div onClick={() => setOpenProduto(true)} className='produto'>16</div>
+                                    <div onClick={() => setOpenProduto(true)} className='produto'>17</div>
+                                    <div onClick={() => setOpenProduto(true)} className='produto'>18</div>
+                                    <div onClick={() => setOpenProduto(true)} className='produto'>19</div>
+                                    <div onClick={() => setOpenProduto(true)} className='produto'>20</div>
                                 </span>
+                            </div>
+
+                            <div>
+                                <Produto isopenProduto = {openProduto}
+                                        setOpenProduto = {setOpenProduto}/>
                             </div>
 
                             <div className='ver-mais'>
