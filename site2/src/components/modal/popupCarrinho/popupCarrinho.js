@@ -1,12 +1,12 @@
-import './modal.scss'
+import './popupCarrinho.scss'
 
 import { Link } from 'react-router-dom';
 
-export default function Modal({isOpen, setOpen}) {
+export default function Carrinho({isOpen, setOpen}) {
     
 
     if (isOpen) {
-        return <dialog open>
+        return <dialog open id='carrinho'>
                     <div id='popup-carrinho'>
                         <div id='container'>
                             <div id='caixa-subtotal'>
