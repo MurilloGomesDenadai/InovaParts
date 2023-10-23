@@ -6,7 +6,7 @@ export default function Carrinho({isOpen, setOpen}) {
     
 
     if (isOpen) {
-        return <dialog open>
+        return <dialog open id='carrinho'>
                     <div id='popup-carrinho'>
                         <div id='container'>
                             <div id='caixa-subtotal'>

@@ -1,6 +1,7 @@
 import './index.scss';
 import Modal from '../../components/modal/popupCarrinho/popupCarrinho.js';
 import Footer from '../../components/rodape/footer.js';
+import Manutencao from '../../components/modal/popupDpto/manutencao/manutencao.js';
 
 import { useState } from 'react';
 import {Link} from 'react-router-dom';
@@ -10,6 +11,17 @@ import {Link} from 'react-router-dom';
 
 export default function Compra() {
     const [open,  setOpen] = useState (false);
+    const [openManutencao,  setOpenManutencao] = useState (false);
+    
+    
+
+    const [openVermais, setOpenVermais] = useState (false)
+    const [openVermais2, setOpenVermais2] = useState (false)
+
+    const vermaisStyle = {
+        display: 'none'
+    }
+
 
     return (
         <div id='pagina-compra'>
@@ -71,7 +83,15 @@ export default function Compra() {
 
                         <div className='card-selecao'>fueltech</div>
 
-                        <div className='card-manutencao'>Manutenção Preventiva</div>
+                        <div onMouseEnter={() => setOpenManutencao(true)} className='card-manutencao'>Manutenção Preventiva</div>
+
+                        {/* <div className='manucard' onMouseOut={() => setOpenManutencao(false)}>
+                            <div onMouseEnter={() => setOpenManutencao(true)} className='card-manutencao'>Manutenção Preventiva</div>
+                            <div>
+                                <Manutencao isopenManutencao = {openManutencao}
+                            />
+                            </div>
+                        </div> */}
                     </div>
                 </section>
             
@@ -105,6 +125,129 @@ export default function Compra() {
                         </div>
 
                         <div className='linha-aside'><hr/></div>
+
+                        <div id='categoria'>
+                            <h2>Categoria</h2> 
+                            <div className='selecao'>
+                                <div className='topico-selecao'>
+                                    <p>Amortecedores</p>
+                                    <img src='../assets/icon/seta-baixo.png'/>
+                                </div>
+
+                                <div className='topico-selecao'>
+                                    <p>Frios</p>
+                                    <img src='../assets/icon/seta-baixo.png'/>
+                                </div>
+
+                                <div className='topico-selecao'>
+                                    <p>Direção</p>
+                                    <img src='../assets/icon/seta-baixo.png'/>
+                                </div>
+
+                                <div className='topico-selecao'>
+                                    <p>Motor</p>
+                                    <img src='../assets/icon/seta-baixo.png'/>
+                                </div>
+
+                                <div className='topico-selecao'>
+                                    <p>Embreagem</p>
+                                    <img src='../assets/icon/seta-baixo.png'/>
+                                </div>
+
+                                <div className='topico-selecao'>
+                                    <p>Suspensão</p>
+                                    <img src='../assets/icon/seta-baixo.png'/>
+                                </div>
+                            </div>
+                            <div className='linha-aside'><hr/></div>
+
+                            <h2>Marcas</h2> 
+                            <div className='selecao'>
+                                <div className='topico-selecao'>
+                                    <p>Amortecedores</p>
+                                    <img src='../assets/icon/seta-baixo.png'/>
+                                </div>
+
+                                <div className='topico-selecao'>
+                                    <p>Frios</p>
+                                    <img src='../assets/icon/seta-baixo.png'/>
+                                </div>
+
+                                <div className='topico-selecao'>
+                                    <p>Direção</p>
+                                    <img src='../assets/icon/seta-baixo.png'/>
+                                </div>
+
+                                <div className='topico-selecao'>
+                                    <p>Motor</p>
+                                    <img src='../assets/icon/seta-baixo.png'/>
+                                </div>
+
+                                <div className='topico-selecao'>
+                                    <p>Embreagem</p>
+                                    <img src='../assets/icon/seta-baixo.png'/>
+                                </div>
+
+                                <div className='topico-selecao'>
+                                    <p>Suspensão</p>
+                                    <img src='../assets/icon/seta-baixo.png'/>
+                                </div>
+                            </div>
+                            <div className='linha-aside'><hr/></div>
+
+                            <h2>Fornecedores</h2> 
+                            <div className='selecao'>
+                                <div className='topico-selecao'>
+                                    <p>Amortecedores</p>
+                                    <img src='../assets/icon/seta-baixo.png'/>
+                                </div>
+
+                                <div className='topico-selecao'>
+                                    <p>Frios</p>
+                                    <img src='../assets/icon/seta-baixo.png'/>
+                                </div>
+                                
+                                <div className='topico-selecao'>
+                                    <p>Direção</p>
+                                    <img src='../assetss/icon/seta-baixo.png'/>
+                                </div>
+
+                                <div className='topico-selecao'>
+                                    <p>Motor</p>
+                                    <img src='../assets/icon/seta-baixo.png'/>
+                                </div>
+
+                                <div className='topico-selecao'>
+                                    <p>Embreagem</p>
+                                    <img src='../assets/icon/seta-baixo.png'/>
+                                </div>
+
+                                <div className='topico-selecao'>
+                                    <p>Suspensão</p>
+                                    <img src='../assets/icon/seta-baixo.png'/>
+                                </div>
+                            </div>
+                            <div className='linha-aside'><hr/></div>
+
+                            <h2>Tipo de carro</h2> 
+                            <div className='selecao'>
+                                <div className='topico-selecao'>
+                                    <p>Carro</p>
+                                    <img src='../assets/icon/seta-baixo.png'/>
+                                </div>
+
+                                <div className='topico-selecao'>
+                                    <p>Moto</p>
+                                    <img src='../assets/icon/seta-baixo.png'/>
+                                </div>
+
+                                <div className='topico-selecao'>
+                                    <p>Caminhão</p>
+                                    <img src='../assets/icon/seta-baixo.png'/>
+                                </div>
+                                
+                            </div>
+                        </div>
                     </aside>
 
                     <article>
@@ -126,18 +269,20 @@ export default function Compra() {
                                 <div className='produto'>10</div>
                                 <div className='produto'>11</div>
                                 <div className='produto'>12</div>
-                                <div className='produto'>13</div>
-                                <div className='produto'>14</div>
-                                <div className='produto'>15</div>
-                                <div className='produto'>16</div>
-                                <div className='produto'>17</div>
-                                <div className='produto'>18</div>
-                                <div className='produto'>19</div>
-                                <div className='produto'>20</div>
+                                <span style={openVermais ? null : vermaisStyle}>
+                                    <div className='produto'>13</div>
+                                    <div className='produto'>14</div>
+                                    <div className='produto'>15</div>
+                                    <div className='produto'>16</div>
+                                    <div className='produto'>17</div>
+                                    <div className='produto'>18</div>
+                                    <div className='produto'>19</div>
+                                    <div className='produto'>20</div>
+                                </span>
                             </div>
 
                             <div className='ver-mais'>
-                                <button>Ver mais</button>
+                                <button onClick={() => setOpenVermais(!openVermais)}>{openVermais ? 'Ver menos' : 'Ver mais'}</button>
                             </div>
 
                             <div className='linha-produto'><hr/></div>
@@ -162,18 +307,20 @@ export default function Compra() {
                                 <div className='produto'>10</div>
                                 <div className='produto'>11</div>
                                 <div className='produto'>12</div>
-                                <div className='produto'>13</div>
-                                <div className='produto'>14</div>
-                                <div className='produto'>15</div>
-                                <div className='produto'>16</div>
-                                <div className='produto'>17</div>
-                                <div className='produto'>18</div>
-                                <div className='produto'>19</div>
-                                <div className='produto'>20</div>
+                                <span style={openVermais2 ? null : vermaisStyle}>
+                                    <div className='produto'>13</div>
+                                    <div className='produto'>14</div>
+                                    <div className='produto'>15</div>
+                                    <div className='produto'>16</div>
+                                    <div className='produto'>17</div>
+                                    <div className='produto'>18</div>
+                                    <div className='produto'>19</div>
+                                    <div className='produto'>20</div>
+                                </span>
                             </div>
 
                             <div className='ver-mais'>
-                                <button>Ver mais</button>
+                                <button onClick={() => setOpenVermais2(!openVermais2)}>{openVermais2 ? 'Ver menos' : 'Ver mais'}</button>
                             </div>
 
                             <div className='linha-produto'><hr/></div>

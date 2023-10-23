@@ -16,6 +16,7 @@ export default function Cadastro() {
     const [confirmeSenha, setConfirmeSenha] = useState ('');
     const [imagem, setimagem] = useState ('');
 
+
     async function cadastrarCliente() {
         let url = 'http://localhost:5000/usuario';
         await axios.post(url, 
@@ -97,7 +98,7 @@ export default function Cadastro() {
                         </div>
 
                         <div id='btn-entrar'>
-                            <Link to='/telaCompra'><button>Entrar</button></Link>
+                            <Link to='/loginCliente'><button>Entrar</button></Link>
                         </div>
                     </div>
                 </main>

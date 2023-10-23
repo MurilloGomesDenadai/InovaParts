@@ -198,6 +198,7 @@
     }
 
     #area-produto h2 {
+        font-size: 1.2;
         margin: 13px;
     }
 
@@ -205,8 +206,24 @@
         background-color: #020032;
         color: white;
         border-radius: 0px 10px 10px 0px;
-        width: 30vw;
+        width: 40vw;
     }
+
+    #selecao {
+        font-size: 1.1em;
+        font-weight: 500;
+        line-height: 30px;
+        margin: 10px 20px;
+        width: 15vw;
+    }
+
+    .topico-selecao {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+    }
+
 
     #ordenamento {
         display: flex;
@@ -253,7 +270,7 @@
     }
 
     .linha-aside hr {
-        width: 28vw;
+        width: 27vw;
 
     }
 
@@ -270,7 +287,7 @@
         height: 5vh;
     }
 
-    .produtos-agrupamento {
+    .produtos-agrupamento, span {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -314,5 +331,7 @@
         width: 65vw;
 
     }
+
+    
 
 }
