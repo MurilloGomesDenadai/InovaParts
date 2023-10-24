@@ -193,6 +193,20 @@
         text-decoration: underline;
     }
 
+    .card-orientacao {
+        background-color: #9e9696;
+    }
+
+    .card-orientacao p {
+        color: #994747;
+    }
+
+    #fechar {
+        background-color: aqua;
+        height: 10vh;
+        width: 100%;
+    }
+
     #area-produto {
         display: flex;
     }
@@ -227,12 +241,39 @@
         margin-right: 20px;
     }
 
+    .topico-selecao > div {
+        display: flex;
+        align-items: end;
+    }
+
     .topico-selecao p {
         margin-right: 10px;
     }
 
     .topico-selecao img {
         cursor: pointer;
+    }
+
+    .subtopico-selecao {
+        text-indent: 13px;
+    }
+
+    .subtopico-selecao p {
+        cursor: pointer;
+        margin: 5px 0px;
+    }
+
+    .subtopico-selecao p:hover {
+        text-decoration: underline;
+
+    }
+
+    .subtopico-selecao-suspensao {
+        width: 19.5vw;
+    }
+
+    .subtopico-selecao-motor {
+        width: 24.8vw;
     }
 
     #ordenamento {

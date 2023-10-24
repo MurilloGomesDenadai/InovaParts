@@ -16,15 +16,68 @@ export default function Compra() {
     const [openManutencao,  setOpenManutencao] = useState (false);
     const [openProduto,  setOpenProduto] = useState (false);
     
-    
-
     const [openVermais, setOpenVermais] = useState (false)
     const [openVermais2, setOpenVermais2] = useState (false)
+    const [openAmortecedor, setOpenAmortecedor] = useState (false)
+    const [openFreio, setOpenFreio] = useState (false)
+    const [openDirecao, setOpenDirecao] = useState (false)
+    const [openMotor, setOpenMotor] = useState (false)
+    const [openEmbreagem, setOpenEmbreagem] = useState (false)
+    const [openSuspensao, setOpenSuspensao] = useState (false)
+    const [openCarro, setOpenCarro] = useState (false)
+    const [openCardmanutencao, setOpenCardmanutencao] = useState (false)
 
-    const vermaisStyle = {
+    //card
+    //manutencao
+    const manutencaoStyle = {
         display: 'none'
     }
 
+    //Categoria
+    const amortecedorStyle = {
+        display: 'none'
+    }
+
+    const freioStyle = {
+        display: 'none'
+    }
+
+    const direcaoStyle = {
+        display: 'none'
+    }
+
+    const motorStyle = {
+        display: 'none'
+    }
+
+    const embreagemStyle = {
+        display: 'none'
+    }
+
+    const suspensaoStyle = {
+        display: 'none'
+    }
+
+
+
+    //Marca
+
+    //Fornecedor
+
+    //Tipo de carro
+    //Carro
+    const carroStyle = {
+        display: 'none'
+    }
+
+    //Caminhão
+
+    //Moto
+
+    //Botão Ver-mais
+    const vermaisStyle = {
+        display: 'none'
+    }
 
     return (
         <div id='pagina-compra'>
@@ -86,15 +139,27 @@ export default function Compra() {
 
                         <div className='card-selecao'>fueltech</div>
 
-                        <div onMouseEnter={() => setOpenManutencao(true)} className='card-manutencao'>Manutenção Preventiva</div>
+                        
 
-                        {/* <div className='manucard' onMouseOut={() => setOpenManutencao(false)}>
-                            <div onMouseEnter={() => setOpenManutencao(true)} className='card-manutencao'>Manutenção Preventiva</div>
-                            <div>
-                                <Manutencao isopenManutencao = {openManutencao}
-                            />
-                            </div>
-                        </div> */}
+                        <div  >
+                            <div onMouseEnter={() => setOpenCardmanutencao(true)} className='card-manutencao'>Manutenção Preventiva</div>
+
+                            {/* <span   className='card-orientacao' style={openCardmanutencao ? null : manutencaoStyle}>
+                                <div>
+                                    <p>Barra de torção</p>
+                                    <p>MC Pherson/Telescopia</p>
+                                    <p>Feixe de molas</p>
+                                    <p>Duplo "A"</p>
+                                    <p>Multiplink</p>
+                                    <p>Suspensão a ar</p>
+                                    <p>Suspensão de rosca</p>
+                                    <p>Suspensão Hidropneumatica</p>
+                                    <div id='fechar' onMouseOut={() => setOpenCardmanutencao(false)}>Fechar</div>
+                                </div>
+                            </span> */}
+                        </div>
+
+                        
                     </div>
                 </section>
 
@@ -136,33 +201,93 @@ export default function Compra() {
                             <div className='selecao'>
                                 <div className='topico-selecao'>
                                     <p>Amortecedores</p>
-                                    <img src='../assets/icon/seta-baixo.png'/>
+
+                                    <div onClick={() => setOpenAmortecedor(!openAmortecedor)}>{openAmortecedor ? <img src='../assets/icon/seta-cima.png'/> : <img src='../assets/icon/seta-baixo.png'/>}</div>
                                 </div>
 
+                                <span className='subtopico-selecao' style={openAmortecedor ? null : amortecedorStyle}>
+                                    <div>
+                                        <p>Hidraulicos</p>
+                                        <p>Pressurizados</p>
+                                    </div>
+                                </span>
+
                                 <div className='topico-selecao'>
-                                    <p>Frios</p>
-                                    <img src='../assets/icon/seta-baixo.png'/>
+                                    <p>Freios</p>
+                                    
+                                    <div onClick={() => setOpenFreio(!openFreio)}>{openFreio ? <img src='../assets/icon/seta-cima.png'/> : <img src='../assets/icon/seta-baixo.png'/>}</div>
                                 </div>
+
+                                <span className='subtopico-selecao' style={openFreio ? null : freioStyle}>
+                                    <div>
+                                        <p>Frios a Disco</p>
+                                        <p>Freios ABS</p>
+                                        <p>Freios a Tambor</p>
+                                    </div>
+                                </span>
 
                                 <div className='topico-selecao'>
                                     <p>Direção</p>
-                                    <img src='../assets/icon/seta-baixo.png'/>
+                                    
+                                    <div onClick={() => setOpenDirecao(!openDirecao)}>{openDirecao ? <img src='../assets/icon/seta-cima.png'/> : <img src='../assets/icon/seta-baixo.png'/>}</div>
                                 </div>
+
+                                <span className='subtopico-selecao' style={openDirecao ? null : direcaoStyle}>
+                                    <div>
+                                        <p>Mecânica</p>
+                                        <p>Hidráulica</p>
+                                        <p>Elétrica</p>
+                                        <p>Eletro-Hidráulica</p>
+                                    </div>
+                                </span>
 
                                 <div className='topico-selecao'>
                                     <p>Motor</p>
-                                    <img src='../assets/icon/seta-baixo.png'/>
+                                    
+                                    <div onClick={() => setOpenMotor(!openMotor)}>{openMotor ? <img src='../assets/icon/seta-cima.png'/> : <img src='../assets/icon/seta-baixo.png'/>}</div>
                                 </div>
+
+                                <span className='subtopico-selecao-motor' style={openMotor ? null : motorStyle}>
+                                    <div>
+                                        <p>Motores de corrente alternada (CA)</p>
+                                        <p>Motores de corrente contínua (CC)</p>
+                                        <p>Motores Universais (CA e CC)</p>
+                                    </div>
+                                </span>
 
                                 <div className='topico-selecao'>
                                     <p>Embreagem</p>
-                                    <img src='../assets/icon/seta-baixo.png'/>
+                                    
+                                    <div onClick={() => setOpenEmbreagem(!openEmbreagem)}>{openEmbreagem ? <img src='../assets/icon/seta-cima.png'/> : <img src='../assets/icon/seta-baixo.png'/>}</div>
                                 </div>
+
+                                <span className='subtopico-selecao' style={openEmbreagem ? null : embreagemStyle}>
+                                    <div>
+                                        <p>Cerâmica</p>
+                                        <p>Carbono</p>
+                                        <p>Multidisco</p>
+                                    </div>
+                                </span>
 
                                 <div className='topico-selecao'>
                                     <p>Suspensão</p>
-                                    <img src='../assets/icon/seta-baixo.png'/>
+                                    
+                                    <div onClick={() => setOpenSuspensao(!openSuspensao)}>{openSuspensao ? <img src='../assets/icon/seta-cima.png'/> : <img src='../assets/icon/seta-baixo.png'/>}</div>
                                 </div>
+
+                                <span className='subtopico-selecao-suspensao' style={openSuspensao ? null : suspensaoStyle}>
+                                    <div>
+                                        <p>Barra de torção</p>
+                                        <p>MC Pherson/Telescopia</p>
+                                        <p>Feixe de molas</p>
+                                        <p>Duplo "A"</p>
+                                        <p>Multiplink</p>
+                                        <p>Suspensão a ar</p>
+                                        <p>Suspensão de rosca</p>
+                                        <p>Suspensão Hidropneumatica</p>
+                                    </div>
+                                </span>
+
                             </div>
                             <div className='linha-aside'><hr/></div>
 
@@ -238,8 +363,49 @@ export default function Compra() {
                             <div className='selecao'>
                                 <div className='topico-selecao'>
                                     <p>Carro</p>
-                                    <img src='../assets/icon/seta-baixo.png'/> 
+
+                                    <div onClick={() => setOpenCarro(!openCarro)}>{openCarro ? <img src='../assets/icon/seta-cima.png'/> : <img src='../assets/icon/seta-baixo.png'/>}</div> 
                                 </div>
+
+                                <span className='subtopico-selecao' style={openCarro ? null : carroStyle}>
+                                    <div>
+                                        <p>Amarok</p>
+                                        <p>Argo</p>
+                                        <p>Azera</p>
+                                        <p>Astra</p>
+                                        <p>Aircross</p>
+
+                                        <p>Blazer</p>
+                                        <p>Boxer</p>
+                                        <p>Boxter</p>
+                                        <p>Bravo</p>
+                                        <p>Boxer</p>
+
+                                        <p>Celta</p>
+                                        <p>Corolla</p>
+                                        <p>Corsa</p>
+                                        <p>Civic</p>
+                                        <p>City</p>
+
+                                        <p>Defender</p>
+                                        <p>Discovery</p>
+                                        <p>Dobló</p>
+                                        <p>Duster</p>
+                                        <p>Durango</p>
+
+                                        <p>EcoSport</p>
+                                        <p>Edge</p>
+                                        <p>Equinox</p>
+                                        <p>Etios</p>
+                                        <p>Elantra</p>
+
+                                        <p>Fiat Mobi</p>
+                                        <p>Fiat Toro</p>
+                                        <p>Fiesta</p>
+                                        <p>Fiorino</p>
+                                        <p>Focus</p>
+                                    </div>
+                                </span>
 
                                 <div className='topico-selecao'>
                                     <p>Moto</p>
