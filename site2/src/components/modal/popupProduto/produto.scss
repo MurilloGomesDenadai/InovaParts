@@ -13,13 +13,67 @@
 
     #white {
         background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         width: 50vw;
         height: 100%;
+    }
+
+    #grupamento-principal {
+        display: flex;
+        align-items: center;
+    }
+
+    .seta-selecao {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+    }
+
+    
+
+    #imagem-principal {
+        margin: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #imagem-principal img{
+        width: 300px;
+        height: 300px;
+    }
+
+    #imagens-secundarias {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    #imagens-secundarias hr {
+        background-color: black;
+        color: black;
+        width: 3vw;
+    }
+
+    .opcao-imagem {
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.329);
+        border: 1px solid black;
+        border-radius: 10px;
+        width: 55px;
+        height: 50px;
+    }
+
+    .opcao-imagem:hover {
+        cursor: pointer;
     }
 
     #blue {
         background-color: #020032;
         width: 50vw;
-        height: 100%;
+        height: 100%; 
     }
 }

@@ -5,7 +5,25 @@ export function Produto({isopenProduto, setOpenProduto}) {
     if (isopenProduto) {
         return <dialog open id='popup-produto'>
             <div id='white'>
+                <div id='grupamento-principal'>
+                    <img className='seta-selecao' src='../assets/icon/seta-esquerda-preta.png' />
 
+                    <div id='imagem-principal'>
+                        <img src='../assets/image/fundo-home-1.png'/>
+                    </div>
+
+                    <img className='seta-selecao' src='../assets/icon/seta-direita-preta.png' />
+                </div>
+
+                <div id='imagens-secundarias'>
+                    <div className='opcao-imagem'></div>
+                    <hr/>
+                    <div className='opcao-imagem'></div>
+                    <hr/>
+                    <div className='opcao-imagem'></div>
+                    <hr/>
+                    <div className='opcao-imagem'></div>
+                </div>
             </div>
 
             <div id='blue'>
@@ -24,7 +42,7 @@ export function Produto({isopenProduto, setOpenProduto}) {
             </div>
 
             
-        </dialog>
+        </dialog> 
     }
 
     return null;
