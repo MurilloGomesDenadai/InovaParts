@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import {useState } from 'react';
 
 import axios from 'axios';
+import { API_URL } from '../../../api/constants.js';
 
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -19,7 +20,7 @@ export default function Login() {
 
   async function enterClick() {
       try {
-        const resposta = await axios.post('http://localhost:5000/usuario/login', {
+        const resposta = await axios.post(API_URL + '/usuario/login', {
           email: email,
           senha: senha
         });
