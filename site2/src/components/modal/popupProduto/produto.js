@@ -16,29 +16,53 @@ export function Produto({isopenProduto, setOpenProduto}) {
                 </div>
 
                 <div id='imagens-secundarias'>
-                    <div className='opcao-imagem'></div>
+                    <div className='opcao-imagem'>
+                        <img src='../assets/image/fundo-home-1.png' />
+                    </div>
                     <hr/>
-                    <div className='opcao-imagem'></div>
+                    <div className='opcao-imagem'>
+                        <img src='../assets/image/fundo-home-1.png' />
+                    </div>
                     <hr/>
-                    <div className='opcao-imagem'></div>
+                    <div className='opcao-imagem'>
+                        <img src='../assets/image/fundo-home-1.png' />
+                    </div>
                     <hr/>
-                    <div className='opcao-imagem'></div>
+                    <div className='opcao-imagem'>
+                        <img src='../assets/image/fundo-home-1.png' />
+                    </div>
                 </div>
             </div>
 
             <div id='blue'>
-                <div>
-                    Ver mais sobre o produto
-                </div>
+                <div id='limitador'>
+                    <div id='agrupamento-produto'>
+                        <div id='nm-produto'>
+                            <p> 2 Amortecedores Traseiro Fox 2006, 2007, 2008 Nakata</p>
+                        </div>
 
-                <div>
-                    <button>Adiciona ao carrinho</button>
-                    <button>Comprar agora</button>
+                        <div id='valor'>
+                            <span>R$</span>380,00
+                        </div>
+                    </div>
+
+                    <div id='agrupamento-funcao'>
+                        <div id='sobre-produto'>
+                            Ver mais sobre o produto
+                        </div>
+                        
+                        <div id='btn-carrinho'>
+                            <button>Adiciona ao carrinho</button>
+                            <button>Comprar agora</button>
+                        </div>
+                    </div>
+
+                    <form method='dialog'>
+                        <button onClick={() => setOpenProduto(false)}>
+                            <img src='../assets/icon/excluir.png' />
+                        </button>
+                    </form>
                 </div>
-                
-                <form method='dialog'>
-                <button onClick={() => setOpenProduto(false)}>Cancelar</button>
-                </form>
             </div>
 
             
