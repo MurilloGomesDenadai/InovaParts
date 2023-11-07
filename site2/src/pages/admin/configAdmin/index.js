@@ -75,14 +75,22 @@ export default function Config() {
     carregarlistaProdutos();
   }, []);
 
-
   //Listar por Nome
   async function Filtrar() {
-      const filtro = await listarporNome(listarNome);
-      setListarTodos(filtro)
-    
+    const filtro = await listarporNome(listarNome);
+    setListarTodos(filtro)
   }
 
+  // async function Pesquisa {
+  //   if (listarNome === null ) {
+  //     const listar = await listarProduto();
+
+  //     setListarTodos(listar)
+  //   }else {
+  //     const filtro = await listarporNome(listarNome);
+  //     setListarTodos(filtro)
+  //   }
+  // }
 
   //Apagar Registro
   async function Deletar(id) {
@@ -156,24 +164,26 @@ export default function Config() {
         </div>
 
         <div id='menu-nav'>
-          <div className='menu-div'>
-            <div><img src='../../assets/icon/usuario.png'/></div>
-            <div className='nav-nome'>
-              <p>Cliente</p>
-            </div>
-          </div>
-
-          <Link to='/'>
-            <div className='menu-div'  style={{background: '#222222'}}>
-                <div><img src='../../assets/icon/produto.png'/></div>
-                <div className='nav-nome'>
-                <p>Produto</p>
+          <Link to='/controleCliente'>
+            <div className='menu-div'>
+              <div><img src='../../assets/icon/usuario.png'/></div>
+              <div className='nav-nome'>
+                <p>Cliente</p>
               </div>
-            </div> 
+            </div>
           </Link>
+
+          <div className='menu-div'  style={{background: '#222222'}}>
+              <div><img src='../../assets/icon/produto.png'/></div>
+
+              <div className='nav-nome'>
+              <p>Produto</p>
+            </div>
+          </div> 
 
           <div className='menu-div'>
             <div><img src='../../assets/icon/icone_Carrinho.png'/> </div>
+
             <div className='nav-nome'>
               <p>Carrinho</p>
             </div>
