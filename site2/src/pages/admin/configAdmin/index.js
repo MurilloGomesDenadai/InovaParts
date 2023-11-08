@@ -164,14 +164,12 @@ export default function Config() {
         </div>
 
         <div id='menu-nav'>
-          <Link to='/controleCliente'>
-            <div className='menu-div'>
-              <div><img src='../../assets/icon/usuario.png'/></div>
-              <div className='nav-nome'>
-                <p>Cliente</p>
-              </div>
+          <a href='/controleCliente' className='menu-div'>
+            <div><img src='../../assets/icon/usuario.png'/></div>
+            <div className='nav-nome'>
+              <p>Cliente</p>
             </div>
-          </Link>
+          </a>
 
           <div className='menu-div'  style={{background: '#222222'}}>
               <div><img src='../../assets/icon/produto.png'/></div>

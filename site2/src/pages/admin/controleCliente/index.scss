@@ -33,6 +33,10 @@
         color: #FF7101;
     }
 
+    #menu {
+        height: 100vh;
+    }
+
     #menu-nav {
         display: flex;
         flex-direction: column;
@@ -63,6 +67,10 @@
         width: 20px;
     }
 
+    a {
+        text-decoration: none;
+    }
+
     .nav-nome {
         text-align: start;
         margin-left: 5px;
@@ -78,7 +86,7 @@
         background-color: #404040;
         box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.308);
         padding: 10px;
-        width: 84.5vw;
+        width: 100%;
         height: 7vh;
     }
 
@@ -90,10 +98,11 @@
     /// 
     main {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
-        height: 50vh;
-        width: 100%
+        justify-content: space-between;
+        height: 90vh;
+        width: 100%;
     }
 
     #consulta {
@@ -120,7 +129,7 @@
     }
 
     .caixa-consulta {
-        background-color: white;
+        background-color: rgb(255, 255, 255);
         font-size: 16px;
         display: flex;
         align-items: start;
@@ -131,11 +140,38 @@
         width: 22vw;
     }
 
+    #area-pesquisa {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 4.5vh;
+    }
+
+    label {
+        font-size: 12px;
+        font-weight: 700;
+        color: #747474;
+    }
+    
+    input {
+        border: none;
+        font-size: 16px;
+        color: #616161;
+        border: none;
+        width: 15vw;
+    }
+
+    input:focus {
+        box-shadow: none;
+        border: none;
+        outline: none;
+    }
+
     #img-consulta {
         display: flex;
-        align-items: center;
+        align-items: end;
         justify-content: center;
-        height: 6vh;
+        height: 4.6vh;
         width: 6vw;
     }
 
@@ -146,10 +182,25 @@
     #img-consulta img {
         height: 20px;
     }
-    
+
     table {
-        background-color: #242121;
-        width: 50vw;
-        height: 50vh;
+        margin-left: 14px;
+        width: 70vw;
     }
+
+    th {
+        text-align: start;
+        margin-bottom: 10px;
+    }
+
+    tbody {
+        margin-top: 10px;
+    }
+
+    
+    #scroll-vertical{
+        max-height: 500px;
+        overflow: auto;
+        width: 73vw;
+      }
 }

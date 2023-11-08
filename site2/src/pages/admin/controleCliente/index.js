@@ -22,15 +22,13 @@ export default function Controle() {
                         </div>
                     </div>
 
-                    <Link to='/'>
-                        <div className='menu-div'>
-                            <div><img src='../../assets/icon/produto.png'/></div>
+                    <a href='/configAdmin' className='menu-div'>
+                        <div><img src='../../assets/icon/produto.png'/></div>
 
-                            <div className='nav-nome'>
-                                <p>Produto</p>
-                            </div>
+                        <div className='nav-nome'>
+                            <p>Produto</p>
                         </div>
-                    </Link>
+                    </a>
 
                     <div className='menu-div'>
                         <div><img src='../../assets/icon/icone_Carrinho.png'/> </div>
@@ -51,6 +49,10 @@ export default function Controle() {
             </div>
 
             <main>
+                <header>
+                    <p>seja bem-vindo sr.Cliente!</p>
+                </header>
+
                 <div id='consulta'>
                     <div id='conjunto'>
                         <div id='enunciado-consulta'>
@@ -58,7 +60,7 @@ export default function Controle() {
                         </div>
 
                         <div className='caixa-consulta'>
-                            <div>
+                            <div id='area-pesquisa'>
                                 <label>Nome do produto</label>
                                 <input type='text' />
                             </div>
@@ -67,28 +69,187 @@ export default function Controle() {
                                 <button><img src='../../assets/icon/lupa.png'/></button>
                             </div>
                         </div>
+                    </div>
 
+                    <div id='scroll-vertical'>
                         <table>
                             <thead>
                                 <tr>
-                                    <th>#ID</th>
-                                    <th>Peça</th>
-                                    <th>Marca</th>
-                                    <th>Disponível</th>
-                                    <th>QTD</th>
-                                    <th>Promoção</th>
-                                    <th>Valor</th>
-                                    <th>Promoção</th>
+                                    <th>Nome</th>
+                                    <th>Email</th>
+                                    <th>CEP</th>
+                                    <th>Telefone</th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                                <tr >
-                                    <td className='td-center'>sdf</td>
-                                    <td className='td-center'>sdf</td>
-                                    <td className='td-center'>sdf</td>
-                                    <td className='td-center'>sdf</td>
-                                    
+                                <tr>
+                                    <td>Luiz Henrique Dias Ananias</td>
+                                    <td>luiz@gmail.com</td>
+                                    <td>84548-4545</td>
+                                    <td>(11) 12456-1245</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Luiz Henrique Dias Ananias</td>
+                                    <td>luiz@gmail.com</td>
+                                    <td>84548-4545</td>
+                                    <td>(11) 12456-1245</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Luiz Henrique Dias Ananias</td>
+                                    <td>luiz@gmail.com</td>
+                                    <td>84548-4545</td>
+                                    <td>(11) 12456-1245</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Luiz Henrique Dias Ananias</td>
+                                    <td>luiz@gmail.com</td>
+                                    <td>84548-4545</td>
+                                    <td>(11) 12456-1245</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Luiz Henrique Dias Ananias</td>
+                                    <td>luiz@gmail.com</td>
+                                    <td>84548-4545</td>
+                                    <td>(11) 12456-1245</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Luiz Henrique Dias Ananias</td>
+                                    <td>luiz@gmail.com</td>
+                                    <td>84548-4545</td>
+                                    <td>(11) 12456-1245</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Luiz Henrique Dias Ananias</td>
+                                    <td>luiz@gmail.com</td>
+                                    <td>84548-4545</td>
+                                    <td>(11) 12456-1245</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Luiz Henrique Dias Ananias</td>
+                                    <td>luiz@gmail.com</td>
+                                    <td>84548-4545</td>
+                                    <td>(11) 12456-1245</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Luiz Henrique Dias Ananias</td>
+                                    <td>luiz@gmail.com</td>
+                                    <td>84548-4545</td>
+                                    <td>(11) 12456-1245</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Luiz Henrique Dias Ananias</td>
+                                    <td>luiz@gmail.com</td>
+                                    <td>84548-4545</td>
+                                    <td>(11) 12456-1245</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Luiz Henrique Dias Ananias</td>
+                                    <td>luiz@gmail.com</td>
+                                    <td>84548-4545</td>
+                                    <td>(11) 12456-1245</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Luiz Henrique Dias Ananias</td>
+                                    <td>luiz@gmail.com</td>
+                                    <td>84548-4545</td>
+                                    <td>(11) 12456-1245</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Luiz Henrique Dias Ananias</td>
+                                    <td>luiz@gmail.com</td>
+                                    <td>84548-4545</td>
+                                    <td>(11) 12456-1245</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Luiz Henrique Dias Ananias</td>
+                                    <td>luiz@gmail.com</td>
+                                    <td>84548-4545</td>
+                                    <td>(11) 12456-1245</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Luiz Henrique Dias Ananias</td>
+                                    <td>luiz@gmail.com</td>
+                                    <td>84548-4545</td>
+                                    <td>(11) 12456-1245</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>Luiz Henrique Dias Ananias</td>
+                                    <td>luiz@gmail.com</td>
+                                    <td>84548-4545</td>
+                                    <td>(11) 12456-1245</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>Luiz Henrique Dias Ananias</td>
+                                    <td>luiz@gmail.com</td>
+                                    <td>84548-4545</td>
+                                    <td>(11) 12456-1245</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>Luiz Henrique Dias Ananias</td>
+                                    <td>luiz@gmail.com</td>
+                                    <td>84548-4545</td>
+                                    <td>(11) 12456-1245</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>Luiz Henrique Dias Ananias</td>
+                                    <td>luiz@gmail.com</td>
+                                    <td>84548-4545</td>
+                                    <td>(11) 12456-1245</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>Luiz Henrique Dias Ananias</td>
+                                    <td>luiz@gmail.com</td>
+                                    <td>84548-4545</td>
+                                    <td>(11) 12456-1245</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>Luiz Henrique Dias Ananias</td>
+                                    <td>luiz@gmail.com</td>
+                                    <td>84548-4545</td>
+                                    <td>(11) 12456-1245</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>Luiz Henrique Dias Ananias</td>
+                                    <td>luiz@gmail.com</td>
+                                    <td>84548-4545</td>
+                                    <td>(11) 12456-1245</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>Luiz Henrique Dias Ananias</td>
+                                    <td>luiz@gmail.com</td>
+                                    <td>84548-4545</td>
+                                    <td>(11) 12456-1245</td>
                                 </tr>
                             </tbody>
                         </table>
