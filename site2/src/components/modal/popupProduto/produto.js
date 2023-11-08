@@ -9,7 +9,7 @@ export function Produto({isopenProduto, setOpenProduto}) {
                     <img className='seta-selecao' src='../assets/icon/seta-esquerda-preta.png' />
 
                     <div id='imagem-principal'>
-                        <img src='../assets/image/fundo-home-1.png'/>
+                        <img src='../assets/image/fundo_1.jpg'/>
                     </div>
 
                     <img className='seta-selecao' src='../assets/icon/seta-direita-preta.png' />
@@ -17,19 +17,19 @@ export function Produto({isopenProduto, setOpenProduto}) {
 
                 <div id='imagens-secundarias'>
                     <div className='opcao-imagem'>
-                        <img src='../assets/image/fundo-home-1.png' />
+                        <img src='../assets/image/fundo_1.jpg' />
                     </div>
                     <hr/>
                     <div className='opcao-imagem'>
-                        <img src='../assets/image/fundo-home-1.png' />
+                        <img src='../assets/image/fundo_1.jpg' />
                     </div>
                     <hr/>
                     <div className='opcao-imagem'>
-                        <img src='../assets/image/fundo-home-1.png' />
+                        <img src='../assets/image/fundo_1.jpg' />
                     </div>
                     <hr/>
                     <div className='opcao-imagem'>
-                        <img src='../assets/image/fundo-home-1.png' />
+                        <img src='../assets/image/fundo_1.jpg' />
                     </div>
                 </div>
             </div>
