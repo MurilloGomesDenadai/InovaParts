@@ -5,10 +5,11 @@ import { listarCliente, listarporNome } from '../../../api/clienteEndpoints.js';
 import {Link} from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function Controle() {
     const [listarClientes, setListarClientes] = useState ([])
-    const [listarporNome, setListarporNome] = useState ([])
+    const [listarporNomes, setListarporNomes] = useState ([])
 
     //Listar todos os clientes
     async function carregarlistaclientes() {
@@ -23,8 +24,27 @@ export default function Controle() {
 
     //Listar clientes por nome
     async function Filtrar() {
-        const filtro = await listarporNome();
-        setListarClientes(filtro)
+
+        try {
+            if (listarporNomes != 0) {
+                const filtro = await listarporNome(listarporNomes);
+                setListarClientes(filtro)
+            } else {
+                const listar = await listarCliente();
+                setListarClientes(listar)
+            }
+            
+        } catch (error) {
+            toast.error('Nome não encontrado!')
+        }
+    };
+
+    const handleKeyDown = event => {
+        console.log(event.key);
+        
+        if (event.key == 'Enter') {
+            
+        }
     }
 
     return (
@@ -84,11 +104,11 @@ export default function Controle() {
                         <div className='caixa-consulta'>
                             <div id='area-pesquisa'>
                                 <label>Nome do produto</label>
-                                <input type='text' />
+                                <input type='text' value={listarporNomes} onChange={e => setListarporNomes(e.target.value)}/>
                             </div>
-
+                            
                             <div id='img-consulta'>
-                                <button><img src='../../assets/icon/lupa.png'/></button>
+                                <button onKeyDown={handleKeyDown} onClick={Filtrar}><img src='../../assets/icon/lupa.png'/></button>
                             </div>
                         </div>
                     </div>
@@ -117,6 +137,7 @@ export default function Controle() {
                         </table>
                     </div>
                 </div>
+                <div><ToastContainer /></div>
             </main>
         </div>
     )

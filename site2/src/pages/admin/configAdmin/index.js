@@ -77,20 +77,21 @@ export default function Config() {
 
   //Listar por Nome
   async function Filtrar() {
-    const filtro = await listarporNome(listarNome);
-    setListarTodos(filtro)
+
+    try {
+      if (listarNome != 0) {
+        const filtro = await listarporNome(listarNome);
+        setListarTodos(filtro)
+
+      } else {
+        const listar = await listarProduto();
+        setListarTodos(listar)
+      }
+    } catch (error) {
+      toast.error("OPS algo deu errado!")
+    }
+    
   }
-
-  // async function Pesquisa {
-  //   if (listarNome === null ) {
-  //     const listar = await listarProduto();
-
-  //     setListarTodos(listar)
-  //   }else {
-  //     const filtro = await listarporNome(listarNome);
-  //     setListarTodos(filtro)
-  //   }
-  // }
 
   //Apagar Registro
   async function Deletar(id) {

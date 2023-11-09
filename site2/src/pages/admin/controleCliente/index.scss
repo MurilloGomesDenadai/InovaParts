@@ -138,12 +138,13 @@
         padding: 3px;
         margin-bottom: 20px;
         width: 22vw;
+        height: 6.5vh;
     }
 
     #area-pesquisa {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-around;
         height: 6vh;
     }
 
@@ -184,19 +185,33 @@
     }
 
     table {
+        border-collapse: collapse;
+        border-radius: 50px;
         margin-left: 14px;
         width: 70vw;
     }
 
     th {
+        color: #A8A8A8;
         text-align: start;
         margin-bottom: 10px;
     }
 
     tbody {
+        background-color: #222222;
         margin-top: 10px;
     }
 
+    tbody tr {
+        border: 1px solid black;
+        height: 5vh;
+        width: 50vw;
+    }
+
+    td {
+        background-color: #D9D9D9;
+        color: #3C4261;
+    }
 
     #scroll-vertical{
         max-height: 300px;

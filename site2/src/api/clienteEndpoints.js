@@ -18,11 +18,11 @@ export async function listarCliente() {
     const resp = await api.get('/usuario')
 
     return resp.data
-}
+};
 
 //Listar clientes por Nome
-export async function listarporNome(nome) {
-    const resp = await api.get(`/produto/busca?nome=${nome}`)
+export async function listarporNome(cliente) {
+    const resp = await api.get(`/usuario/busca?nome=${cliente}`)
 
     return resp.data
 };
