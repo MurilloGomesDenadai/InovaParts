@@ -141,11 +141,11 @@ export default function Compra() {
 
                         
 
-                        <div  >
+                        <div onMouseOut={() => setOpenCardmanutencao(false)} >
                             <div onMouseEnter={() => setOpenCardmanutencao(true)} className='card-manutencao'>Manutenção Preventiva</div>
 
-                            {/* <span   className='card-orientacao' style={openCardmanutencao ? null : manutencaoStyle}>
-                                <div>
+                            <span   className='card-orientacao' style={openCardmanutencao ? null : manutencaoStyle}>
+                                <div className='conteudo-card' >
                                     <p>Barra de torção</p>
                                     <p>MC Pherson/Telescopia</p>
                                     <p>Feixe de molas</p>
@@ -154,9 +154,8 @@ export default function Compra() {
                                     <p>Suspensão a ar</p>
                                     <p>Suspensão de rosca</p>
                                     <p>Suspensão Hidropneumatica</p>
-                                    <div id='fechar' onMouseOut={() => setOpenCardmanutencao(false)}>Fechar</div>
                                 </div>
-                            </span> */}
+                            </span> 
                         </div>
 
                         

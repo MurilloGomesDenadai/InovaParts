@@ -38,7 +38,7 @@ export async function alterarProduto(id, categoria, nome, marca, modelo, disponi
 };
 
 
-//Listar todos os Produros
+//Listar todos os Produtos
 export async function listarProduto() {
     const resp = await api.get(`/produto`)
 
@@ -60,9 +60,10 @@ export async function deletarProduto(id) {
     return resp.status
 };
 
-//Buscar por ID
+//Buscar produto por ID
 export async function buscarId(id) {
     const resp = await api.get(`/produto/busca/${id}`)
 
     return resp.data
 };
+

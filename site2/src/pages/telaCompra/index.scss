@@ -45,6 +45,7 @@
         width: 18vw;
     }
 
+
     #apresentacao p {
         color: white;
     }
@@ -52,7 +53,7 @@
     #config-car {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         width: 16vw;
     }
 
@@ -63,6 +64,8 @@
 
     #config-car img {
         cursor: pointer;
+        width: 50px;
+        height: 50px;
     }
 
     .txt-header {
@@ -184,7 +187,7 @@
         justify-content: center;
         cursor: pointer;
         border-radius: 5px;
-        margin: 20px;
+        margin-right: 20px;
         width: 20vw;
         height: 5vh;
     }
@@ -194,17 +197,11 @@
     }
 
     .card-orientacao {
-        background-color: #9e9696;
+        background-color: #8f8f8f;
     }
 
-    .card-orientacao p {
-        color: #994747;
-    }
-
-    #fechar {
-        background-color: aqua;
-        height: 10vh;
-        width: 100%;
+    .conteudo-card {
+        line-height: 30px;
     }
 
     #area-produto {

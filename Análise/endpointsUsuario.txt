@@ -35,7 +35,7 @@
     ]
 
 (4) LISTAR TODOS OS USUARIOS
-    VERBO: GET          CAMINHO: http://localhost:5000/usuario
+    VERBO: GET          CAMINHO: http://localhost:5000/usuario 
 
 (5) BUSCAR USUARIO POR NOME OU CPF
     VERBO: GET          CAMINHO: http://localhost:5000/usuario/busca?nome=
