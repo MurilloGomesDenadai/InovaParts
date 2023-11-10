@@ -29,6 +29,7 @@ export default function Controle() {
             if (listarporNomes != 0) {
                 const filtro = await listarporNome(listarporNomes);
                 setListarClientes(filtro)
+
             } else {
                 const listar = await listarCliente();
                 setListarClientes(listar)
@@ -39,11 +40,11 @@ export default function Controle() {
         }
     };
 
-    const handleKeyDown = event => {
-        console.log(event.key);
-        
-        if (event.key == 'Enter') {
-            
+
+    //Comando por click listar Clientes
+    async function enterClick(e){
+        if(e.key === 'Enter'){
+            Filtrar()
         }
     }
 
@@ -92,23 +93,23 @@ export default function Controle() {
 
             <main>
                 <header>
-                    <p>seja bem-vindo sr.Cliente!</p>
+                    <p>seja bem-vindo sr.Admin!</p>
                 </header>
 
                 <div id='consulta'>
                     <div id='conjunto'>
                         <div id='enunciado-consulta'>
-                            <h2>Lista de produtos</h2>
+                            <h2>Listar Clientes</h2>
                         </div>
 
                         <div className='caixa-consulta'>
                             <div id='area-pesquisa'>
                                 <label>Nome do produto</label>
-                                <input type='text' value={listarporNomes} onChange={e => setListarporNomes(e.target.value)}/>
+                                <input type='text' onKeyDown={enterClick} value={listarporNomes} onChange={e => setListarporNomes(e.target.value)}/>
                             </div>
                             
                             <div id='img-consulta'>
-                                <button onKeyDown={handleKeyDown} onClick={Filtrar}><img src='../../assets/icon/lupa.png'/></button>
+                                <button  onClick={Filtrar}><img src='../../assets/icon/lupa.png'/></button>
                             </div>
                         </div>
                     </div>

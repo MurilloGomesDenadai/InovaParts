@@ -103,7 +103,7 @@ export default function Cadastro() {
                         </div>
 
                         <div id='btn-entrar'>
-                            <Link to='/loginCliente'><button>Entrar</button></Link>
+                            <a href='/loginCliente'><button>Entrar</button></a>
                         </div>
                     </div>
                 </main>

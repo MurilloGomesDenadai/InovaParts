@@ -101,7 +101,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        height: 80vh;
+        height: 100vh;
         width: 100%;
     }
 
@@ -112,6 +112,7 @@
         padding: 30px;
         margin-top: 10px;
         width: 80vw;
+        height: 70vh;
     }
 
     #conjunto {
@@ -129,7 +130,6 @@
     }
 
     .caixa-consulta {
-        background-color: rgb(255, 255, 255);
         font-size: 16px;
         display: flex;
         align-items: start;
@@ -173,7 +173,7 @@
         align-items: end;
         justify-content: center;
         height: 6vh;
-        width: 6vw;
+        width: 68vw;
     }
 
     #img-consulta button {
@@ -181,7 +181,7 @@
     }
 
     #img-consulta img {
-        height: 20px;
+        height: 28px;
     }
 
     table {
@@ -214,7 +214,7 @@
     }
 
     #scroll-vertical{
-        max-height: 300px;
+        max-height: 455px;
         overflow: auto;
         width: 73vw;
     }

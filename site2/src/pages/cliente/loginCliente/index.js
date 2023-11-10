@@ -1,6 +1,5 @@
 import './index.scss';
 
-import {Link} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import {useState } from 'react';
 
@@ -18,7 +17,7 @@ export default function Login() {
   const navigate = useNavigate();
 
 
-  async function enterClick() {
+  async function Login() {
       try {
         const resposta = await axios.post(API_URL + '/usuario/login', {
           email: email,
@@ -31,6 +30,13 @@ export default function Login() {
         toast.error('Conta inválida')
       }
   }
+
+  function enterClick(e) {
+    if(e.key === 'Enter'){
+      Login()
+    }
+  }
+    
   
 
   return (
@@ -59,11 +65,11 @@ export default function Login() {
 
           
           <div id='btn-entrar'>
-          <button onClick={enterClick}>Entrar</button>
+          <button  onClick={Login}>Entrar</button>
           </div>
     
           <div id ='nav-cadastro'>
-            <p>Não possui cadastro? <Link to='/cadastroCliente'><span>Cadastre-se</span></Link></p>
+            <p>Não possui cadastro? <a href='/cadastroCliente'><span>Cadastre-se</span></a></p>
           </div>
         </main>
         <div><ToastContainer /></div>
