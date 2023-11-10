@@ -160,7 +160,7 @@ export default function Config() {
       <div id='menu'>
         <div id='logo'>
           <div>
-            <img src='../assets/icon/logo.png'/>
+            <a href="/"><img src='../assets/icon/logo.png'/></a>
           </div>
         </div>
 
