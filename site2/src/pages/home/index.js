@@ -1,5 +1,5 @@
 import './index.scss';
-import Footer from '../../components/rodape/footer.js';
+import Footer from '../../components/layout/rodape/footer.js';
 
 import { Link } from 'react-router-dom';
 import { useState } from 'react';

@@ -67,3 +67,17 @@ export async function buscarId(id) {
     return resp.data
 };
 
+//imagem do produto
+export async function adicionarImagem(id, img) {
+    const formData = new FormData();
+    formData.append('capa', img);
+
+    const resp =await api.post(`/imagem`. formData, {
+        headers: {
+            "constet-Type": "multipart/form-data"
+        },
+    })
+
+    return resp.status;
+}
+

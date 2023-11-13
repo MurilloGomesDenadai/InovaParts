@@ -4,85 +4,19 @@
   height: 100%;
   width: 100%;
   
-  #menu {
-    background-color: #020032;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 159.1vh;
-    width: 15vw;
-    
-  }
-
-  #logo {
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-  }
-
   
-
-  #logo img {
-    width: 100%;
-  }
-
-  #logo span {
-    color: #FF7101;
-  }
-
-  #menu-nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    margin-top: 10px;
-    width: 100%;
-    height: 40vh;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  #menu .menu-div {
-    color: white;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    border: none;
-    cursor: pointer;
-    padding: 15px;
-    width: 100%;
-  }
-
-  #menu .menu-div:hover {
-    background-color: #222222;
-  }
-
-  .menu-div img {
-    height: 20px;
-    width: 20px;
-  }
-
-  .nav-nome {
-    text-align: start;
-    margin-left: 5px;
-    width: 8vw;
-  }
 
   #container {
     background-color: #565656;
     height: 100%;
+    width: 83vw;
   }
 
   header {
     background-color: #404040;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.308);
     padding: 10px;
-    width: 84.5vw;
+    width: 83vw;
     height: 7vh;
   }
 
@@ -95,14 +29,14 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 15vh;
-    max-width: 39vw;
-    min-width: 38vw;
+    padding: 30px 30px 30px 0px;
+    margin: 10px;
+
   }
 
   #enunciado h1 {
     font-size: 32px;
-    text-indent: 50px;
+    text-indent: 5px;
   }
 
   main {
@@ -111,7 +45,7 @@
     align-items: center;
     justify-content: center;
     height: 132.2vh;
-    width: 100%;
+    width: 100%vw;
   }
 
   #inserir {
@@ -223,29 +157,27 @@
   #img-g {
     background-color: white;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     border: 1px solid black;
     padding: 4px;
     height: 20vh;
     width: 20vw;
   }
 
-  #img-g p {
-    font-size: 12px;
-    font-weight: 700;
-    color: #747474;
+  #imagemVazia{
+    height: 70px;
+    width: 70px;
   }
 
-  #img-g > div{
-    text-align: center;
-    padding-left: 20px;
-    height: 15vh;
-    width: 15vw;
-  }
-
-  #img-g > div img{
+  #imagemConteudo {
     height: 100%;
     width: 100%;
+  }
+
+  #imagemcapa {
+    visibility: hidden;
+    position: absolute;
   }
 
   #img-p > div {
@@ -312,6 +244,7 @@
     border-radius: 3px;
     padding: 30px;
     margin-top: 10px;
+    margin-bottom: 30px;
     width: 80vw;
   }
 
@@ -377,7 +310,6 @@
 
   tbody tr{
     border: 1px solid rgba(71, 70, 70, 0.589);
-    border-radius: 5px;
     padding: 5px;
   }
 

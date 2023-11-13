@@ -51,16 +51,16 @@
     }
 
 -- ENDPOINTS DA tb_img_produto --
--- TABELA IMAGEM DOS PRODUTOS (AQUI É ONDE O FILHO CHORA E A MÃE NÃO VÊ)--
+-- TABELA IMAGEM DOS PRODUTOS--
 (1) ADICIONAR IMAGEM
     VERBO: POST         CAMINHO: http://localhost:5000/imagem
 
     {
         "produto": 1, => ID DO PRODUTO
-        "imagem": "" => PASSA VAZIO, ZÉ.
+        "imagem": "" => PASSA VAZIO
     }
 
-(2) ALTERAR IMAGEM (PRESTA ATENÇÃO AQUI!)
+(2) ALTERAR IMAGEM
     VERBO: put          CAMINHO: http://localhost:5000/imagem/:id => ESSE ID É O id_img_produto QUE VOCÊ CRIOU ANTERIORMENTE.
     FILES: 'capa'
 

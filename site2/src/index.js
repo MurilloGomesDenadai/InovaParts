@@ -8,6 +8,7 @@ import Compra from './pages/telaCompra';
 import Admin from './pages/admin/loginAdmin';
 import Config from './pages/admin/configAdmin';
 import Controle from './pages/admin/controleCliente';
+import Perfiladmin from './pages/admin/perfilAdmin';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -30,6 +31,7 @@ root.render(
         <Route path='/configAdmin' element = {<Config/>} />
         <Route path='/alterar/:idparams' element = {<Config/>} />
         <Route path='/controleCliente' element = {<Controle/>} />
+        <Route path='/perfilAdmin' element = {<Perfiladmin/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

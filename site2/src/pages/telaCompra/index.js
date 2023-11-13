@@ -1,6 +1,6 @@
 import './index.scss';
 import Modal from '../../components/modal/popupCarrinho/popupCarrinho.js';
-import Footer from '../../components/rodape/footer.js';
+import Footer from '../../components/layout/rodape/footer.js';
 
 import Manutencao from '../../components/modal/popupDpto/manutencao/manutencao.js';
 import { Produto } from '../../components/modal/popupProduto/produto';
@@ -109,6 +109,7 @@ export default function Compra() {
                         <p>
                             Invista no seu veículo  
                         </p>
+
                         <p>
                             do conforto e com a segurança da sua <span>casa!</span>
                         </p>

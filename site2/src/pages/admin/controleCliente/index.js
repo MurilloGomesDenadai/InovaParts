@@ -1,5 +1,5 @@
 import './index.scss';
-
+import PerifericosAdmin from '../../../components/layout/controleAdmin';
 import { listarCliente, listarporNome } from '../../../api/clienteEndpoints.js';
 
 import {Link} from 'react-router-dom'
@@ -41,55 +41,16 @@ export default function Controle() {
     };
 
 
-    //Comando por click listar Clientes
-    async function enterClick(e){
-        if(e.key === 'Enter'){
+    //Comando por tecla listar Clientes
+    async function enterClick(e) {
+        if (e.key === 'Enter'){
             Filtrar()
         }
     }
 
     return (
         <div id='page-controle'>
-            <div id='menu'>
-                <div id='logo'>
-                    <div>
-                        <img src='../assets/icon/logo.png'/>
-                    </div>
-                </div>
-
-                <div id='menu-nav'>
-                    <div className='menu-div'  style={{background: '#222222'}}>
-                        <div><img src='../../assets/icon/usuario.png'/></div>
-                        <div className='nav-nome'>
-                            <p>Cliente</p>
-                        </div>
-                    </div>
-
-                    <a href='/configAdmin' className='menu-div'>
-                        <div><img src='../../assets/icon/produto.png'/></div>
-
-                        <div className='nav-nome'>
-                            <p>Produto</p>
-                        </div>
-                    </a>
-
-                    <div className='menu-div'>
-                        <div><img src='../../assets/icon/icone_Carrinho.png'/> </div>
-
-                        <div className='nav-nome'>
-                            <p>Carrinho</p>
-                        </div>
-                    </div>
-
-                    <div className='menu-div'>
-                        <div><img src='../../assets/icon/editar.png'/> </div>
-
-                        <div className='nav-nome'>
-                            <p>Editar Perfil</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <PerifericosAdmin fundo1 = '#222222'/>
 
             <main>
                 <header>
@@ -104,7 +65,7 @@ export default function Controle() {
 
                         <div className='caixa-consulta'>
                             <div id='area-pesquisa'>
-                                <label>Nome do produto</label>
+                                <label>Nome do Cliente</label>
                                 <input type='text' onKeyDown={enterClick} value={listarporNomes} onChange={e => setListarporNomes(e.target.value)}/>
                             </div>
                             
@@ -129,9 +90,9 @@ export default function Controle() {
                                 {listarClientes.map(item => 
                                 <tr key={item.Id}>
                                     <td>{item.Cliente}</td>
-                                    <td>{item.Email}</td>
                                     <td>{item.CPF}</td>
                                     <td>{item.Telefone}</td>
+                                    <td>{item.Email}</td>
                                 </tr>
                                 )}
                             </tbody>

@@ -19,15 +19,20 @@ export default function Login() {
 
   async function Login() {
       try {
-        const resposta = await axios.post(API_URL + '/usuario/login', {
+        if (email != 0 && senha != 0) {
+          const resposta = await axios.post(API_URL + '/usuario/login', {
           email: email,
           senha: senha
         });
 
         navigate('/telaCompra');
 
+        }else {
+          toast.error('Preencha os campos')
+        }
+
       } catch (err) {
-        toast.error('Conta inválida')
+        toast.error('Conta não cadastrada!')
       }
   }
 
@@ -54,18 +59,18 @@ export default function Login() {
           <form>
             <div className='caixa-senha'>
               <label>Digite seu Email</label>
-              <input type='text' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)}/>
+              <input type='text' onKeyDown={enterClick} placeholder='Email' value={email} onChange={e => setEmail(e.target.value)}/>
             </div>
 
             <div className='caixa-senha'>
               <label>Digite sua Senha</label>
-              <input type='password' placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)}/>
+              <input type='password' onKeyDown={enterClick} placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)}/>
             </div>
           </form>
 
           
           <div id='btn-entrar'>
-          <button  onClick={Login}>Entrar</button>
+          <button onKeyDown={enterClick} onClick={Login}>Entrar</button>
           </div>
     
           <div id ='nav-cadastro'>

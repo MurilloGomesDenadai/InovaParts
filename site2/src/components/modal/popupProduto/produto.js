@@ -19,15 +19,21 @@ export function Produto({isopenProduto, setOpenProduto}) {
                     <div className='opcao-imagem'>
                         <img src='../assets/image/fundo_1.jpg' />
                     </div>
+
                     <hr/>
+                    
                     <div className='opcao-imagem'>
                         <img src='../assets/image/fundo_1.jpg' />
                     </div>
+
                     <hr/>
+
                     <div className='opcao-imagem'>
                         <img src='../assets/image/fundo_1.jpg' />
                     </div>
+
                     <hr/>
+
                     <div className='opcao-imagem'>
                         <img src='../assets/image/fundo_1.jpg' />
                     </div>

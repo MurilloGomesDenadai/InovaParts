@@ -50,7 +50,7 @@ export async function listarclientes() {
 
 export async function buscarPorNomeCpf(nome, cpf) {
     const comando = 
-    `SELECT nm_cliente      as Nome,
+    `SELECT nm_cliente      as Cliente,
             ds_cpf          as CPF,
             ds_telefone     as Telefone,
             ds_email        as Email

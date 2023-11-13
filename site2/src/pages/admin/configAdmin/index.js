@@ -1,5 +1,6 @@
 import './index.scss';
-import {cadastrarProduto, alterarProduto, listarProduto, listarporNome, deletarProduto, buscarId} from '../../../api/produtoEndpoints'
+import PerifericosAdmin from '../../../components/layout/controleAdmin';
+import {cadastrarProduto, alterarProduto, listarProduto, listarporNome, deletarProduto, buscarId, adicionarImagem} from '../../../api/produtoEndpoints'
 
 import {Link} from 'react-router-dom'
 import { useEffect, useState } from 'react';
@@ -20,6 +21,7 @@ export default function Config() {
   const [valor, setValor] = useState ('')
   const [detalhes, setDetalhes] = useState ('')
   const [quantidade, setQuantidade] = useState ('')
+  const [imagem, setImagem] = useState ()
   const [id, setId] = useState (0)
 
   const {idparams} = useParams ();
@@ -32,6 +34,7 @@ export default function Config() {
     try {
       if (id === 0) {
         const novoProduto = await cadastrarProduto(categoria, nome, marca, modelo, disponivel, promocao, valor, detalhes, quantidade)
+        // const imagemCapa = await adicionarImagem(novoProduto.id, imagem)
 
         setId(novoProduto.id);
         toast.success("Registro Salvo!")
@@ -152,50 +155,27 @@ export default function Config() {
 
   }
 
-  
+  //Comando por tecla para listar produto
+  async function enterClick(e) {
+    if (e.key == 'Enter') {
+      Filtrar()
+    }
+  }
+
+  //Selecionar imagem
+  function selecionarImagem() {
+    document.getElementById('imagemcapa').click();
+  }
+
+  //Mostrar imagem 
+  function mostrarImagem() {
+    return URL.createObjectURL(imagem)
+  }
 
   return (
     <div className="pagina-config">
       
-      <div id='menu'>
-        <div id='logo'>
-          <div>
-            <a href="/"><img src='../assets/icon/logo.png'/></a>
-          </div>
-        </div>
-
-        <div id='menu-nav'>
-          <a href='/controleCliente' className='menu-div'>
-            <div><img src='../../assets/icon/usuario.png'/></div>
-            <div className='nav-nome'>
-              <p>Cliente</p>
-            </div>
-          </a>
-
-          <div className='menu-div'  style={{background: '#222222'}}>
-              <div><img src='../../assets/icon/produto.png'/></div>
-
-              <div className='nav-nome'>
-              <p>Produto</p>
-            </div>
-          </div> 
-
-          <div className='menu-div'>
-            <div><img src='../../assets/icon/icone_Carrinho.png'/> </div>
-
-            <div className='nav-nome'>
-              <p>Carrinho</p>
-            </div>
-          </div>
-
-          <div className='menu-div'>
-            <div><img src='../../assets/icon/editar.png'/> </div>
-            <div className='nav-nome'>
-              <p>Editar Perfil</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <PerifericosAdmin fundo2 = '#222222'/>
 
       <div id='container'>
         <header>
@@ -219,7 +199,7 @@ export default function Config() {
                     <label>
                       Produto
                     </label>
-                    <input type='text' value={nome} onChange={e => setNome(e.target.value)}/>
+                    <input type='text' onKeyDown={enterClick} value={nome} onChange={e => setNome(e.target.value)}/>
                   </div>
 
                   <div className='caixa-inserir'>
@@ -248,7 +228,7 @@ export default function Config() {
                       <label>
                         Disponivel
                       </label>
-                      <input type='checkbox' value={disponivel} onChange={e => setDisponivel(e.target.checked)}/>
+                      <input type='checkbox' onKeyDown={enterClick} value={disponivel} onChange={e => setDisponivel(e.target.checked)}/>
                     </div>
                   </div>
 
@@ -285,8 +265,13 @@ export default function Config() {
               <div id='finalizar'>
                 <div>
                   <div id='area-img'>
-                    <div id='img-g'>
-                      <p>imagem</p>
+                    <div id='img-g' onClick={selecionarImagem}>
+
+                      {!imagem && <img id='imagemVazia' src='../assets/icon/icon_upload.png' alt='icon_upload'/>} 
+                      
+                      {imagem && <img id='imagemConteudo' src={mostrarImagem()} />}
+                      
+                      <input type='file' id='imagemcapa' onChange={e => setImagem(e.target.files[0])}/>
                     </div>
 
                     <div id='img-p'>
@@ -333,7 +318,7 @@ export default function Config() {
               <div className='caixa-consulta'>
                   <div>
                     <label>Nome do produto</label>
-                    <input type='text' value={listarNome} onChange={e => setListarNome(e.target.value)}/>
+                    <input type='text' onKeyDown={enterClick} value={listarNome} onChange={e => setListarNome(e.target.value)}/>
                   </div>
 
                   <div id='img-consulta'>

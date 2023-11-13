@@ -21,8 +21,8 @@ export async function listarCliente() {
 };
 
 //Listar clientes por Nome
-export async function listarporNome(cliente) {
-    const resp = await api.get(`/usuario/busca?nome=${cliente}`)
+export async function listarporNome(nome) {
+    const resp = await api.get(`/usuario/busca?nome=${nome}`)
 
     return resp.data
 };
