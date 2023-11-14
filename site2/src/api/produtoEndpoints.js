@@ -1,6 +1,6 @@
 import axios from 'axios';
 const api = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'http://localhost:5011'
 });
 
 
@@ -50,7 +50,7 @@ export async function listarProduto() {
 export async function listarporNome(nome) {
     const resp = await api.get(`/produto/busca?nome=${nome}`)
 
-    return resp.data
+    return resp.data 
 };
 
 //Deletar Produto
