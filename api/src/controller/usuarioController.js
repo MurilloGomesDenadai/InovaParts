@@ -109,7 +109,7 @@ server.get('/usuario/busca', async (req, resp) => {
     try {
         const {cpf, nome} = req.query;
         const resposta = await buscarPorNomeCpf(cpf, nome);
-        console.log(resposta)
+
         if(resposta.length === 0)
             throw new Error('Usuário não cadastrado.');
 
