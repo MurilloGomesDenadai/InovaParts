@@ -23,7 +23,7 @@
         height: 7vh;
     }
 
-    #area-de-alteracao {
+    #area-de-alteracao { 
         background-color: #404040;
         display: flex;
         flex-direction: column;
@@ -31,7 +31,7 @@
         justify-content: center;
         margin-bottom: 20px;
         height: 80vh;
-        width: 70vw;
+        width: 60vw;
     }
 
     #foto-usuario {
@@ -64,13 +64,12 @@
         width: 50vw;
     }
 
-    #nome-funcao p{
+    .nome-funcao p{
         font-size: 1.2em;
         font-weight: 500;
     }
 
     .area-interacao {
-        background-color: brown;
         display: flex;
         align-items: center;
     }
@@ -80,6 +79,75 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin: 10px;
+        width: 100%;
     }
+
+    #redefinir-senha {
+        width: 50vw;
+    }
+
+    .area-senha {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+        width: 100%;
+    }
+
+    #bloco-senha {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 43.5vw;
+    }
+
+    .bloco-input {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        margin: 10px;
+    }
+
+    label {
+        font-size: 0.8em;
+        font-weight: 500;
+        margin-bottom: 3px;
+    }
+
+    input {
+        font-size: 1em;
+        text-indent: 5px;
+        border-radius: 20px;
+        border: none;
+        padding: 5px;
+    }
+
+    input:focus {
+        box-shadow: 0px;
+        opacity: 0px;
+        outline: none;
+    }
+
+    #btn-alteracao {
+        margin: 20px;
+    }
+
+    #btn-alteracao button {
+        background-color: #020032;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 10px;
+        width: 70px;
+    }
+
+    #btn-alteracao button:hover {
+        background-color: #0e0c5c;
+
+    }
+
 
 }

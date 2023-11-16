@@ -25,7 +25,7 @@ export default function Perfiladmin() {
                     <hr/>
 
                     <div id='contato'>
-                        <div id='nome-funcao'>
+                        <div className='nome-funcao'>
                             <p>Contato</p>
                         </div>
 
@@ -33,44 +33,53 @@ export default function Perfiladmin() {
                             <div>
                                 <div className='bloco-input'>
                                     <label>Nome</label>
-                                    <input type='text'/>
+                                    <input type='text' placeholder=''/>
                                 </div>
                                 
-                                <div className='bloco-inpu'>
+                                <div className='bloco-input'>
                                     <label>Email</label>
-                                    <input type='text'/>
+                                    <input type='text' placeholder=''/>
                                 </div>
                             </div>
 
                             <div>
-                                <div className='bloco-inpu'>
+                                <div className='bloco-input'>
                                     <label>Telefone</label>
-                                    <input type='text'/>
+                                    <input type='text' placeholder=''/>
                                 </div>
 
-                                <div className='bloco-inpu'>
+                                <div className='bloco-input'>
                                     <label>CPF</label>
-                                    <input type='text'/>
+                                    <input type='text' placeholder=''/>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div id='redefinir-senha'>
-                        <p>redefinir senha</p>
+                        <div className='nome-funcao'>
+                            <p>Redefinir senha</p>
+                        </div>
 
-                        <div>
-                            <div className='bloco-inpu'>
-                                <label>Senha</label>
-                                <input type='text'/>
-                            </div>
-                            <div className='bloco-inpu'>
-                                <label>Confime senha</label>
-                                <input type='text'/>
+                        <div className='area-senha'>
+                            <div id='bloco-senha'>
+                                <div className='bloco-input'>
+                                    <label>Senha</label>
+                                    <input type='text' placeholder=''/>
+                                </div>
+
+                                <div className='bloco-input'>
+                                    <label>Confime senha</label>
+                                    <input type='text' placeholder=''/>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </section>
+
+                    <div id='btn-alteracao'>
+                        <button>Alterar</button>
+                    </div>
+                </section> 
             </main>
         </div>
     );

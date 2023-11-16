@@ -91,7 +91,7 @@ export default function Config() {
         setListarTodos(listar)
       }
     } catch (error) {
-      toast.error("OPS algo deu errado!")
+      toast.error("Esse produto não foi cadastrado!")
     }
     
   }
