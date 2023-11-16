@@ -20,7 +20,7 @@ export default function Admin () {
     async function enterClick() {
 
         try {
-            const resposta = await axios.post('http://localhost:5000/adm/login', {
+            const resposta = await axios.post('http://localhost:5011/adm/login', {
                 email: email,
                 senha: senha
             });
@@ -52,7 +52,7 @@ export default function Admin () {
 
                         <div className='caixa-senha'>
                             <label>Digite sua Senha</label>
-                            <input type='text' placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)}/>
+                            <input type='password' placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)}/>
 
                         </div>
 

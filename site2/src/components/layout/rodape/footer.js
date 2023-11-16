@@ -34,8 +34,8 @@ export default function Footer(props) {
 
                     <div id='contato'>
                         <h4>Contato</h4>
-                        <p>... (11) 93124-5378</p>
-                        <p>... (11) 91008-7258</p>
+                        <p>(11) 93124-5378</p>
+                        <p>(11) 91008-7258</p>
                         <p>inovapartes@gmail.com</p>
                     </div>
                 </div>

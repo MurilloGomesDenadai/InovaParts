@@ -29,7 +29,7 @@ export default function Config() {
 
 
   //Inserir Produto
-  async function Salvar() {
+  async function Salvar() { 
 
     try {
       if (id === 0) {
@@ -122,8 +122,6 @@ export default function Config() {
         }
       ]
     });
-
-    
   };
 
   
@@ -134,7 +132,6 @@ export default function Config() {
       }
   }, [])
   
-
   async function carregarProduto() {
     const resposta = await buscarId(idparams)
     setId(resposta.id)
@@ -152,7 +149,6 @@ export default function Config() {
   function Editar(id) {
     navigate(`/alterar/${id}`);
     window.location.reload(false)
-
   }
 
   //Comando por tecla para listar produto
