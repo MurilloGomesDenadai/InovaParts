@@ -26,6 +26,8 @@ export default function Compra() {
     const [openSuspensao, setOpenSuspensao] = useState (false)
     const [openCarro, setOpenCarro] = useState (false)
     const [openCardmanutencao, setOpenCardmanutencao] = useState (false)
+    const [listarTodos, setListarTodos] = useState ([])
+
 
     //card
     //manutencao
@@ -78,6 +80,23 @@ export default function Compra() {
     const vermaisStyle = {
         display: 'none'
     }
+
+    // {listarTodos.map(item =>
+    //     <tr key={item.Id}>
+    //       <td className='td-center'>{item.Id}</td>
+    //       <td>{item.Produto}</td>
+    //       <td>{item.Marca}</td>
+    //       <td className='td-center'>{item.Disponivel ? 'Sim' : 'Não'}</td>
+    //       <td className='td-center'>{item.Quantidade}</td>
+    //       <td>{item.Promocao}</td>
+    //       <td className='td-center'>{item.Valor}</td>
+    //       <td>
+    //         <div className='interacao'>
+    //           <div><button onClick={() => Editar(item.Id)}><img src='../../assets/icon/alterar.png' /></button></div>
+    //           <div><button onClick={() => Deletar(item.Id)}><img src='../../assets/icon/lixeira.png' /></button></div>
+    //         </div>
+    //       </td>
+    //     </tr>
 
     return (
         <div id='pagina-compra'>
@@ -428,7 +447,7 @@ export default function Compra() {
                             </div>
 
                             <div className='produtos-agrupamento'>
-                                <div onClick={() => setOpenProduto(true)} className='produto'>1</div>
+                                <div onClick={() => setOpenProduto(true)} className='produto'></div>
                                 <div onClick={() => setOpenProduto(true)} className='produto'>2</div>
                                 <div onClick={() => setOpenProduto(true)} className='produto'>3</div>
                                 <div onClick={() => setOpenProduto(true)} className='produto'>4</div>
@@ -503,8 +522,7 @@ export default function Compra() {
                         </div>
                     </article>
                 </section>
-            
-
+  
             </main>
 
             <div>
