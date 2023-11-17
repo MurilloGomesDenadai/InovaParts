@@ -146,10 +146,20 @@ export default function Config() {
     setQuantidade(resposta.quantidade)
   }
 
-  function Editar(id) {
-    navigate(`/alterar/${id}`);
+  function Editar(idparams) {
+    navigate(`/alterar/${idparams}`);
     window.location.reload(false)
   }
+
+  //       "categoria": 2,
+  //       "nome": "Turbina Chevette",
+  //       "marca": "Bagio",
+  //       "modelo": "BBB200",
+  //       "disponivel": false,
+  //       "promocao": "de 19/08 à 20/08",
+  //       "valor": "1980.00",
+  //       "detalhes": "Turbina para Chevette 1.0",
+  //       "quantidade": 1
 
   //Comando por tecla para listar produto
   async function enterClick(e) {

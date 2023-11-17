@@ -47,7 +47,7 @@ export default function PerifericosAdmin(props) {
                     </div>
                 </div>
 
-                <a href='/loginAdmin'id='saida'>
+                <a href='/loginCliente'id='saida'>
                     <img src='../../assets/icon/sair.png'/>
                     <p>Sair</p>
                 </a>
