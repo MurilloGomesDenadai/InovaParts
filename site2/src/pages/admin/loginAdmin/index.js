@@ -20,7 +20,7 @@ export default function Admin () {
     async function enterClick() {
 
         try {
-            const resposta = await axios.post('http://129.148.42.252/:5011/adm/login', {
+            const resposta = await axios.post('http://localhost:5011/adm/login', {
                 email: email,
                 senha: senha
             });
