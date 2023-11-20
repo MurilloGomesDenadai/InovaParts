@@ -1,8 +1,30 @@
 import './produto.scss';
 
+import { buscarId } from '../../../api/produtoEndpoints.js';
+import { useEffect, useState } from 'react';
+
+
 export function Produto({isopenProduto, setOpenProduto}) {
+    const [nome, setNome] = useState ()
+    const [marca, setMarca] = useState ()
+    const [modelo, setModelo] = useState ()
+    const [promocao, setPromocao] = useState ()
+    const [valor, setValor] = useState ()
+    const [id, setId] = useState (0)
 
     if (isopenProduto) {
+
+        async function Push(id) {
+            const resposta = await buscarId(id)
+            setNome(resposta.nome)
+            setValor(resposta.valor)
+            setId(resposta.id)
+        
+            console.log(resposta)
+        }
+        
+
+    
         return <dialog open id='popup-produto'>
             <div id='white'>
                 <div id='grupamento-principal'>
@@ -44,11 +66,12 @@ export function Produto({isopenProduto, setOpenProduto}) {
                 <div id='limitador'>
                     <div id='agrupamento-produto'>
                         <div id='nm-produto'>
-                            <p> 2 Amortecedores Traseiro Fox 2006, 2007, 2008 Nakata</p>
+                            {nome}, {marca}, {modelo}
                         </div>
 
                         <div id='valor'>
-                            <span>R$</span>380,00
+                            <span>R$ {id}</span>{valor}
+                            {promocao}
                         </div>
                     </div>
 
@@ -58,7 +81,7 @@ export function Produto({isopenProduto, setOpenProduto}) {
                         </div>
                         
                         <div id='btn-carrinho'>
-                            <button>Adiciona ao carrinho</button>
+                            <button onClick={Push}>Adiciona ao carrinho</button>
                             <button>Comprar agora</button>
                         </div>
                     </div>

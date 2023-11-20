@@ -1,18 +1,23 @@
 import './index.scss';
 import Modal from '../../components/modal/popupCarrinho/popupCarrinho.js';
+import Header from '../../components/layout/headerProduto/index.js';
 import Footer from '../../components/layout/rodape/footer.js';
 
-import Manutencao from '../../components/modal/popupDpto/manutencao/manutencao.js';
-import { Produto } from '../../components/modal/popupProduto/produto';
+import { Produto  } from '../../components/modal/popupProduto/produto';
 
-import { useState } from 'react';
-import {Link} from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import {Link, useNavigate, useParams} from 'react-router-dom';
+import { Buscar, listarMercadoria } from '../../api/telacompraEndpoints.js';
 
 
 
 
 export default function Compra() {
     const [open,  setOpen] = useState (false);
+
+    const [listarItens, setListarItens] = useState ([])
+
+
     const [openManutencao,  setOpenManutencao] = useState (false);
     const [openProduto,  setOpenProduto] = useState (false);
     
@@ -26,7 +31,20 @@ export default function Compra() {
     const [openSuspensao, setOpenSuspensao] = useState (false)
     const [openCarro, setOpenCarro] = useState (false)
     const [openCardmanutencao, setOpenCardmanutencao] = useState (false)
-    const [listarTodos, setListarTodos] = useState ([])
+
+    const [categoria, setCategoria] = useState ('')
+    const [nome, setNome] = useState ('')
+    const [marca, setMarca] = useState ('')
+    const [modelo, setModelo] = useState ('')
+    const [disponivel, setDisponivel] = useState ('')
+    const [promocao, setPromocao] = useState ('')
+    const [valor, setValor] = useState ('')
+    const [detalhes, setDetalhes] = useState ('')
+    const [quantidade, setQuantidade] = useState ('')
+    const [id, setId] = useState (0)
+
+    const idparams = useParams ();
+    const navigate = useNavigate ();
 
 
     //card
@@ -81,67 +99,28 @@ export default function Compra() {
         display: 'none'
     }
 
-    // {listarTodos.map(item =>
-    //     <tr key={item.Id}>
-    //       <td className='td-center'>{item.Id}</td>
-    //       <td>{item.Produto}</td>
-    //       <td>{item.Marca}</td>
-    //       <td className='td-center'>{item.Disponivel ? 'Sim' : 'Não'}</td>
-    //       <td className='td-center'>{item.Quantidade}</td>
-    //       <td>{item.Promocao}</td>
-    //       <td className='td-center'>{item.Valor}</td>
-    //       <td>
-    //         <div className='interacao'>
-    //           <div><button onClick={() => Editar(item.Id)}><img src='../../assets/icon/alterar.png' /></button></div>
-    //           <div><button onClick={() => Deletar(item.Id)}><img src='../../assets/icon/lixeira.png' /></button></div>
-    //         </div>
-    //       </td>
-    //     </tr>
+
+
+
+    //Carregar produto
+    async function carregarLista() {
+        const listar = await listarMercadoria();
+    
+        setListarItens(listar)
+    };
+
+    useEffect( () => {
+        carregarLista()
+    }, [])
+
+    function navegarProduto(idparams) {
+        navigate(`/produto/${idparams}`);
+        window.location.reload(false)
+    }
 
     return (
         <div id='pagina-compra'>
-            <header>
-                <nav>
-                    <div id='menu'>
-                        <div id='apresentacao'>
-                            <Link to='/'><img src='../assets/icon/logo.png'/></Link>
-                            <p>InovaPartes</p>
-                        </div>
-
-                        <div id='config-car'>
-                            <button onClick={() => setOpen(true)}>
-                                <img src='../assets/icon/icon_Carrinho.png'/>
-                            </button>
-
-                            <img src='../assets/icon/icone_Usuario.png'/>
-                        </div>
-                        
-                    </div>
-                </nav>
-
-                <Modal isOpen = {open}
-                        setOpen = {setOpen}/>
-
-                <div id='area-pesquisa'>
-                    <div className='txt-header'>
-                        <h1>Inovapartes</h1>
-                        <p>
-                            Invista no seu veículo  
-                        </p>
-
-                        <p>
-                            do conforto e com a segurança da sua <span>casa!</span>
-                        </p>
-                    </div>
-
-                    <div id='alinhar-caixa-pesquisa'>
-                        <div id='caixa-pesquisa'>
-                            <input type='text' placeholder='Pesquisa'/>
-                            <img src='../assets/icon/lupa.png'/>
-                        </div>
-                    </div>
-                </div>
-            </header>
+            <Header/>
 
             <main>
                 <section id='departamento'>
@@ -447,19 +426,22 @@ export default function Compra() {
                             </div>
 
                             <div className='produtos-agrupamento'>
-                                <div onClick={() => setOpenProduto(true)} className='produto'></div>
-                                <div onClick={() => setOpenProduto(true)} className='produto'>2</div>
-                                <div onClick={() => setOpenProduto(true)} className='produto'>3</div>
-                                <div onClick={() => setOpenProduto(true)} className='produto'>4</div>
-                                <div onClick={() => setOpenProduto(true)} className='produto'>5</div>
-                                <div onClick={() => setOpenProduto(true)} className='produto'>6</div>
-                                <div onClick={() => setOpenProduto(true)} className='produto'>7</div>
-                                <div onClick={() => setOpenProduto(true)} className='produto'>8</div>
-                                <div onClick={() => setOpenProduto(true)} className='produto'>9</div>
-                                <div onClick={() => setOpenProduto(true)} className='produto'>10</div>
-                                <div onClick={() => setOpenProduto(true)} className='produto'>11</div>
-                                <div onClick={() => setOpenProduto(true)} className='produto'>12</div>
-                                <span style={openVermais ? null : vermaisStyle}>
+                                {listarItens.map(item => 
+                                    <div onClick={() => setOpenProduto(true)} className='produto'>
+                                        <div className='produto-nome'>{item.nome}, {item.marca}, {item.modelo}</div>
+
+                                        <div className='produto-valor'><span className='cifrao'>R$</span> <span className='valor'>{item.valor}</span>
+                                        </div>
+
+                                        <div className='btn-saibaMais'>
+                                            <button onClick={navegarProduto}>Saiba mais</button>
+                                        </div>
+
+                                        {/* .toLocaleString('pt-br', {minimumFractionDigits: 2}) */}
+                                    </div>
+
+                                )}
+                                {/* <span style={openVermais ? null : vermaisStyle}>
                                     <div onClick={() => setOpenProduto(true)} className='produto'>13</div>
                                     <div onClick={() => setOpenProduto(true)} className='produto'>14</div>
                                     <div onClick={() => setOpenProduto(true)} className='produto'>15</div>
@@ -468,7 +450,7 @@ export default function Compra() {
                                     <div onClick={() => setOpenProduto(true)} className='produto'>18</div>
                                     <div onClick={() => setOpenProduto(true)} className='produto'>19</div>
                                     <div onClick={() => setOpenProduto(true)} className='produto'>20</div>
-                                </span>
+                                </span> */}
                             </div>
 
                             <div className='ver-mais'>

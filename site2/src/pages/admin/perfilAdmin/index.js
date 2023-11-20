@@ -1,20 +1,40 @@
 import './index.scss';
 import PerifericosAdmin from '../../../components/layout/controleAdmin';
 
+import { useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+
 export default function Perfiladmin() {
+    const [imagem, setImagem] = useState ()
+
+    const {idparams} = useParams ();
+    const navigate = useNavigate ();
+
+    function selecionarImagem() {
+        document.getElementById('imagem').click();
+    }
+
+    function mostrarImagem() {
+        return URL.createObjectURL(imagem);
+    }
+
     return (
         <div id='perfil-admin'>
             <PerifericosAdmin fundo4 = '#222222' />
 
             <main>
                 <div id='mensagem-identificacao'>
-                    <p>seja bem-vindo sr.Admin!</p>
+                    <p>seja bem-vindo sr.Admin!</p> 
                 </div>
 
                 <section id='area-de-alteracao'>
                     <div id='foto-usuario'>
-                        <div id='imagem-perfil'>
-                            <img src='../../assets/icon/icone_usuario.png'/>
+                        <div id='imagem-perfil' onClick={selecionarImagem}>
+                            {!imagem && <img id='imagemVazia' src='../../assets/icon/icone_usuario.png'/>}
+
+                            {imagem && <img id='imagemConteudo' src={mostrarImagem()} />}
+                            
+                            <input type='file' id='imagem' onChange={e => setImagem(e.target.files[0])}/>
                         </div>
 
                         <div id='apelido-usuario'>
