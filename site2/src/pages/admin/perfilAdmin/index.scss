@@ -30,7 +30,7 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 20px;
-        height: 80vh;
+        height: 85vh;
         width: 60vw;
     }
 
@@ -47,6 +47,22 @@
     #imagem-perfil img {
         height: 100%;
         width: 100%;
+    }
+
+    #imagemVazia{
+        height: 70px;
+        width: 70px;
+    }
+    
+    #imagemConteudo {
+        border-radius: 100px;
+        height: 100%;
+        width: 100%;
+    }
+    
+    #imagem {
+        visibility: hidden;
+        position: absolute;
     }
 
     #apelido-usuario {
@@ -98,8 +114,9 @@
     #bloco-senha {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        width: 43.5vw;
+        justify-content: space-between; 
+        padding: 0px 25px 0px 8px;
+        width: 100%;
     }
 
     .bloco-input {

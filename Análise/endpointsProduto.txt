@@ -24,9 +24,9 @@
                                http://localhost:5011/produto/busca?marca=
 
 (4) ALTERAR PRODUTOS
-    VERBO: PRODUTO     CAMINHO: http://localhost:5011/produto/:id     
+    VERBO: PUT     CAMINHO: http://localhost:5011/produto/:id     
 
-    {
+   {
         "categoria": 2,
         "nome": "Turbina Chevette",
         "marca": "Bagio",
@@ -36,7 +36,7 @@
         "valor": "1980.00",
         "detalhes": "Turbina para Chevette 1.0",
         "quantidade": 1
-    }
+    } 
 
 (5) DELETAR PRODUTO
     VERBO: DELETE       CAMINHO: http://localhost:5011/produto/:id

@@ -21,7 +21,7 @@ export default function PerifericosAdmin(props) {
                             </div>
                         </a>
 
-                        <a href='/configAdmin' className='menu-div'  style={{background: props.fundo2}}>
+                        <a href='/controleProduto' className='menu-div'  style={{background: props.fundo2}}>
                             <div><img src='../../assets/icon/produto.png'/></div>
 
                             <div className='nav-nome'>

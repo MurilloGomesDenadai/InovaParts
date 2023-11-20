@@ -1,0 +1,199 @@
+#produtoPage {
+    background-color: #565656;
+
+    #comentarioEproduto {
+        display: flex;
+    }
+
+    #comentarios {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 5px;
+        padding: 5px;
+        margin: 10px;
+        width: 50vw;
+        height: 57vh;
+    }
+
+    
+
+    #listaComentarios {
+        background-color: brown;
+        width: 40vw;
+        height: 45vh;
+    }
+
+    #listaComentarios ul {
+        text-decoration: none; 
+    }
+
+    .lista {
+        border-color: black;
+        border-style: solid;
+        border-top: 0px;
+        border-bottom: 0px;
+        border-right: 12px;
+        border-bottom: 0px;
+    }
+
+    #comentar {
+        background-color: aquamarine;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 3px;
+        width: 25vw;
+    }
+
+    #comentar input {
+        font-size: 1em;
+        text-indent: 10px;
+        border-radius: 5px;
+    }
+
+    #comentar img {
+        background-color: transparent;
+        width: 20px;
+        height: 20px;
+    }
+
+    #comentar button{
+        background-color: #020032;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    #comentar button:hover {
+        background-color: #0e0c5c;
+        transition: 0.5s;
+    }
+
+    #scroll {
+        max-height: 100px;
+        overflow: auto;
+        width: 30vw;
+    }
+
+    #produto {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #informacoesProduto {
+        background-color: rgb(250, 250, 250);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        margin: 10px;
+        width: 50vw;
+    }
+
+    #grupoInformacao{
+        display: flex;
+        padding: 5px 5px 0px 0px;
+        margin: 5px 5px 0px 0px;
+    }
+
+    #imagemdescricao {
+        color: white;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #imagemProduto {
+        padding: 5px;
+        margin: 5px;
+        width: 25vw;
+        height: 25vw;
+    }
+
+    #imagemProduto img {
+        border: 1px solid black;
+        width: 100%;
+        height: 100%;
+    }
+
+    #grupoCampos {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 20vw;
+        height: 36.5vh;
+    }
+
+    #descricaoProduto {
+        padding: 5px;
+        margin: 5px;
+        width: 45.9vw;
+    }
+
+    #nomeProduto {
+        margin: 5px 0px;
+    }
+
+    #modeloProduto {
+        margin-bottom: 5px;
+    }
+    
+    #marcaProduto {
+        margin-bottom: 5px;
+        
+    }
+    
+    #categoriaProduto {
+        margin-bottom: 5px;
+    }
+
+    .nomeNegrito {
+        font-size: 0.8em;
+        font-weight: 700;
+    }
+
+    .informacaoProduto {
+        text-indent: 40px;
+        border-color: black;
+        border-top: 0px;
+        border-bottom: 1px;
+        border-right: 0px;
+        border-left: 1px;
+        border-style: solid;
+    }
+
+    #btnDecisao {
+        text-align: center;
+        align-content: center;
+        margin: 10px;
+        width: 50vw;
+    }
+
+    #btnDecisao button {
+        background-color: #020032;
+        color: white;
+        font-weight: 600;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        margin: 10px;
+        width: 160px;
+    }
+
+    #btnDecisao button:hover {
+        background-color: #0e0c5c;
+        transition: 0.5s;
+    }
+}
+
+

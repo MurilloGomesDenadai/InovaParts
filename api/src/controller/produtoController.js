@@ -107,10 +107,9 @@ server.put('/produto/:id', async (req, resp) => {
 
         if(!produto.categoria)
             throw new Error('Categoria inválida.');
-
+            console.log(id, 'Controller')
         if(!produto.nome)
             throw new Error('Nome inválido.');
-
         if(!produto.marca)
             throw new Error('Marca inválida.');
 
@@ -131,6 +130,7 @@ server.put('/produto/:id', async (req, resp) => {
 
         if(produto.quantidade == undefined || produto.quantidade < 0)
             throw new Error('Quantidade inválida.');
+            
 
         const resposta = await alterarProduto(id, produto);
         if(resposta !== 1)
@@ -142,6 +142,8 @@ server.put('/produto/:id', async (req, resp) => {
             erro: err.message
         });
     }
+        console.log('produtoController tem conexão')
+
 })
 
 

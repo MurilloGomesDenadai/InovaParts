@@ -3,8 +3,9 @@ import './index.scss';
 import {Link} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import {useState } from 'react';
-
 import axios from 'axios';
+
+import { API_URL } from '../../../api/constants.js';
 
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -20,7 +21,7 @@ export default function Admin () {
     async function enterClick() {
 
         try {
-            const resposta = await axios.post('http://129.148.42.252:5011/adm/login', {
+            const resposta = await axios.post(`${API_URL}/adm/login`, {
                 email: email,
                 senha: senha
             });

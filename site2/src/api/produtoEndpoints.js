@@ -21,9 +21,9 @@ export async function cadastrarProduto(categoria, nome, marca, modelo, disponive
     return resp.data;
 };
 
-
 //Alterar Produtos
-export async function alterarProduto(id, categoria, nome, marca, modelo, disponivel, promocao, valor, detalhes, quantidade) {
+export async function editarProduto(id, categoria, nome, marca, modelo, disponivel, promocao, valor, detalhes, quantidade) {
+    console.log('produtoEndpoint tem conexão')
     const resp = await api.put(`/produto/${id}`, {
         categoria: categoria,
         nome: nome,
@@ -33,9 +33,10 @@ export async function alterarProduto(id, categoria, nome, marca, modelo, disponi
         promocao: promocao,
         valor: valor,
         detalhes: detalhes,
-        quantidade: quantidade
+        quantidade: quantidade,
     })
-    return resp.data;
+
+    return resp.data[0];
 };
 
 
@@ -64,8 +65,7 @@ export async function deletarProduto(id) {
 //Buscar produto por ID
 export async function buscarId(id) {
     const resp = await api.get(`/produto/busca/${id}`)
-
-    return resp.data
+    return resp.data[0]
 };
 
 //imagem do produto

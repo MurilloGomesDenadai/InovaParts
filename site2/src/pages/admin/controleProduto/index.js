@@ -1,6 +1,6 @@
 import './index.scss';
 import PerifericosAdmin from '../../../components/layout/controleAdmin';
-import {cadastrarProduto, alterarProduto, listarProduto, listarporNome, deletarProduto, buscarId, adicionarImagem} from '../../../api/produtoEndpoints'
+import {cadastrarProduto, editarProduto, listarProduto, listarporNome, deletarProduto, buscarId, adicionarImagem} from '../../../api/produtoEndpoints'
 
 import {Link} from 'react-router-dom'
 import { useEffect, useState } from 'react';
@@ -21,8 +21,9 @@ export default function Config() {
   const [valor, setValor] = useState ('')
   const [detalhes, setDetalhes] = useState ('')
   const [quantidade, setQuantidade] = useState ('')
-  const [imagem, setImagem] = useState ()
+  const [imagem, setImagem] = useState ('')
   const [id, setId] = useState (0)
+  const [listarAlguns, setListarAlguns] = useState ([])
 
   const {idparams} = useParams ();
   const navigate = useNavigate ();
@@ -40,13 +41,13 @@ export default function Config() {
         toast.success("Registro Salvo!")
 
       }else {
-        await alterarProduto(id, categoria, nome, marca, modelo, disponivel, promocao, valor, detalhes, quantidade)
-        toast.success("Registro Alterado!")
+        await editarProduto(id, categoria, nome, marca, modelo, disponivel, promocao, valor, detalhes, quantidade)
+        toast.success('Produto alterado!')
       }
 
 
     } catch (error) {
-      toast.error("Registro não foi salvo!")
+      toast.error(id)
       
     }
 
@@ -54,7 +55,7 @@ export default function Config() {
 
 
   //Adicionar Novo Produto
-  function novoClick() {
+  async function novoClick() {
     setId(0)
     setCategoria('')
     setNome('')
@@ -70,7 +71,6 @@ export default function Config() {
   //listar Todos
   async function carregarlistaProdutos() {
     const listar = await listarProduto();
-
     setListarTodos(listar)
   };
 
@@ -134,6 +134,7 @@ export default function Config() {
   
   async function carregarProduto() {
     const resposta = await buscarId(idparams)
+
     setId(resposta.id)
     setCategoria(resposta.categoria)
     setNome(resposta.nome)
@@ -147,19 +148,10 @@ export default function Config() {
   }
 
   function Editar(idparams) {
-    navigate(`/alterar/${idparams}`);
+    navigate(`/produto/${idparams}`);
     window.location.reload(false)
   }
 
-  //       "categoria": 2,
-  //       "nome": "Turbina Chevette",
-  //       "marca": "Bagio",
-  //       "modelo": "BBB200",
-  //       "disponivel": false,
-  //       "promocao": "de 19/08 à 20/08",
-  //       "valor": "1980.00",
-  //       "detalhes": "Turbina para Chevette 1.0",
-  //       "quantidade": 1
 
   //Comando por tecla para listar produto
   async function enterClick(e) {
@@ -264,7 +256,7 @@ export default function Config() {
                   <label>
                     Detalhes
                   </label>
-                  <input type='text' value={detalhes} onChange={e => setDetalhes(e.target.value)}/>
+                  <input id='teste' type='text' value={detalhes} onChange={e => setDetalhes(e.target.value)}/>
                 </div>
               </form>
 
@@ -349,18 +341,18 @@ export default function Config() {
                   </thead>
                   <tbody>
                       {listarTodos.map(item =>
-                        <tr key={item.Id}>
-                          <td className='td-center'>{item.Id}</td>
-                          <td>{item.Produto}</td>
-                          <td>{item.Marca}</td>
-                          <td className='td-center'>{item.Disponivel ? 'Sim' : 'Não'}</td>
-                          <td className='td-center'>{item.Quantidade}</td>
-                          <td>{item.Promocao}</td>
-                          <td className='td-center'>{item.Valor}</td>
+                        <tr key={item.id}>
+                          <td className='td-center'>{item.id}</td>
+                          <td>{item.nome}</td>
+                          <td>{item.marca}</td>
+                          <td className='td-center'>{item.disponivel ? 'Sim' : 'Não'}</td>
+                          <td className='td-center'>{item.quantidade}</td>
+                          <td>{item.promocao}</td>
+                          <td className='td-center'>{item.valor}</td>
                           <td>
                             <div className='interacao'>
-                              <div><button onClick={() => Editar(item.Id)}><img src='../../assets/icon/alterar.png' /></button></div>
-                              <div><button onClick={() => Deletar(item.Id)}><img src='../../assets/icon/lixeira.png' /></button></div>
+                              <div><button onClick={() => Editar(item.id)}><img src='../../assets/icon/alterar.png' /></button></div>
+                              <div><button onClick={() => Deletar(item.id)}><img src='../../assets/icon/lixeira.png' /></button></div>
                             </div>
                           </td>
                         </tr>
