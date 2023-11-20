@@ -122,7 +122,6 @@ export async function listarCategoria() {
     return resposta;
 }
 
-
 export async function inserirImg(imagem) {
     const comando = 
     `INSERT INTO tb_img_produto (id_produto, ds_img)
