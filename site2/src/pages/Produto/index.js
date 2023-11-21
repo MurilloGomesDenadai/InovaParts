@@ -1,8 +1,11 @@
 import './index.scss';
 import Header from '../../components/layout/headerProduto';
+import Carrossel from '../../components/modal/Carousel/carouselProduto.js';
 import Footer from '../../components/layout/rodape/footer.js';
 
 import { useState } from 'react';
+
+
 
 export default function Produtopage() {
     const [comentar, setComentar] = useState ('');
@@ -95,6 +98,11 @@ export default function Produtopage() {
                             <button>Efutuar Compra</button>
                         </div>
                     </article>
+                </section>
+
+                <section id='areaCarrossel'>
+                    <div id='enunciadoCarrossel'>Destaques</div>
+                    <Carrossel/>
                 </section>
             </main>
 

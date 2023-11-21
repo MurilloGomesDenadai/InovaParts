@@ -1,0 +1,41 @@
+#compCarrossel {
+
+    .grupoCard {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%; 
+    }
+
+    .cardCarousel {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.397);
+        padding: 5px;
+        margin: 7px;
+        width: 18vw;
+        height: 25vh;
+    }
+
+    .cardCarousel img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .carousel-indicators {
+        margin-bottom: -1rem;
+    }
+
+    .btnSaibaMais button {
+        background-color: #020032;
+        color: white;
+        font-weight: 600;
+        border: none;
+        border-radius: 5px;
+        padding: 5px;
+    }
+}
