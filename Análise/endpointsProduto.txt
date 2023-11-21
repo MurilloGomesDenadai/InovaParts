@@ -4,29 +4,54 @@
     VERBO: POST       CAMINHO: http://localhost:5011/produto
     
     {
-        "categoria": 1,
-        "nome": "Turbina Chevette",
-        "marca": "Bagio",
-        "modelo": "AAA100",
-        "disponivel": true,
-        "promocao": "de 19/08 à 20/08",
-        "valor": "1900.00",
-        "detalhes": "Turbina para Chevette 1.0",
-        "quantidade": 2
+        "categoria": ,
+        "nome": "",
+        "marca": "",
+        "modelo": "",
+        "disponivel": ,
+        "promocao": "",
+        "valor": "",
+        "detalhes": "",
+        "quantidade": 
     }   
+
+    RETORNA: 
+    {
+        "categoria": 1,
+        "nome": "Filtro",
+        "marca": "aaaa",
+        "modelo": "aaaa",
+        "disponivel": 1,
+        "promocao": "aaaaa",
+        "valor": "200.00",
+        "detalhes": "aaaa",
+        "quantidade": 2,
+        "id": 6
+    }
+
+
+(1.1) INSERIR IMAGEM DO PRODUTO
+    VERBO: PUT          CAMINHO: http://localhost:5011/produto/:id/capa => ID DO PRODUTO
+    FILES: 'capa'
+
+    RETORNA: 
+    STATUS: 200 OK
+
 
 (2) LISTAR TODOS OS PRODUTOS
     VERBO: GET        CAMINHO: http://localhost:5011/produto
+
 
 (3) LISTAR PRODUTO POR NOME, CATEGORIA E MARCA
     VERBO: GET        CAMINHO: http://localhost:5011/produto/busca?nome=
                                http://localhost:5011/produto/busca?categoria=
                                http://localhost:5011/produto/busca?marca=
 
+
 (4) ALTERAR PRODUTOS
     VERBO: PUT     CAMINHO: http://localhost:5011/produto/:id     
 
-   {
+    {
         "categoria": 2,
         "nome": "Turbina Chevette",
         "marca": "Bagio",
@@ -36,24 +61,31 @@
         "valor": "1980.00",
         "detalhes": "Turbina para Chevette 1.0",
         "quantidade": 1
-    } 
+    }
+
+    RETORNA: 
+    STATUS: 200 OK
+
 
 (5) DELETAR PRODUTO
     VERBO: DELETE       CAMINHO: http://localhost:5011/produto/:id
 
+    RETORNA:
+    STATUS: 200 OK
 
--- TABELA CATRGORIA --
+
+-- TABELA CATEGORIA --
 (1) ADICIONAR CATEGORIA
     VERBO: POST         CAMINHO: http://localhost:5011/categoria
 
     {
-        "categoria": "Caminhão"
+        "categoria": ""
     }
 
     RETORNA:
 
     {
-        "categoria": "Caminhão",
+        "categoria": "",
         "id": 3
     }
 
@@ -62,47 +94,10 @@
 
     RETORNA:
 
-    [
+    
         {
             "Categoria": "Alta Performance",
             "ID": 1
         }
-    ]
     
-
--- ENDPOINTS DA tb_img_produto --
--- TABELA IMAGEM DOS PRODUTOS --
-(1) ADICIONAR IMAGEM
-    VERBO: POST         CAMINHO: http://localhost:5011/imagem
-
-    {
-        "produto": 1, => ID DO PRODUTO
-        "imagem": "" => PASSA VAZIO, ZÉ.
-    }
-
-(2) ALTERAR IMAGEM
-    VERBO: put          CAMINHO: http://localhost:5011/imagem/:id => ESSE ID É O id_img_produto QUE VOCÊ CRIOU ANTERIORMENTE.
-    FILES: 'capa'
-
-    SE TIVER DÚVIDA EM COMO ADICIONAR A IMAGEM ME CHAMA, ESTAREI A DISPOSIÇÃO, OU NÃO.
-
-(3) LISTAR AS IMAGENS 
-    VERBO: GET          CAMINHO: http://localhost:5011/imagem
-
-(4) LISTAR IMAGEM COM A INFORMAÇÃO DO PRODUTO JUNTO (FAZ O TESTE DE PASSAR ESSE ENDPOINT NA TELA DE INFORMAÇÕES DO PRODUTO)
-    VERBO: GET          CAMINHO: http://localhost:5011/imagem/:id => ID DO PRODUTO QUE DESEJA, MAS A IMAGEM TEM QUE SER ADICIONADA ANTES, SE NÃO DA ERRADO.
-
-    E ASSIM RETORNA A BRINCADEIRA:
-    [
-        {
-            "Nome": "FT400",
-            "Marca": "FUELTECH",
-            "Modelo": "EXEMPLOII",
-            "Disponivel": true,
-            "Promocao": "EXEMPLOII",
-            "Valor": "5900.00",
-            "Detalhes": "EXEMPLOII",
-            "Quantidade": 1,
-            "Imagem": "storage\\imgProdutos\\f1534cc3dd8880824e1c348dd78df6c6"
-        }
-]
+    

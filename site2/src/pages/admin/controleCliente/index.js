@@ -88,11 +88,11 @@ export default function Controle() {
 
                             <tbody>
                                 {listarClientes.map(item => 
-                                <tr key={item.Id}>
-                                    <td>{item.Cliente}</td>
-                                    <td>{item.CPF}</td>
-                                    <td>{item.Telefone}</td>
-                                    <td>{item.Email}</td>
+                                <tr key={item.id}>
+                                    <td>{item.cliente}</td>
+                                    <td>{item.cpf}</td>
+                                    <td>{item.telefone}</td>
+                                    <td>{item.email}</td>
                                 </tr>
                                 )}
                             </tbody>

@@ -1,4 +1,4 @@
-import { alterarImg, alterarProduto, cadastrarProdutos, deletarProduto, inserirCategoria, inserirImg, listarCategoria, listarImg, listarImgInfo, listarPorId, listarPorNome, listarProdutos } from '../repository/produtoRepository.js';
+import { alterarImg, alterarProduto, cadastrarProdutos, deletarProduto, imagemProduto, inserirCategoria, inserirImg, listarCategoria, listarImg, listarImgInfo, listarPorId, listarPorNome, listarProdutos } from '../repository/produtoRepository.js';
 
 import Router from 'express';
 import multer from 'multer';
@@ -40,6 +40,24 @@ server.post('/produto', async (req, resp) => {
 
         const produtoCadastrado = await cadastrarProdutos(cadastrar);
         resp.send(produtoCadastrado);
+
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+})
+
+server.put('/produto/:id/capa', upload.single('capa'), async (req, resp) => {
+    try {
+        const {id} = req.params;
+        const imagem  = req.file.path;
+
+        const resposta = await imagemProduto(imagem , id);
+        if(resposta !== 1)
+            throw new Error('A imagem não pode ser salva.');
+
+        resp.status(200).send();
 
     } catch (err) {
         resp.status(400).send({
@@ -107,9 +125,10 @@ server.put('/produto/:id', async (req, resp) => {
 
         if(!produto.categoria)
             throw new Error('Categoria inválida.');
-            console.log(id, 'Controller')
+
         if(!produto.nome)
             throw new Error('Nome inválido.');
+
         if(!produto.marca)
             throw new Error('Marca inválida.');
 
@@ -130,20 +149,18 @@ server.put('/produto/:id', async (req, resp) => {
 
         if(produto.quantidade == undefined || produto.quantidade < 0)
             throw new Error('Quantidade inválida.');
-            
 
         const resposta = await alterarProduto(id, produto);
         if(resposta !== 1)
             throw new Error('O produto não pode ser alterado.');
         else
             resp.status(200).send();
+        
     } catch (err) {
         resp.status(400).send({
             erro: err.message
         });
     }
-        console.log('produtoController tem conexão')
-
 })
 
 

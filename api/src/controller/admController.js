@@ -10,14 +10,13 @@ const upload = multer({dest: 'storage/admPerfil'});
 
 const schema = new passwordValidator();
 schema
-    .is().min(8, 'A quantidade miníma são 8 caractéres.') // Minimum length 8
-    .is().max(100, 'A quantidade máxima é de 100 caractéres.') // Maximum length 100
-    .has().uppercase(1, 'Adicione no minímo 1 caractére maiúsculo.') // Must have uppercase letters
-    .has().lowercase(1, 'Adicione no minímo 1 caractére minúsculo.') // Must have lowercase letters
-    .has().digits(1, 'Adicione no minímo 1 digito numérico.') // Must have at least 2 digits
-    .has().not().spaces(true, 'Não adicione espaços na senha.') // Should not have spaces
-    // .is().not().oneOf(['Passw0rd', 'Password123']); // Blacklist these values
-    .has().symbols(1, 'Adicione no minímo 1 caractére especial (ex.: @, #, !)') // special character
+    .is().min(8, 'A quantidade miníma são 8 caractéres.')
+    .is().max(100, 'A quantidade máxima é de 100 caractéres.')
+    .has().uppercase(1, 'Adicione no minímo 1 caractére maiúsculo.')
+    .has().lowercase(1, 'Adicione no minímo 1 caractére minúsculo.')
+    .has().digits(1, 'Adicione no minímo 1 digito numérico.')
+    .has().not().spaces(true, 'Não adicione espaços na senha.')
+    .has().symbols(1, 'Adicione no minímo 1 caractére especial (ex.: @, #, !)')
 
 
 server.post('/adm', async (req, resp) => {
@@ -110,7 +109,8 @@ server.put('/adm/:id', async (req, resp) => {
 
 server.post('/adm/login', async (req, resp) => {
     try {
-        const {cpf, email, senha} = req.body;
+        const cpf = req.body.cpf
+        const {email, senha} = req.body;
         const resposta = await loginAdm(cpf, email, senha);
 
         if(!resposta)
@@ -147,7 +147,7 @@ server.get('/adm/busca', async (req, resp) => {
         const resposta = await buscarPorCpfNome(cpf, nome);
 
         if(resposta.length === 0)
-            throw new Error('Busca por administrador');
+            throw new Error('Administrador inválido.');
 
         resp.send(resposta);
 

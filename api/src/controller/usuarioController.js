@@ -79,8 +79,7 @@ server.post('/usuario/login', async (req, resp) => {
         const resposta = await loginCliente(cpf, email, senha);
 
         if(!resposta)
-            throw new Error('Credenciais inválidas.')
-
+            throw new Error('Credenciais inválidas.');
         resp.send(resposta);
 
     } catch (err) {
@@ -109,7 +108,7 @@ server.get('/usuario/busca', async (req, resp) => {
     try {
         const {cpf, nome} = req.query;
         const resposta = await buscarPorNomeCpf(cpf, nome);
-
+        console.log(resposta)
         if(resposta.length === 0)
             throw new Error('Usuário não cadastrado.');
 
@@ -141,7 +140,7 @@ server.put('/usuario/:id', async (req, resp) => {
 
         if(!cliente.senha)
             throw new Error('Senha inválida.');
-        const errorSenha = schema.validate(cadastrar.senha, {details: true});
+        const errorSenha = schema.validate(cliente.senha, {details: true});
         if(errorSenha !== 0) {
             for(let item of errorSenha) {
                 throw new Error(`${item.message}`);
