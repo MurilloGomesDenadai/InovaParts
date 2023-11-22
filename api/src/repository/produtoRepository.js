@@ -27,7 +27,7 @@ export async function listarProdutos() {
     const comando =
     `SELECT 		 id_produto		as id, 
         tb_categoria.ds_categoria	as categoria,
-                     nm_produto		as produto,
+                     nm_produto		as nome,
                      ds_marca		as marca,
                      ds_modelo		as modelo,
                      bt_disponivel	as disponivel,
@@ -47,7 +47,7 @@ export async function listarPorNome(nome, categoria, marca) {
     const comando =
     `SELECT  id_produto         as id,
              ds_categoria	    as categoria,
-             nm_produto		    as produto,
+             nm_produto		    as nome,
              ds_marca		    as marca,
              ds_modelo		    as modelo,
              vl_valor		    as valor,
@@ -69,7 +69,7 @@ export async function listarPorId(id) {
     const comando = 
     `SELECT  id_produto         as id,
              ds_categoria	    as categoria,
-             nm_produto		    as produto,
+             nm_produto		    as nome,
              ds_marca		    as marca,
              ds_modelo		    as modelo,
              vl_valor		    as valor,

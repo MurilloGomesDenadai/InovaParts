@@ -15,7 +15,7 @@ export default function Perfiladmin() {
     }
 
     function mostrarImagem() {
-        return URL.createObjectURL(imagem);
+        return URL.createObjectURL(imagem); 
     }
 
     return (
