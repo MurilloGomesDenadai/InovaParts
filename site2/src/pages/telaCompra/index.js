@@ -293,35 +293,25 @@ export default function Compra() {
 
                             <h2>Marcas</h2> 
                             <div className='selecao'>
-                                <div className='topico-selecao'>
-                                    <p>Amortecedores</p>
-                                    <img src='../assets/icon/seta-baixo.png'/>
-                                </div>
+                                <span className='subtopico-selecao' style={openCarro ? null : carroStyle}>
+                                    <div>
+                                        <p>Bosch</p>
+                                        <p>Exedy</p>
+                                        <p>Ferodo</p>
+                                        <p>GSP</p>
+                                        <p>Fremax</p>
 
-                                <div className='topico-selecao'>
-                                    <p>Frios</p>
-                                    <img src='../assets/icon/seta-baixo.png'/>
-                                </div>
+                                        <p>KeN</p>
+                                        <p>KYB</p>
+                                        <p>Mann Filter</p>
+                                        <p>Monroe</p>
+                                        <p>NGK</p>
 
-                                <div className='topico-selecao'>
-                                    <p>Direção</p>
-                                    <img src='../assets/icon/seta-baixo.png'/>
-                                </div>
-
-                                <div className='topico-selecao'>
-                                    <p>Motor</p>
-                                    <img src='../assets/icon/seta-baixo.png'/>
-                                </div>
-
-                                <div className='topico-selecao'>
-                                    <p>Embreagem</p>
-                                    <img src='../assets/icon/seta-baixo.png'/>
-                                </div>
-
-                                <div className='topico-selecao'>
-                                    <p>Suspensão</p>
-                                    <img src='../assets/icon/seta-baixo.png'/>
-                                </div>
+                                        <p>Pierburg</p>
+                                        <p>Textar</p>
+                                        
+                                    </div>
+                                </span>
                             </div>
                             <div className='linha-aside'><hr/></div>
 
