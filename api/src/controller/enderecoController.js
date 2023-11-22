@@ -57,6 +57,23 @@ server.get('/endereco', async (req, resp) => {
     }
 })
 
+server.get('/endereco/:id', async (req, resp) => {
+    try {
+        const {id} = req.params;
+        const dados = await listarEndClienteId(id);
+
+        if(dados.length === 0)
+            throw new Error('Não há nenhum endereço cadastrado relacionado a esse cliente.');
+
+        resp.send(dados);
+
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+})
+
 server.put('/endereco/:id', async (req, resp) =>{
     try {
         const {id} = req.params;

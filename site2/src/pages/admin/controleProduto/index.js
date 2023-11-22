@@ -148,7 +148,7 @@ export default function Config() {
   }
 
   function Editar(idparams) {
-    navigate(`/produto/${idparams}`);
+    navigate(`/alterarProduto/${idparams}`); 
     window.location.reload(false)
   }
 
@@ -339,7 +339,7 @@ export default function Config() {
                       <th>Promoção</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody> 
                       {listarTodos.map(item =>
                         <tr key={item.id}>
                           <td className='td-center'>{item.id}</td>

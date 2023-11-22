@@ -34,12 +34,16 @@ root.render(
         <Route path='/loginAdmin' element = {<Admin/>} />
         <Route path='/cadastrarAdmin' element = {<Cadastrar/>} />
         <Route path='/controleProduto' element = {<Config/>} />
-        <Route path='/produto/:idparams' element = {<Config/>} />
+        <Route path='/alterarProduto/:idparams' element = {<Config/>} />
         <Route path='/controleCliente' element = {<Controle/>} />
         <Route path='/perfilAdmin' element = {<Perfiladmin/>} />
         <Route path='/perfil/:idparams' element = {<Perfiladmin/>} />
         <Route path='/Produto' element = {<Produtopage/>} />
+<<<<<<< HEAD
         <Route path='/perfilCliente' element = {<PerfilCliente/>} />
+=======
+        <Route path='/Produto/:idp' element = {<Produtopage/>} />
+>>>>>>> 03331faf55d7101fcd287c51dfed0d28fca09f31
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
