@@ -33,11 +33,12 @@ root.render(
         <Route path='/loginAdmin' element = {<Admin/>} />
         <Route path='/cadastrarAdmin' element = {<Cadastrar/>} />
         <Route path='/controleProduto' element = {<Config/>} />
-        <Route path='/produto/:idparams' element = {<Config/>} />
+        <Route path='/alterarProduto/:idparams' element = {<Config/>} />
         <Route path='/controleCliente' element = {<Controle/>} />
         <Route path='/perfilAdmin' element = {<Perfiladmin/>} />
         <Route path='/perfil/:idparams' element = {<Perfiladmin/>} />
         <Route path='/Produto' element = {<Produtopage/>} />
+        <Route path='/Produto/:idp' element = {<Produtopage/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -7,6 +7,9 @@ import { Link } from 'react-router-dom';
 
 export default function Header() {
     const [open,  setOpen] = useState (false);
+    const [listarNome, setListarNome] = useState ('')
+
+    
     return (
         <div id='paginaHeader'>
             <header>
@@ -45,8 +48,8 @@ export default function Header() {
 
                     <div id='alinhar-caixa-pesquisa'>
                         <div id='caixa-pesquisa'>
-                            <input type='text' placeholder='Pesquisa'/>
-                            <img src='../assets/icon/lupa.png'/>
+                            <input type='text' placeholder='Pesquisa' value={listarNome} onChange={e => setListarNome(e.target.value)}/>
+                            <img  src='../assets/icon/lupa.png'/>
                         </div>
                     </div>
                 </div>

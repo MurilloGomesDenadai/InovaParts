@@ -2,12 +2,13 @@ import './index.scss';
 import Modal from '../../components/modal/popupCarrinho/popupCarrinho.js';
 import Header from '../../components/layout/headerProduto/index.js';
 import Footer from '../../components/layout/rodape/footer.js';
+import Carrinho from '../../components/modal/popupCarrinho/popupCarrinho.js';
 
 import { Produto  } from '../../components/modal/popupProduto/produto';
 
 import { useEffect, useState } from 'react';
 import {Link, useNavigate, useParams} from 'react-router-dom';
-import { Buscar, listarMercadoria } from '../../api/telacompraEndpoints.js';
+import { BuscarPorId, listarMercadoria, listarporNome } from '../../api/telacompraEndpoints.js';
 
 
 
@@ -16,6 +17,7 @@ export default function Compra() {
     const [open,  setOpen] = useState (false);
 
     const [listarItens, setListarItens] = useState ([])
+    const [listarNome, setListarNome] = useState ([])
 
 
     const [openManutencao,  setOpenManutencao] = useState (false);
@@ -99,8 +101,32 @@ export default function Compra() {
         display: 'none'
     }
 
+    //Filtrar produto
+    async function filtrarProduto() {
 
+        try {
+            if (listarNome != 0) {
+            const filtro = await listarporNome(listarNome);
+            setListarItens(filtro)
 
+            } else {
+            const listar = await listarMercadoria();
+            setListarItens(listar)
+            }
+        } catch (error) {
+            alert(error)
+        }
+    
+    }
+
+    async function IconeTodos() {
+        const listar = await listarMercadoria();
+        setListarItens(listar)
+    }
+
+    async function maiorPreco() {
+        
+    }
 
     //Carregar produto
     async function carregarLista() {
@@ -113,14 +139,63 @@ export default function Compra() {
         carregarLista()
     }, [])
 
-    function navegarProduto(idparams) {
-        navigate(`/produto/${idparams}`);
+    //Visualizar produto
+    function BuscarPorId(idparams) {
+        navigate(`/produto/${idparams}`); 
         window.location.reload(false)
+    }
+
+    //Tecla enter
+    async function enterClick(e) {
+        if (e.key == 'Enter') {
+            filtrarProduto()
+        }
     }
 
     return (
         <div id='pagina-compra'>
-            <Header/>
+            <header>
+                <nav>
+                    <div id='menu'>
+                        <div id='apresentacao'>
+                            <Link to='/'><img src='../assets/icon/logo.png'/></Link>
+                            <p>InovaPartes</p>
+                        </div>
+
+                        <div id='config-car'>
+                            <button onClick={() => setOpen(true)}>
+                                <img src='../assets/icon/icon_Carrinho.png'/>
+                            </button>
+
+                            <img src='../assets/icon/icone_Usuario.png'/>
+                        </div>
+                        
+                    </div>
+                </nav>
+
+                <Carrinho isOpen = {open}
+                        setOpen = {setOpen}/>
+
+                <div id='area-pesquisa'>
+                    <div className='txt-header'>
+                        <h1>Inovapartes</h1>
+                        <p>
+                            Invista no seu veículo  
+                        </p>
+
+                        <p>
+                            do conforto e com a segurança da sua <span>casa!</span>
+                        </p>
+                    </div>
+
+                    <div id='alinhar-caixa-pesquisa'>
+                        <div id='caixa-pesquisa'>
+                            <input type='text' placeholder='Pesquisa' onKeyDown={enterClick} value={listarNome} onChange={e => setListarNome(e.target.value)}/>
+                            <img onClick={filtrarProduto} src='../assets/icon/lupa.png'/>
+                        </div>
+                    </div>
+                </div>
+            </header>
 
             <main>
                 <section id='departamento'>
@@ -169,7 +244,7 @@ export default function Compra() {
                         <div id='ordenamento'>
                             <div>
                                 <div className='circulo-opcao'>
-                                <img src='../assets/icon/icon-todos.svg'/>
+                                <img onClick={IconeTodos} src='../assets/icon/icon-todos.svg'/>
                                 </div>
 
                                 <div className='nome-opcao'>Todos</div>
@@ -185,7 +260,7 @@ export default function Compra() {
 
                             <div>
                                 <div className='circulo-opcao'>
-                                    <img src='../assets/icon/icon-maior-preco.svg'/>
+                                    <img onClick={maiorPreco} src='../assets/icon/icon-maior-preco.svg'/>
                                 </div>
 
                                 <div className='nome-opcao'>Maior preço</div>
@@ -434,7 +509,7 @@ export default function Compra() {
                                         </div>
 
                                         <div className='btn-saibaMais'>
-                                            <button onClick={navegarProduto}>Saiba mais</button>
+                                            <button onClick={BuscarPorId}>Saiba mais</button>
                                         </div>
 
                                         {/* .toLocaleString('pt-br', {minimumFractionDigits: 2}) */}

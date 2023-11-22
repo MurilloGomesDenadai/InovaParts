@@ -2,14 +2,29 @@ import './index.scss';
 import Header from '../../components/layout/headerProduto';
 import Carrossel from '../../components/modal/Carousel/carouselProduto.js';
 import Footer from '../../components/layout/rodape/footer.js';
+import { BuscarPorId, listarMercadoria } from '../../api/telacompraEndpoints.js';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 
 
 export default function Produtopage() {
+    const [id, setId] = useState ('');
+    const [categoria, setCategoria] = useState ('');
+    const [nome, setNome] = useState ('');
+    const [marca, setMarca] = useState ('');
+    const [modelo, setModelo] = useState ('');
+    const [dispnivel, setDisponivel] = useState ('');
+    const [promocao, setPromocao] = useState ('');
+    const [valor, setValor] = useState ('');
+    const [detalhes, setDetalhes] = useState ('');
+    const [quantidade, setQuantidade] = useState ('');
+    const [produto, setProduto] = useState ('')
     const [comentar, setComentar] = useState ('');
     const [comentarios, setComentarios] = useState ([]);
+
+    const {idp} = useParams ()
 
     function alternarComentario(e) {
         setComentar(e.target.value)
@@ -20,6 +35,35 @@ export default function Produtopage() {
         setComentarios([...comentarios])
 
         setComentar('')
+    }
+
+    async function carregarProdutos() {
+        const listar = await listarMercadoria();
+        setProduto(listar)
+    };
+
+    useEffect(() => {
+        if (idp) {
+            carregarProduto();
+        }
+    }, [])
+
+
+    async function carregarProduto() {
+        const resposta = await BuscarPorId(idp)
+    
+        setId(resposta.id)
+        setCategoria(resposta.categoria)
+        setNome(resposta.nome)
+        setMarca(resposta.marca)
+        setModelo(resposta.modelo)
+        setDisponivel(resposta.disponivel)
+        setPromocao (resposta.promocao)
+        setValor(resposta.valor)
+        setDetalhes(resposta.detalhes)
+        setQuantidade(resposta.quantidade)
+
+        console.log(resposta.nome)
     }
 
 
@@ -59,32 +103,34 @@ export default function Produtopage() {
                                     </div>
                                 </div>
 
-                                <div id='grupoCampos'>
-                                    <div id='nomeProduto'>
-                                        <p className='nomeNegrito'>Nome:</p>
-                                        <p className='informacaoProduto'>Turbina Chevette</p>
-                                    </div>
+                                {/* {listarMercadoria.map(item =>  */}
+                                    <div id='grupoCampos'>
+                                        <div id='nomeProduto'>
+                                            <p className='nomeNegrito'>Nome:</p>
+                                            <p className='informacaoProduto'>{nome}</p>
+                                        </div>
 
-                                    <div id='modeloProduto'>
-                                        <p className='nomeNegrito'>Modelo:</p>
-                                        <p className='informacaoProduto'>AAA10</p>
-                                    </div>
+                                        <div id='modeloProduto'>
+                                            <p className='nomeNegrito'>Modelo:</p>
+                                            <p className='informacaoProduto'>{modelo}</p>
+                                        </div>
 
-                                    <div id='MarcaProduto'>
-                                        <p className='nomeNegrito'>Marca:</p>
-                                        <p className='informacaoProduto'>Bagio</p>
-                                    </div>
+                                        <div id='MarcaProduto'>
+                                            <p className='nomeNegrito'>Marca:</p>
+                                            <p className='informacaoProduto'>{marca}</p>
+                                        </div>
 
-                                    <div id='categoriaProduto'>
-                                        <p className='nomeNegrito'>Cartegoria:</p>
-                                        <p className='informacaoProduto'>Alta-Performance</p>
-                                    </div>
+                                        <div id='categoriaProduto'>
+                                            <p className='nomeNegrito'>Cartegoria:</p>
+                                            <p className='informacaoProduto'>{categoria}</p>
+                                        </div>
 
-                                    <div id='valorProduto'>
-                                        <p className='nomeNegrito'>Valor:</p>
-                                        <p className='informacaoProduto'>R$520.50</p>
+                                        <div id='valorProduto'>
+                                            <p className='nomeNegrito'>Valor:</p>
+                                            <p className='informacaoProduto'>{valor}</p>
+                                        </div>
                                     </div>
-                                </div>
+                                {/* )} */}
                             </div>
 
                             <div id='descricaoProduto'>

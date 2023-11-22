@@ -148,7 +148,7 @@ export default function Config() {
   }
 
   function Editar(idparams) {
-    navigate(`/produto/${idparams}`);
+    navigate(`/alterarProduto/${idparams}`); 
     window.location.reload(false)
   }
 
