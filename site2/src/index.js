@@ -12,6 +12,7 @@ import Config from './pages/admin/controleProduto';
 import Controle from './pages/admin/controleCliente';
 import Perfiladmin from './pages/admin/perfilAdmin';
 import Produtopage from './pages/Produto';
+import PerfilCliente from './pages/cliente/perfilCliente';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -38,6 +39,7 @@ root.render(
         <Route path='/perfilAdmin' element = {<Perfiladmin/>} />
         <Route path='/perfil/:idparams' element = {<Perfiladmin/>} />
         <Route path='/Produto' element = {<Produtopage/>} />
+        <Route path='/perfilCliente' element = {<PerfilCliente/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

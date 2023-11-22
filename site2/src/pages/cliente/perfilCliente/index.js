@@ -24,7 +24,7 @@ export default function Perfiladmin() {
 
             <main>
                 <div id='mensagem-identificacao'>
-                    <p>seja bem-vindo sr.Admin!</p> 
+                    <p>seja bem-vindo sr.Cliente!</p> 
                 </div>
 
                 <section id='area-de-alteracao'>
@@ -38,7 +38,7 @@ export default function Perfiladmin() {
                         </div>
 
                         <div id='apelido-usuario'>
-                            nm_Admin
+                            nm_Cliente
                         </div>
                     </div>
                     
