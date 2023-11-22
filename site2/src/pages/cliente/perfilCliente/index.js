@@ -1,5 +1,5 @@
 import './index.scss';
-import PerifericosAdmin from '../../../components/layout/controleAdmin';
+import ConfigCliente from '../../../components/layout/confgCliente';
 
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -20,7 +20,7 @@ export default function Perfiladmin() {
 
     return (
         <div id='perfil-admin'>
-            <PerifericosAdmin fundo4 = '#222222' />
+            <ConfigCliente fundo4 = '#222222' />
 
             <main>
                 <div id='mensagem-identificacao'>
@@ -96,9 +96,51 @@ export default function Perfiladmin() {
                         </div>
                     </div>
 
+
+                    <div id='contato'>
+                        <div className='nome-funcao'>
+                            <p>Endereço</p>
+                        </div>
+                    </div>
+                    
+                    <div id='bloco-cep'>
+                                <div className='cep'>
+                                    <label>CEP</label>
+                                    <input type='text' placeholder=''/>
+                                </div>   
+                    </div>  
+
+                    <div className='area-interacao'>
+                            <div>
+                                <div className='bloco-input'>
+                                    <label>Logradouro</label>
+                                    <input type='text' placeholder=''/>
+                                </div>
+                                
+                                <div className='bloco-input'>
+                                    <label>Email</label>
+                                    <input type='text' placeholder=''/>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div className='bloco-input'>
+                                    <label>Telefone</label>
+                                    <input type='text' placeholder=''/>
+                                </div>
+
+                                <div className='bloco-input'>
+                                    <label>CPF</label>
+                                    <input type='text' placeholder=''/>
+                                </div>
+                            </div>
+                        </div>
+    
+
                     <div id='alteracao'>
                         <button>Alterar</button>
                     </div>
+
                 </section> 
             </main>
         </div>

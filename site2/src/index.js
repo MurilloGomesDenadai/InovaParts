@@ -39,11 +39,7 @@ root.render(
         <Route path='/perfilAdmin' element = {<Perfiladmin/>} />
         <Route path='/perfil/:idparams' element = {<Perfiladmin/>} />
         <Route path='/Produto' element = {<Produtopage/>} />
-<<<<<<< HEAD
         <Route path='/perfilCliente' element = {<PerfilCliente/>} />
-=======
-        <Route path='/Produto/:idp' element = {<Produtopage/>} />
->>>>>>> 03331faf55d7101fcd287c51dfed0d28fca09f31
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

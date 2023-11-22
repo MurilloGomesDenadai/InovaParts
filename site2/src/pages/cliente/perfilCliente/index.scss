@@ -2,7 +2,7 @@
     background-color: #565656;
     color: white;
     display: flex;
-    height: 100vh;
+    height: 130%;
     width: 100%;
 
     main {
@@ -30,8 +30,9 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 20px;
-        height: 85vh;
+        height: 100vh;
         width: 60vw;
+        margin-top: 20px;
     }
 
     #foto-usuario {
@@ -167,5 +168,21 @@
 
     }
 
+   .bloco-cep{
+    display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        margin: 10px;
+   }
+   .cep{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        margin: 10px;
+   }
+
+   
 
 }
