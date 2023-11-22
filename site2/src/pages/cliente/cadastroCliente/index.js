@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios'
 
+import { API_URL } from '../../../api/constants.js';
+
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -18,7 +21,7 @@ export default function Cadastro() {
 
 
     async function cadastrarCliente() {
-        let url = 'http://localhost:5000/usuario';
+        let url = `${API_URL}/usuario`;
         await axios.post(url, 
         {
             nome: nome,
@@ -30,9 +33,7 @@ export default function Cadastro() {
             
         } )
         
-
         toast.success("Registro Salvo!")
-
     }
     
 
@@ -100,7 +101,7 @@ export default function Cadastro() {
                         </div>
 
                         <div id='btn-entrar'>
-                            <Link to='/loginCliente'><button>Entrar</button></Link>
+                            <a href='/loginCliente'><button>Entrar</button></a>
                         </div>
                     </div>
                 </main>

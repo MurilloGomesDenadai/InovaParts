@@ -45,6 +45,7 @@
         width: 18vw;
     }
 
+
     #apresentacao p {
         color: white;
     }
@@ -52,7 +53,7 @@
     #config-car {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         width: 16vw;
     }
 
@@ -63,6 +64,8 @@
 
     #config-car img {
         cursor: pointer;
+        width: 50px;
+        height: 50px;
     }
 
     .txt-header {
@@ -73,7 +76,7 @@
         align-items: center;
         margin-left: 60px;
         height: 40vh;
-        width: 27vw;
+        width: 30vw;
     }
 
     .txt-header h1 {
@@ -140,6 +143,7 @@
         margin-right: 10px;
         
     }
+    /////
 
     #faixa-departamento {
         background-color: #020032;
@@ -184,7 +188,7 @@
         justify-content: center;
         cursor: pointer;
         border-radius: 5px;
-        margin: 20px;
+        margin-right: 20px;
         width: 20vw;
         height: 5vh;
     }
@@ -194,17 +198,11 @@
     }
 
     .card-orientacao {
-        background-color: #9e9696;
+        background-color: #8f8f8f;
     }
 
-    .card-orientacao p {
-        color: #994747;
-    }
-
-    #fechar {
-        background-color: aqua;
-        height: 10vh;
-        width: 100%;
+    .conteudo-card {
+        line-height: 30px;
     }
 
     #area-produto {
@@ -212,7 +210,7 @@
     }
 
     #area-produto h2 {
-        font-size: 1.2;
+        font-size: 1.2em;
         margin: 13px;
     }
 
@@ -329,6 +327,8 @@
         width: 100%;
     }
 
+    /////////////////////////
+
     .nome-area {
         color: white;
         font-size: 1.2em;
@@ -340,23 +340,23 @@
         height: 5vh;
     }
 
-    .produtos-agrupamento, span {
+    .produtos-agrupamento {//span 
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
     }
 
-    
 
     .produto {
         background-color: white;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         border-radius: 10px;
         cursor: pointer;
+        padding: 5px;
         margin: 10px;
         width: 15vw;
         height: 35vh;
@@ -365,6 +365,28 @@
     .produto:hover {
         background-color: rgb(223, 223, 223);
         transform: translate(0px,-1px);
+    }
+
+    .produto-nome {
+        text-align: center;
+        align-content: center;
+        font-weight: 500;
+    }
+
+    .produto-valor {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-weight: 500;
+    }
+
+    .cifrao {
+        width: 6vw;
+    }
+
+    .valor {
+        font-size: 1.2em;
+        text-indent: 20px;
     }
 
     .ver-mais {

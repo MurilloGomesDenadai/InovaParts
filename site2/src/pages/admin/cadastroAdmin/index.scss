@@ -1,0 +1,143 @@
+#pagina-cadastro-admin {
+    background-color: lightgray;
+    background-image: url('../../../../public/assets/image/fundo-loginAdmin.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+
+    header {
+        background-color: #020032;
+        height: 8vh;
+        width: 100%;
+    }
+
+    #container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 92vh;
+    }
+
+    main {
+        background-color: #222222;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        width: 50vw;
+    }
+
+    #enunciado {
+        background-color: #020032;
+        font-size: 20px;
+        font-weight: 600;
+        border-radius: 20px 20px 0px 0px;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .caixa-senha {
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5px;
+        margin: 15px;
+        height: 50px;
+    }
+
+    .caixa-senha label {
+        text-indent: 10px;
+        margin-bottom: 3px;
+    }
+
+    .caixa-senha input {
+        font-size: 16px;
+        border-radius: 20px;
+        border: none;
+        padding: 7px;
+        width: 40vw;
+    }
+
+    input:focus {
+        box-shadow: 0;
+        outline: 0;
+    }
+
+    input::placeholder {
+        color: #535353d5;
+    }
+
+    #checkbox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 30vw;
+    }
+
+    .caixa-check {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+
+    }
+
+    .caixa-check input {
+        margin-bottom: 15px;
+        margin-right: 10px;
+    }
+
+    .caixa-check label {
+        text-align: center;
+    }
+
+    .caixa-check span {
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    #area-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 40vw;
+    }
+
+    #btn-cadastrar{
+        margin-bottom: 20px;
+        margin-top: 10px;
+
+    }
+
+    #btn-entrar{
+        margin-bottom: 20px;
+        margin-top: 10px;
+
+    }
+
+    button {
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+        padding: 7px;
+        width: 15vw;
+    }
+
+    button:hover {
+        background-color: lightgray;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}

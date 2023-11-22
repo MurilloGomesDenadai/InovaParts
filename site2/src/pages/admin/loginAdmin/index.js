@@ -3,8 +3,9 @@ import './index.scss';
 import {Link} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import {useState } from 'react';
-
 import axios from 'axios';
+
+import { API_URL } from '../../../api/constants.js';
 
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -20,7 +21,7 @@ export default function Admin () {
     async function enterClick() {
 
         try {
-            const resposta = await axios.post('http://localhost:5000/adm/login', {
+            const resposta = await axios.post(`${API_URL}/adm/login`, {
                 email: email,
                 senha: senha
             });
@@ -52,7 +53,7 @@ export default function Admin () {
 
                         <div className='caixa-senha'>
                             <label>Digite sua Senha</label>
-                            <input type='text' placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)}/>
+                            <input type='password' placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)}/>
 
                         </div>
 

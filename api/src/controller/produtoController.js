@@ -1,4 +1,4 @@
-import { alterarImg, alterarProduto, cadastrarProdutos, deletarProduto, inserirCategoria, inserirImg, listarImg, listarImgInfo, listarPorId, listarPorNome, listarProdutos } from '../repository/produtoRepository.js';
+import { alterarImg, alterarProduto, cadastrarProdutos, deletarProduto, imagemProduto, inserirCategoria, inserirImg, listarCategoria, listarImg, listarImgInfo, listarPorId, listarPorNome, listarProdutos } from '../repository/produtoRepository.js';
 
 import Router from 'express';
 import multer from 'multer';
@@ -29,7 +29,7 @@ server.post('/produto', async (req, resp) => {
         if(!cadastrar.promocao)
             throw new Error('Campo promoção obrigaratório.');
 
-        if(cadastrar.valor == undefined || cadastrar.valor < 0)
+        if(cadastrar.valor == undefined || cadastrar.valor <= 0)
             throw new Error('Valor inválido.');
 
         if(!cadastrar.detalhes)
@@ -40,6 +40,24 @@ server.post('/produto', async (req, resp) => {
 
         const produtoCadastrado = await cadastrarProdutos(cadastrar);
         resp.send(produtoCadastrado);
+
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+})
+
+server.put('/produto/:id/capa', upload.single('capa'), async (req, resp) => {
+    try {
+        const {id} = req.params;
+        const imagem  = req.file.path;
+
+        const resposta = await imagemProduto(imagem , id);
+        if(resposta !== 1)
+            throw new Error('A imagem não pode ser salva.');
+
+        resp.status(200).send();
 
     } catch (err) {
         resp.status(400).send({
@@ -123,7 +141,7 @@ server.put('/produto/:id', async (req, resp) => {
         if(!produto.promocao)
             throw new Error('Campo promoção obrigaratório.');
 
-        if(produto.valor == undefined || produto.valor < 0)
+        if(produto.valor == undefined || produto.valor <= 0)
             throw new Error('Valor inválido.');
 
         if(!produto.detalhes)
@@ -133,10 +151,11 @@ server.put('/produto/:id', async (req, resp) => {
             throw new Error('Quantidade inválida.');
 
         const resposta = await alterarProduto(id, produto);
-        if(resposta != 1)
+        if(resposta !== 1)
             throw new Error('O produto não pode ser alterado.');
         else
             resp.status(200).send();
+        
     } catch (err) {
         resp.status(400).send({
             erro: err.message
@@ -150,7 +169,7 @@ server.delete('/produto/:id', async (req, resp) => {
         const {id} = req.params;
         const resposta = await deletarProduto(id);
 
-        if(resposta != 1)
+        if(resposta !== 1)
             throw new Error('O produto não pode ser deletado.');
 
         resp.status(204).send();
@@ -179,6 +198,22 @@ server.post('/categoria', async (req, resp) => {
     }
 })
 
+server.get('/categoria', async (req, resp) => {
+    try {
+        const dados = await listarCategoria();
+
+        if(dados.length === 0)
+            throw new Error('Não há nenhuma categoria cadastrada.');
+
+        resp.send(dados);
+
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+})
+
 
 server.post('/imagem', async (req, resp) => {
     try {
@@ -186,6 +221,7 @@ server.post('/imagem', async (req, resp) => {
         const resposta = await inserirImg(imagem);
         
         resp.send(resposta);
+
     } catch (err) {
         resp.status(400).send({
             erro: err.message
@@ -199,10 +235,11 @@ server.put('/imagem/:id', upload.single('capa'), async (req, resp) => {
         const img = req.file.path;
 
         const resposta = await alterarImg(img, id);
-        if(resposta != 1)
+        if(resposta !== 1)
             throw new Error('A imagem não pode ser salva.');
 
         resp.status(204).send();
+
     } catch (err) {
         resp.status(400).send({
             erro: err.message
@@ -217,6 +254,7 @@ server.get('/imagem', async (req, resp) => {
             throw new Error('Não há imagens cadastradas.');
 
         resp.send(dados);
+
     } catch (err) {
         resp.status(400).send({
             error: err.message
@@ -228,7 +266,12 @@ server.get('/imagem/:id', async (req, resp) => {
     try {
         const {id} = req.params;
         const dados = await listarImgInfo(id);
+
+        if(dados.length === 0)
+            throw new Error('Não há nenhuma imagem cadastrada para este produto.');
+
         resp.send(dados);
+
     } catch (err) {
         resp.status(400).send({
             erro: err.message

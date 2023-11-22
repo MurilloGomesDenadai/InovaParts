@@ -1,0 +1,65 @@
+#comp-footer {
+    section {
+        background-color: #020032;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    section > div {
+        line-height: 25px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    h3 {
+    font-size: 0.5em;
+    margin-bottom: 30px;
+    }
+
+    section p {
+    font-size: 16px;
+    cursor: pointer;
+    }
+
+    #sobre {
+    margin: 10px;
+    }
+
+    #atendimento {
+    margin: 10px;
+    }
+
+    #politica {
+    margin: 10px;
+    }
+
+    #pagamento {
+    margin: 10px;
+    text-align: center;
+    }
+
+    #pagemento img {
+    text-align: center;
+    }
+
+    #contato {
+    margin: 10px;
+    }
+
+    #endereco {
+    text-align: center;
+    margin: 20px;
+    height: 15vh;
+    }
+
+    #endereco > div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    width: 55vw;
+
+    }
+}

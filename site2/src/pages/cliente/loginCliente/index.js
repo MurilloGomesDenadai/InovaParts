@@ -1,10 +1,10 @@
 import './index.scss';
 
-import {Link} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import {useState } from 'react';
 
 import axios from 'axios';
+import { API_URL } from '../../../api/constants.js';
 
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -17,19 +17,31 @@ export default function Login() {
   const navigate = useNavigate();
 
 
-  async function enterClick() {
+  async function Login() {
       try {
-        const resposta = await axios.post('http://localhost:5000/usuario/login', {
+        if (email != 0 && senha != 0) {
+          const resposta = await axios.post(API_URL + '/usuario/login', {
           email: email,
           senha: senha
         });
 
         navigate('/telaCompra');
 
+        }else {
+          toast.error('Preencha os campos')
+        }
+
       } catch (err) {
-        toast.error('Conta inválida')
+        toast.error('Conta não cadastrada!')
       }
   }
+
+  function enterClick(e) {
+    if(e.key === 'Enter'){
+      Login()
+    }
+  }
+    
   
 
   return (
@@ -47,22 +59,22 @@ export default function Login() {
           <form>
             <div className='caixa-senha'>
               <label>Digite seu Email</label>
-              <input type='text' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)}/>
+              <input type='text' onKeyDown={enterClick} placeholder='Email' value={email} onChange={e => setEmail(e.target.value)}/>
             </div>
 
             <div className='caixa-senha'>
               <label>Digite sua Senha</label>
-              <input type='password' placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)}/>
+              <input type='password' onKeyDown={enterClick} placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)}/>
             </div>
           </form>
 
           
           <div id='btn-entrar'>
-          <button onClick={enterClick}>Entrar</button>
+          <button onKeyDown={enterClick} onClick={Login}>Entrar</button>
           </div>
     
           <div id ='nav-cadastro'>
-            <p>Não possui cadastro? <Link to='/cadastroCliente'><span>Cadastre-se</span></Link></p>
+            <p>Não possui cadastro? <a href='/cadastroCliente'><span>Cadastre-se</span></a></p>
           </div>
         </main>
         <div><ToastContainer /></div>
