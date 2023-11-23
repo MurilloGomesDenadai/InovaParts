@@ -1,11 +1,13 @@
 import './index.scss';
 import PerifericosAdmin from '../../../components/layout/controleAdmin';
 
-import { useState } from 'react';
+import storage from 'local-storage';
+import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 export default function Perfiladmin() {
     const [imagem, setImagem] = useState ()
+    const [nomeAdmin, setNomeAdmin] = useState ()
 
     const {idparams} = useParams ();
     const navigate = useNavigate ();
@@ -18,13 +20,22 @@ export default function Perfiladmin() {
         return URL.createObjectURL(imagem); 
     }
 
+    //Segurança
+    useEffect(() => {
+        if (!storage('admin-logado')) {
+            navigate('/loginAdmin')
+        }
+    }, [])
+
+
+
     return (
         <div id='perfil-admin'>
             <PerifericosAdmin fundo4 = '#222222' />
 
             <main>
                 <div id='mensagem-identificacao'>
-                    <p>seja bem-vindo sr.Admin!</p> 
+                    <p>seja bem-vindo sr {nomeAdmin}</p> 
                 </div>
 
                 <section id='area-de-alteracao'>

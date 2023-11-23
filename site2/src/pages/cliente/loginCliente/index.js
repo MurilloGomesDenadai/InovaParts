@@ -1,10 +1,12 @@
 import './index.scss';
 
+import { API_URL } from '../../../api/constants.js';
+
+import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom';
 import {useState } from 'react';
 
 import axios from 'axios';
-import { API_URL } from '../../../api/constants.js';
 
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -24,6 +26,7 @@ export default function Login() {
           email: email,
           senha: senha
         });
+        storage('usuario-logado', resposta)
 
         navigate('/telaCompra');
 

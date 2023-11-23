@@ -2,7 +2,7 @@ import './index.scss';
 import PerifericosAdmin from '../../../components/layout/controleAdmin';
 import { listarCliente, listarporNome } from '../../../api/clienteEndpoints.js';
 
-import {Link} from 'react-router-dom'
+import storage from 'local-storage';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
@@ -10,6 +10,9 @@ import { ToastContainer, toast } from 'react-toastify';
 export default function Controle() {
     const [listarClientes, setListarClientes] = useState ([])
     const [listarporNomes, setListarporNomes] = useState ([])
+    const [nomeAdmin, setNomeAdmin] = useState ([])
+
+    const navigate = useNavigate ();
 
     //Listar todos os clientes
     async function carregarlistaclientes() {
@@ -48,13 +51,25 @@ export default function Controle() {
         }
     }
 
+    //Segurança
+    useEffect(() => {
+        if (!storage('admin-logado')) {
+            navigate('/loginAdmin')
+        }else  {
+            const adminLogado = storage('admin-logado');
+            setNomeAdmin(adminLogado.nome)
+        }
+    }, [])
+
+
+
     return (
         <div id='page-controle'>
             <PerifericosAdmin fundo1 = '#222222'/>
 
             <main>
                 <header>
-                    <p>seja bem-vindo sr.Admin!</p>
+                    <p>seja bem-vindo sr.{nomeAdmin}!</p>
                 </header>
 
                 <div id='consulta'>

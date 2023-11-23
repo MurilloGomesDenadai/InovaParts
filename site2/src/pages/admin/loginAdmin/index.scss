@@ -74,9 +74,7 @@
     }
 
     #senha {
-        text-align: end;
-        margin-bottom: 30px;
-        width: 17.5vw;
+        visibility: hidden;
     }
 
     #btn-entrar {
@@ -111,5 +109,16 @@
         cursor: pointer;
         text-decoration: none;
         
+    }
+
+    a {
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
     }
 }

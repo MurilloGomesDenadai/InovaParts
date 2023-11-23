@@ -6,6 +6,7 @@ import Carrinho from '../../components/modal/popupCarrinho/popupCarrinho.js';
 
 import { Produto  } from '../../components/modal/popupProduto/produto';
 
+import storage from 'local-storage';
 import { useEffect, useState } from 'react';
 import {Link, useNavigate, useParams} from 'react-router-dom';
 import { BuscarPorId, listarMercadoria, listarporNome } from '../../api/telacompraEndpoints.js';
@@ -151,6 +152,12 @@ export default function Compra() {
             filtrarProduto()
         }
     }
+
+    useEffect(() => {
+        if (!storage('usuario-logado')) {
+            navigate('/loginCliente')
+        }
+    }, [])
 
     return (
         <div id='pagina-compra'>

@@ -303,6 +303,7 @@ server.get('/imagem/:id', async (req, resp) => {
     try {
         const {id} = req.params;
         const dados = await listarImgInfo(id);
+        console.log(dados)
 
         if(dados.length === 0)
             throw new Error('Não há nenhuma imagem cadastrada para este produto.');
