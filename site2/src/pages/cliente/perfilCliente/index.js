@@ -19,7 +19,7 @@ export default function Perfiladmin() {
     }
 
     return (
-        <div id='perfil-admin'>
+        <div id='perfil-Cliente'>
             <ConfigCliente fundo4 = '#222222' />
 
             <main>

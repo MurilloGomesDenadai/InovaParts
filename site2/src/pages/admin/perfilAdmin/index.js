@@ -29,9 +29,9 @@ export default function Perfiladmin() {
 
 
 
-    return (
+    return ( 
         <div id='perfil-admin'>
-            <PerifericosAdmin fundo4 = '#222222' />
+            <PerifericosAdmin fundo4 = '#222222' /> 
 
             <main>
                 <div id='mensagem-identificacao'>
@@ -107,7 +107,7 @@ export default function Perfiladmin() {
                         </div>
                     </div>
 
-                    <div id='alteracao'>
+                    <div id='btn-alteracao'>
                         <button>Alterar</button>
                     </div>
                 </section> 

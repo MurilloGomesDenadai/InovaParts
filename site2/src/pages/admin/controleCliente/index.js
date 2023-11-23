@@ -46,7 +46,7 @@ export default function Controle() {
 
     //Comando por tecla listar Clientes
     async function enterClick(e) {
-        if (e.key === 'Enter'){
+        if (e.key === 'Enter'){ 
             Filtrar()
         }
     }
