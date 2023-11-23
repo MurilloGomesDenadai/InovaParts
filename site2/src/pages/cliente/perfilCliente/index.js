@@ -118,27 +118,40 @@ export default function Perfiladmin() {
                                 </div>
                                 
                                 <div className='bloco-input'>
-                                    <label>Email</label>
+                                    <label>Bairro</label>
                                     <input type='text' placeholder=''/>
                                 </div>
                             </div>
 
                             <div>
                                 <div className='bloco-input'>
-                                    <label>Telefone</label>
+                                    <label>Cidade</label>
                                     <input type='text' placeholder=''/>
                                 </div>
 
                                 <div className='bloco-input'>
-                                    <label>CPF</label>
+                                    <label>Estado</label>
                                     <input type='text' placeholder=''/>
                                 </div>
                             </div>
                         </div>
-    
 
-                    <div id='alteracao'>
+                        <div className='area-interacao'>
+                                <div className='bloco-input'>
+                                    <label>Complemento</label>
+                                    <input type='text' placeholder=''/>
+                                </div>
+
+                                <div className='bloco-input'>
+                                    <label>N° Casa</label>
+                                    <input type='text' placeholder=''/>
+                                </div>
+                            </div>
+                        
+
+                    <div id='btn-alteracao'>
                         <button>Alterar</button>
+                        <button className='btn'>Salvar</button>
                     </div>
 
                 </section> 
