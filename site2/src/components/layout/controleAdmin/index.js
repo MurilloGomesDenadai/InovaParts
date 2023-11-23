@@ -1,7 +1,18 @@
 import './index.scss';
 
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import storage from 'local-storage';
+
 
 export default function PerifericosAdmin(props) {
+    const navigate = useNavigate ();
+
+    function sairLocal() {
+        storage.remove('admin-logado');
+        navigate('/loginAdmin')
+    }
+
     return (
         <div id='perifericosAdmin'>
             <div id='menu'>
@@ -47,7 +58,7 @@ export default function PerifericosAdmin(props) {
                     </div>
                 </div>
 
-                <a href='/loginCliente'id='saida'>
+                <a onClick={sairLocal} href='/loginCliente'id='saida'>
                     <img src='../../assets/icon/sair.png'/>
                     <p>Sair</p>
                 </a>

@@ -2,7 +2,7 @@ import './index.scss';
 import PerifericosAdmin from '../../../components/layout/controleAdmin';
 import {cadastrarProduto, editarProduto, listarProduto, listarporNome, deletarProduto, buscarId, adicionarImagem} from '../../../api/produtoEndpoints'
 
-import {Link} from 'react-router-dom'
+import storage from 'local-storage';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
@@ -35,7 +35,7 @@ export default function Config() {
     try {
       if (id === 0) {
         const novoProduto = await cadastrarProduto(categoria, nome, marca, modelo, disponivel, promocao, valor, detalhes, quantidade)
-        // const imagemCapa = await adicionarImagem(novoProduto.id, imagem)
+        await adicionarImagem(novoProduto.id, imagem)
 
         setId(novoProduto.id);
         toast.success("Registro Salvo!")
@@ -169,6 +169,15 @@ export default function Config() {
   function mostrarImagem() {
     return URL.createObjectURL(imagem)
   }
+
+  //Segurança
+  useEffect(() => {
+    if (!storage('admin-logado')) {
+      navigate('/loginCliente')
+    }
+  }, [])
+
+  
 
   return (
     <div className="pagina-config">

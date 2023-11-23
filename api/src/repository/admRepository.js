@@ -36,7 +36,7 @@ export async function alterarAdm(id, admin) {
 export async function loginAdm(cpf, email, senha) {
     const comando =
     `SELECT id_adm 	    as id,
-            nm_adm	    as admin,
+            nm_adm	    as nome,
             ds_email    as email,
             ds_cpf      as cpf
                 FROM tb_adm

@@ -1,5 +1,6 @@
 import './index.scss';
 
+import storage from 'local-storage'
 import {Link} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import {useState } from 'react';
@@ -25,8 +26,10 @@ export default function Admin () {
                 email: email,
                 senha: senha
             });
+
+            storage('admin-logado', resposta)
             
-            navigate('/configAdmin');
+            navigate('/controleProduto');
             
         } catch (err) {
             toast.error('Conta Inválida')
@@ -67,7 +70,7 @@ export default function Admin () {
                     </div>
                     
                     <div id ='nav-cadastro'>
-                        <p>Não possui cadastro? <Link to='/cadastroCliente'><span>Cadastre-se</span></Link></p>
+                        <p>Não possui cadastro? <a href='/cadastroCliente'>Cadastre-se</a></p>
                     </div>
                 </main>
                 <div><ToastContainer /></div>

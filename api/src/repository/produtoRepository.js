@@ -153,7 +153,7 @@ export async function inserirImg(imagem) {
     `INSERT INTO tb_img_produto (id_produto, ds_img)
                     VALUES (?, ?)`
     
-    const [resposta] = await conexao.query(comando, [imagem.produto, imagem.imagem]);
+    const [resposta] = await conexao.query(comando, [imagem.nome, imagem.imagem]);
     imagem.id = resposta.insertId;
     return imagem;
 }
