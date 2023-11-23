@@ -1,6 +1,8 @@
 import './index.scss';
 import ConfigCliente from '../../../components/layout/confgCliente';
 
+
+
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -10,6 +12,42 @@ export default function Perfiladmin() {
     const {idparams} = useParams ();
     const navigate = useNavigate ();
 
+    const [email, setEmail] = useState ('');
+    const [nome, setNome] = useState('');
+    const [telefone, setTelefone] = useState('');
+    const [cpf, setCpf] = useState('');
+    const [senha, setSenha] = useState('');
+    const [confirmarsenha, setConfirmarsenha] = useState('');
+    const [cep, setCep] = useState('');
+    const [logradouro, setLogradouro] = useState('');
+    const [bairro, setBairro] = useState('');
+    const [cidade, setCidade] = useState('');
+    const [estado, setEstado] = useState('');
+    const [complemento, setComplemento] = useState('');
+    const [ncasa, setNcasa] = useState('');
+    const [cdseguranca, setCdseguranca] = useState('');
+    const [validade, setValidade] = useState('');
+
+
+
+//idade,Estado,Complemento, NºCasa,Titular, NºdoCartão,Cód.deSegurança,Validade
+    async function Salvar() { 
+        try {
+          if (id === 0) {
+            const novoRegistro = await cadastrarCliente(Nome,Telefone, Email, CPF, Senha, ConfirmarSenha, CEP, Logradouro, Bairro, Cidade,Estado,Complemento, NºCasa,Titular, NºdoCartão,Cód.deSegurança,Validade)
+            // const imagemCapa = await adicionarImagem(novoProduto.id, imagem)   
+            setId(novoRegistro.perfil);
+            toast.success("Registro Salvo!")  
+          }else {
+            await alterarInfoCliente(Nome,Telefone, Email, CPF, Senha,ConfirmarSenha,CEP, Logradouro, Bairro, Cidade,Estado,Complemento, NºCasa,Titular, NºdoCartão,Cód.deSegurança,Validade)
+            toast.success('Informação alterado!')
+          }
+        } catch (error) {
+          toast.error(id)          
+        }    
+    
+
+    }
     function selecionarImagem() {
         document.getElementById('imagem').click();
     }
@@ -53,24 +91,24 @@ export default function Perfiladmin() {
                             <div>
                                 <div className='bloco-input'>
                                     <label>Nome</label>
-                                    <input type='text' placeholder=''/>
+                                    <input type='text' value={nome} onChange={e => setNome(e.target.value)}/>
                                 </div>
                                 
                                 <div className='bloco-input'>
                                     <label>Email</label>
-                                    <input type='text' placeholder=''/>
+                                    <input type='text' value={email} onChange={e => setEmail(e.target.value)}/>
                                 </div>
                             </div>
 
                             <div>
                                 <div className='bloco-input'>
                                     <label>Telefone</label>
-                                    <input type='text' placeholder=''/>
+                                    <input type='text' value={telefone} onChange={e => seTelefone(e.target.value)}/>
                                 </div>
 
                                 <div className='bloco-input'>
                                     <label>CPF</label>
-                                    <input type='text' placeholder=''/>
+                                    <input type='text' value={cpf} onChange={e => setCpf(e.target.value)}/>
                                 </div>
                             </div>
                         </div>
@@ -85,12 +123,12 @@ export default function Perfiladmin() {
                             <div id='bloco-senha'>
                                 <div className='bloco-input'>
                                     <label>Senha</label>
-                                    <input type='password' placeholder=''/>
+                                    <input type='text' placeholder=''/>
                                 </div>
 
                                 <div className='bloco-input'>
                                     <label>Confime senha</label>
-                                    <input type='password' placeholder=''/>
+                                    <input type='text' placeholder=''/>
                                 </div>
                             </div>
                         </div>
@@ -106,7 +144,7 @@ export default function Perfiladmin() {
                     <div id='bloco-cep'>
                                 <div className='cep'>
                                     <label>CEP</label>
-                                    <input type='text' placeholder=''/>
+                                    <input type='text' value={cep} onChange={e => setCep(e.target.value)}/>
                                 </div>   
                     </div>  
 
@@ -114,24 +152,24 @@ export default function Perfiladmin() {
                             <div>
                                 <div className='bloco-input'>
                                     <label>Logradouro</label>
-                                    <input  type='text' placeholder=''/>
+                                    <input type='text' placeholder=''/>
                                 </div>
                                 
                                 <div className='bloco-input'>
                                     <label>Bairro</label>
-                                    <input  type='text' placeholder=''/>
+                                    <input type='text' placeholder=''/>
                                 </div>
                             </div>
 
                             <div>
                                 <div className='bloco-input'>
                                     <label>Cidade</label>
-                                    <input  type='text' placeholder=''/>
+                                    <input type='text' placeholder=''/>
                                 </div>
 
                                 <div className='bloco-input'>
                                     <label>Estado</label>
-                                    <input  type='text' placeholder=''/>
+                                    <input type='text' placeholder=''/>
                                 </div>
                             </div>
                             <div>
@@ -142,12 +180,12 @@ export default function Perfiladmin() {
                         <div className='area-interacao_1'>
                                 <div className='bloco-input'>
                                     <label>Complemento</label>
-                                    <input  type='text' placeholder=''/>
+                                    <input type='text' placeholder=''/>
                                 </div>
 
                                 <div className='bloco-input'>
                                     <label>N° Casa</label>
-                                    <input type='text' placeholder=''/>
+                                    <input type='text' value={ncasa} onChange={e => setNcasa(e.target.value)}/>
                                 </div>
                             </div>
 
@@ -188,7 +226,7 @@ export default function Perfiladmin() {
 
                     <div id='btn-alteracao'>
                         <button>Alterar</button>
-                        <button >Salvar</button>
+                        <button className='btn'>Salvar</button>
                     </div>
 
                 </section> 
