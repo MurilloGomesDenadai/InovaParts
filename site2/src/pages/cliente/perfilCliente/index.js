@@ -6,7 +6,7 @@ import ConfigCliente from '../../../components/layout/confgCliente';
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-export default function Perfiladmin() {
+export default function PerfilCliente() {
     const [imagem, setImagem] = useState ()
 
     const {idparams} = useParams ();
