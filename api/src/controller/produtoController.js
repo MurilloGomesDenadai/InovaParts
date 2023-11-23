@@ -1,4 +1,4 @@
-import { alterarImg, alterarProduto, cadastrarProdutos, deletarProduto, imagemProduto, inserirCategoria, inserirImg, listarCategoria, listarImg, listarImgInfo, listarPorId, listarPorNome, listarProdutos } from '../repository/produtoRepository.js';
+import { alterarImg, alterarProduto, cadastrarProdutos, deletarProduto, filtroValorMaior, filtroValorMenor, imagemProduto, inserirCategoria, inserirImg, listarCategoria, listarImg, listarImgInfo, listarPorId, listarPorNome, listarProdutos } from '../repository/produtoRepository.js';
 
 import Router from 'express';
 import multer from 'multer';
@@ -213,6 +213,43 @@ server.get('/categoria', async (req, resp) => {
         });
     }
 })
+
+
+server.get('/filtro/maior', async (req, resp) => {
+    try {
+        const {valor} = req.query;
+        const dados = await filtroValorMaior(valor);
+
+        if(dados.length === 0)
+            throw new Error('Não há produtos referente a esse valor.');
+
+        resp.send(dados);   
+
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+})
+
+
+server.get('/filtro/menor', async (req, resp) => {
+    try {
+        const {valor} = req.query;
+        const dados = await filtroValorMenor(valor);
+
+        if(dados.length === 0)
+            throw new Error('Não há produtos referente a esse valor.');
+
+        resp.send(dados);   
+
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+})
+
 
 
 server.post('/imagem', async (req, resp) => {

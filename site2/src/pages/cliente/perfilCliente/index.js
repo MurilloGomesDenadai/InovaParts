@@ -85,12 +85,12 @@ export default function Perfiladmin() {
                             <div id='bloco-senha'>
                                 <div className='bloco-input'>
                                     <label>Senha</label>
-                                    <input type='text' placeholder=''/>
+                                    <input type='password' placeholder=''/>
                                 </div>
 
                                 <div className='bloco-input'>
                                     <label>Confime senha</label>
-                                    <input type='text' placeholder=''/>
+                                    <input type='password' placeholder=''/>
                                 </div>
                             </div>
                         </div>
