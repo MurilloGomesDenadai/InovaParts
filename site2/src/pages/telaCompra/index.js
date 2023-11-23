@@ -234,7 +234,7 @@ export default function Compra() {
                                     <p>Multiplink</p>
                                     <p>Suspensão a ar</p>
                                     <p>Suspensão de rosca</p>
-                                    <p>Suspensão Hidropneumatica</p>
+                                    <p>Suspensão Hidropneumática</p>
                                 </div>
                             </span> 
                         </div>
@@ -287,7 +287,7 @@ export default function Compra() {
 
                                 <span className='subtopico-selecao' style={openAmortecedor ? null : amortecedorStyle}>
                                     <div>
-                                        <p>Hidraulicos</p>
+                                        <p>Hidráulicos</p>
                                         <p>Pressurizados</p>
                                     </div>
                                 </span>
@@ -364,7 +364,7 @@ export default function Compra() {
                                         <p>Multiplink</p>
                                         <p>Suspensão a ar</p>
                                         <p>Suspensão de rosca</p>
-                                        <p>Suspensão Hidropneumatica</p>
+                                        <p>Suspensão Hidropneumática</p>
                                     </div>
                                 </span>
 

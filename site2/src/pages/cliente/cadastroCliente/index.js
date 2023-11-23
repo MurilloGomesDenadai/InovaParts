@@ -86,12 +86,12 @@ export default function Cadastro() {
                     <form id='checkbox'>
                     <div className='caixa-check'>
                         <input type='checkbox' checked/>
-                        <label>Li e concordo com a <span>Politica de Privacidade</span> <span>e Termos e Condições de Uso do Site.</span></label>
+                        <label>Li e concordo com a <span>Política de Privacidade</span> <span>e Termos e Condições de Uso do Site.</span></label>
                     </div>
 
                     <div className='caixa-check' checked>
                         <input type='checkbox'/>
-                        <label>Aceito receber novidades, ofertas e notícias do autopeças por e-mail.</label>
+                        <label>Aceito receber novidades, ofertas e notícias da autopeças por e-mail.</label>
                     </div>
                     </form>
                     

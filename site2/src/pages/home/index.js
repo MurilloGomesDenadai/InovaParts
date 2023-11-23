@@ -21,7 +21,7 @@ export default function Home() {
                 <div className='txt'>
                   <h2>Sobre nós</h2>
                   <p>
-                    Somos uma loja online, que fornece as melhores peças e equipamentos para seu veículo do conforto de sua casa ou de qualquer outro lugar com acesso a internet.
+                    Somos uma loja online que fornece as melhores peças e equipamentos para seu veículo do conforto de sua casa ou de qualquer outro lugar com acesso a internet.
                   </p>
                 </div>
 
@@ -35,7 +35,7 @@ export default function Home() {
                 <div className='txt'>
                   <h2>NOSSO OBJETIVO</h2>
                   <p>
-                    Temos como objetivo  trazer peças e equipamentos para o nosso veículo que nos transporta no dia a dia de  maneira confiável e prática.
+                    Temos como objetivo trazer peças e equipamentos para o nosso veículo que nos transporta no dia a dia de maneira confiável e prática.
                   </p>
                 </div>
               </div>
@@ -44,7 +44,7 @@ export default function Home() {
                 <div className='txt'>
                   <h2 >ENCONTRA-SE AQUI</h2>
                   <p>
-                    De maneira organizada você consegue achar  o que proucura de forma rápida e eficiente.
+                    De maneira organizada você consegue achar o que procura de forma rápida e eficiente.
                   </p>
                 </div>
               </div>

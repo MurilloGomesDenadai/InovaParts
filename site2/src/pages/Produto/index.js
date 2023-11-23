@@ -121,7 +121,7 @@ export default function Produtopage() {
                                         </div>
 
                                         <div id='categoriaProduto'>
-                                            <p className='nomeNegrito'>Cartegoria:</p>
+                                            <p className='nomeNegrito'>Categoria:</p>
                                             <p className='informacaoProduto'>{categoria}</p>
                                         </div>
 
@@ -141,7 +141,7 @@ export default function Produtopage() {
 
                         <div id='btnDecisao'>
                             <button>Adicionar ao Carrinho</button>
-                            <button>Efutuar Compra</button>
+                            <button>Efetuar Compra</button>
                         </div>
                     </article>
                 </section>

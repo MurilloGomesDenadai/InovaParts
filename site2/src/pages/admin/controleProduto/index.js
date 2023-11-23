@@ -233,7 +233,7 @@ export default function Config() {
 
                     <div className='caixa-inserir'>
                       <label>
-                        Disponivel
+                        Disponível
                       </label>
                       <input type='checkbox' onKeyDown={enterClick} value={disponivel} onChange={e => setDisponivel(e.target.checked)}/>
                     </div>
@@ -301,7 +301,7 @@ export default function Config() {
                       <button>Adicionar Imagem</button>
                     </div>
                     <div className='btn-img'>
-                      <button>Remover imagem</button>
+                      <button>Remover Imagem</button>
                     </div>
                   </div>
                 </div>
