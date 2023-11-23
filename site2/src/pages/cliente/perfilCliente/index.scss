@@ -2,7 +2,7 @@
     background-color: #565656;
     color: white;
     display: flex;
-    height: 130%;
+    height: 190vh;
     width: 100%;
 
     main {
@@ -30,9 +30,9 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 20px;
-        height: 100vh;
+        height: 170vh;
         width: 60vw;
-        margin-top: 20px;
+       margin-top: 30px;
     }
 
     #foto-usuario {
@@ -51,8 +51,9 @@
     }
 
     #imagemVazia{
-        height: 70px;
-        width: 70px;
+        height: 40px;
+        width: 40px;
+        margin-top: -50px;
     }
     
     #imagemConteudo {
@@ -70,20 +71,24 @@
         font-size: 1.5em;
         font-weight: 500;
         margin: 10px;
+        margin-top:-60px;
     }
 
     hr {
         width: 50vw;
         margin: 10px;
+        margin-top: -5px;
     }
 
     #contato {
         width: 50vw;
+        margin-top: -5px;
     }
 
     .nome-funcao p{
         font-size: 1.2em;
         font-weight: 500;
+        
     }
 
     .area-interacao {
@@ -128,14 +133,15 @@
         flex-direction: column;
         align-items: start;
         justify-content: center;
-        margin: 10px;
+        margin: 15px;
     }
 
     label {
         font-size: 0.8em;
         font-weight: 500;
         margin-bottom: 3px;
-        margin-left: 5px;
+        margin-left: 2px;
+        
     }
 
     input {
@@ -162,8 +168,9 @@
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        padding: 10px;
-        width: 70px;
+        padding: 10px 10px;
+        width: 90px;
+        height: 60px;
         margin: 5px;
     }
 
@@ -174,7 +181,7 @@
    
 
    .bloco-cep{
-    display: flex;
+        display: flex;
         flex-direction: column;
         align-items: start;
         justify-content: center;
@@ -187,7 +194,13 @@
         justify-content: center;
         margin: 10px;
    }
-
    
-
+   .area-interacao_1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    width: 100%;
+   }
 }

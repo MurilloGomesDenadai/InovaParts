@@ -85,12 +85,12 @@ export default function Perfiladmin() {
                             <div id='bloco-senha'>
                                 <div className='bloco-input'>
                                     <label>Senha</label>
-                                    <input type='text' placeholder=''/>
+                                    <input type='password' placeholder=''/>
                                 </div>
 
                                 <div className='bloco-input'>
                                     <label>Confime senha</label>
-                                    <input type='text' placeholder=''/>
+                                    <input type='password' placeholder=''/>
                                 </div>
                             </div>
                         </div>
@@ -114,32 +114,35 @@ export default function Perfiladmin() {
                             <div>
                                 <div className='bloco-input'>
                                     <label>Logradouro</label>
-                                    <input type='text' placeholder=''/>
+                                    <input  type='text' placeholder=''/>
                                 </div>
                                 
                                 <div className='bloco-input'>
                                     <label>Bairro</label>
-                                    <input type='text' placeholder=''/>
+                                    <input  type='text' placeholder=''/>
                                 </div>
                             </div>
 
                             <div>
                                 <div className='bloco-input'>
                                     <label>Cidade</label>
-                                    <input type='text' placeholder=''/>
+                                    <input  type='text' placeholder=''/>
                                 </div>
 
                                 <div className='bloco-input'>
                                     <label>Estado</label>
-                                    <input type='text' placeholder=''/>
+                                    <input  type='text' placeholder=''/>
                                 </div>
+                            </div>
+                            <div>
+                                
                             </div>
                         </div>
 
-                        <div className='area-interacao'>
+                        <div className='area-interacao_1'>
                                 <div className='bloco-input'>
                                     <label>Complemento</label>
-                                    <input type='text' placeholder=''/>
+                                    <input  type='text' placeholder=''/>
                                 </div>
 
                                 <div className='bloco-input'>
@@ -147,11 +150,45 @@ export default function Perfiladmin() {
                                     <input type='text' placeholder=''/>
                                 </div>
                             </div>
-                        
+
+                            <div id='contato'>
+                        <div className='nome-funcao'>
+                            <p>Cartão</p>
+                        </div>
+                    </div>
+
+
+
+                    <div className='area-interacao'>
+                            <div>
+                                <div className='bloco-input'>
+                                    <label>Titular</label>
+                                    <input type='text' placeholder=''/>
+                                </div>
+                                
+                                <div className='bloco-input'>
+                                    <label>Cód. de Segurança (CVV)</label>
+                                    <input type='text' placeholder=''/>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div className='bloco-input'>
+                                    <label>Nº do Cartão</label>
+                                    <input type='text' placeholder=''/>
+                                </div>
+
+                                <div className='bloco-input'>
+                                    <label>Validade</label>
+                                    <input type='text' placeholder=''/>
+                                </div>
+                            </div>
+                        </div>
+                    
 
                     <div id='btn-alteracao'>
                         <button>Alterar</button>
-                        <button className='btn'>Salvar</button>
+                        <button >Salvar</button>
                     </div>
 
                 </section> 
