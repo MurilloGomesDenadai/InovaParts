@@ -10,7 +10,7 @@ export default function Home() {
           <header>
               <div>
                 <img src='../assets/icon/logo.png'/>
-              
+      
                 <p>Inovapartes</p>
               </div>
           </header>
@@ -19,7 +19,7 @@ export default function Home() {
             <main>
               <div className='fundo-1'>
                 <div className='txt'>
-                  <h2>Sobre nós</h2>
+                  <h2>SOBRE NÓS</h2>
                   <p>
                     Somos uma loja online, que fornece as melhores peças e equipamentos para seu veículo do conforto de sua casa ou de qualquer outro lugar com acesso a internet.
                   </p>

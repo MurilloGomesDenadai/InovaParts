@@ -8,58 +8,66 @@
     }
 
     section > div {
-        line-height: 25px;
+        line-height: 20px;
         display: flex;
         justify-content: space-evenly;
     }
 
     h3 {
-    font-size: 0.5em;
-    margin-bottom: 30px;
+        font-size: 0.5em;
+        margin-bottom: 30px;
     }
 
     section p {
     font-size: 16px;
-    cursor: pointer;
+    }
+
+    section  p:hover {
+        cursor: pointer;
+        text-decoration: underline;
     }
 
     #sobre {
-    margin: 10px;
+        margin: 10px;
     }
 
     #atendimento {
-    margin: 10px;
+        margin: 10px;
+    }
+
+    #atendimento > p:hover {
+        cursor: pointer;
+        text-decoration: underline;
     }
 
     #politica {
-    margin: 10px;
+        margin: 10px;
     }
 
     #pagamento {
-    margin: 10px;
-    text-align: center;
+        margin: 10px;
+        text-align: center;
     }
 
     #pagemento img {
-    text-align: center;
+        text-align: center;
     }
 
     #contato {
-    margin: 10px;
+        margin: 10px;
     }
 
     #endereco {
-    text-align: center;
-    margin: 20px;
-    height: 15vh;
+        text-align: center;
+        margin: 20px;
+        height: 15vh;
     }
 
     #endereco > div {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    width: 55vw;
-
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        width: 55vw;
     }
 }
