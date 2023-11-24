@@ -44,7 +44,7 @@ export default function PerifericosAdmin(props) {
                             <div><img src='../../assets/icon/icone_Carrinho.png'/> </div>
 
                             <div className='nav-nome'>
-                                <p>Analise</p>
+                                <p>Análise</p>
                             </div>
                         </a>
 

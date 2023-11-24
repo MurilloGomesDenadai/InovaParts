@@ -29,6 +29,8 @@ export default function Footer(props) {
 
                     <div id='pagamento'>
                         <h4>Formas de Pagamento</h4>
+                        <p>Cartão de Crédito</p>
+                        <p>Cartão de Débito</p>
                         <img src='../assets/icon/credit-card.png'/>
                     </div>
 
@@ -42,14 +44,14 @@ export default function Footer(props) {
             
                 <div id='endereco'>
                     <div>
-                        <p>Autopeças (Nome) Ltda.</p>
-                        
                         <p>
-                            Sede na Rua André Pernet, 2060 - JD.Roschel - CEP 04030-020, São Paulo/SP
+                            Autopeças Inovapartes Ltda. <br/>
+                            Sede na Rua André Pernet, 2060 - JD.Roschel - CEP 04030-020, São Paulo/SP <br/>
                             Inscrita no CNPJ sob o nº 43.158.302/0001-03
                         </p>
                     </div>
                 </div>
+                
             </section>
         </div>
     );
