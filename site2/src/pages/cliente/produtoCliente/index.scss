@@ -24,6 +24,7 @@
         align-items: center;
         margin: 8px;
         margin-left: 5px;
+        margin-top: 40px;
     }
 
     .produto{
@@ -40,4 +41,34 @@
         margin-left: 10px;
     }
     
+    #topo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px;
+    }
+
+    .images{
+        margin:60px ;
+        margin-top: -160px;
+    }
+
+    .images > img {
+         border-radius: 10px;
+         margin: 10px 15px 10px 15px;
+    }
+
+    .linha{
+        margin-top: -99px;
+    }
+
+    hr{
+        margin-top: 40px;
+    }
+
+    button {
+        margin: 10px 15px 10px 15px;
+        background-color: #020032;
+        color: white;
+    }
 }

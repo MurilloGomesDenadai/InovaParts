@@ -21,15 +21,22 @@ export default function ProdutoCliente() {
 
          <section id='area-de-alteracao'>
              
-           <div>
-               <div>
-               <img  src='../../assets/image/icone_Carrinho.jpg'/>
-               <img  src='../../assets/image/teste_1.jpg'/>
-               <img  src='../../assets/image/teste_2.jpg'/>
+           <div id='topo'>
+               <div className='images'>
+             
+           
+                <img  src='../../assets/image/icone_Carrinho.jpg'/>
+              
+            
+                <img  src='../../assets/image/teste_1.jpg'/>
+               
+            
+                <img  src='../../assets/image/teste_2.jpg'/>
+            
                </div>
            </div>
            
-           <hr/>
+           <hr className='linha'/>
         
             <div className='alterar'>
                 <div className='produto'>
@@ -49,7 +56,53 @@ export default function ProdutoCliente() {
                 <button>Comprar</button>
             
              </div>
+
+        
+             <hr/>
+
+             <div className='alterar'>
+                <div className='produto'>
+                <img  src='../../assets/image/teste_3.jpg'/>
+                </div>
+                <p>Jogo de pistões com biela e virabrequim v6</p>
+                <h6>QTD: 1
+                R$ 3.180,58
+                </h6>
+                
+            </div>
+             
+             <div id='btt'>
+              
+                <button>Alterar</button>
+                <button>Remover</button>
+                <button>Comprar</button>
+            
+             </div>
          
+         
+             <hr/>
+             
+             <div className='alterar'>
+                <div className='produto'>
+                <img  src='../../assets/image/teste_3.jpg'/>
+                </div>
+                <p>Jogo de pistões com biela e virabrequim v6</p>
+                <h6>QTD: 1
+                R$ 3.180,58
+                </h6>
+                
+            </div>
+             
+             <div id='btt'>
+              
+                <button>Alterar</button>
+                <button>Remover</button>
+                <button>Comprar</button>
+           
+            
+             </div>
+         
+
          </section>
 
          </main>
