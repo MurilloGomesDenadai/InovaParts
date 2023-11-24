@@ -1,0 +1,189 @@
+#paginaCartao {
+    height: 100%;
+    width: 100%;
+    
+    header {
+        background-color: #020032;
+        height: 100%;
+        width: 100%;
+    }
+
+    #imagemLogo {
+        padding: 10px;
+    }
+
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80vh;
+    }
+
+    main section {
+        background-color: #222222;
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    main section div {
+        display: flex;
+    }
+
+    #dados {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .campoCartao {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    label {
+        color: white;
+        font-size: 0.8em;
+        font-weight: 600;
+        margin-bottom: 3px;
+    }
+    
+    input {
+        font-size: 1em;
+        text-indent: 5px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    #campoDuplo {
+        display: flex;
+    }
+
+
+    .campoCartaoduplo {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    .campoCartaoduplo input {
+        width: 10vw;
+    }
+
+    #cardInterativo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #card {
+        background-color: rgb(138, 34, 138);
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px 20px;
+        width: 40vw;
+        height: 25vw;
+    }
+
+    #faixaCardroxa {
+        background-color: rgb(138, 34, 138);
+        border-radius: 20px 20px 0px 0px;
+        height: 3vh;
+        width: 100%;
+    }
+
+    #faixaCardpreta {
+        background-color: black;
+        height: 7vh;
+        width: 100%;
+    }
+
+    #selo {
+        background-color: rgba(128, 128, 128, 0.918);
+        border-radius: 100px;
+        margin: 10px;
+        display: flex;
+        width: 7vw;
+    }
+
+    #circuloForte {
+        background-color: rgb(131, 129, 129);
+        border-radius: 100px;
+        line-height: 10px;
+        height: 50px;
+        width: 50px;
+    }
+
+    #informacaoCartao {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 20px;
+        height: 13vh;
+    }
+
+    #numeroTitular {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #numeroTitular p{
+        color: white;
+        font-size: 1.2em;
+        font-weight: 500;
+        line-height: 10px;
+    }
+
+    #nomeTitular {
+        color: white;
+        font-size: 1em;
+        text-indent: 5px;
+    }
+
+    #numeroCartao {
+        color: white;
+        font-size: 1em;
+        text-indent: 5px;
+    }
+    
+    #validadeCartao {
+        color: white;
+        font-size: 1em;
+        text-indent: 5px;
+    }
+    
+    #codCartao {
+        color: white;
+        font-size: 1em;
+        text-indent: 5px;
+    }
+
+    .nomeIdentificacao {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .txtIdetificacao {
+        color: white;
+        font-size: 0.7em;
+
+    }
+
+    #validadeCvc {
+        color: white;
+        font-weight: 500;
+        display: flex;
+        justify-content: space-between;
+        height: 3vh;
+        width: 17vw;
+    }
+
+}
