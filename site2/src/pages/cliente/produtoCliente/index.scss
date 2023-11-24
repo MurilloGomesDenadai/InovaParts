@@ -1,0 +1,43 @@
+#perfil-Cliente {
+    background-color: #565656;
+    color: white;
+    display: flex;
+    height: 190vh;
+    width: 100%;
+
+    main {
+        background-color: #565656;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+    }
+
+    .alterar{
+        background-color: #222222;
+        color: white;
+        display: flex;
+        height: 24vh;
+        width: 42.5vw;
+        align-items: center;
+        margin: 8px;
+        margin-left: 5px;
+    }
+
+    .produto{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .produto > img{
+         
+        margin-left: 10px;
+    }
+    
+    .alterar > p{
+        margin-left: 10px;
+    }
+    
+}
