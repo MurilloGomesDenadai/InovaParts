@@ -25,8 +25,11 @@ export default function ProdutoCliente() {
                <div className='images'>
              
            
-                <img  src='../../assets/image/icone_Carrinho.jpg'/>
-              
+                
+              <a>
+                <img  src='../../assets/icon/icone_Carrinho.png'/>
+            </a>
+                
             
                 <img  src='../../assets/image/teste_1.jpg'/>
                

@@ -27,6 +27,7 @@
         margin-top: 40px;
     }
 
+    
     .produto{
         display: flex;
         flex-direction: column;
@@ -70,5 +71,8 @@
         margin: 10px 15px 10px 15px;
         background-color: #020032;
         color: white;
+        border-radius: 10px;
+        padding: 5px 30px 5px 30px;
+        border: none;
     }
 }
