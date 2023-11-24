@@ -27,6 +27,8 @@ export default function PerfilCliente() {
     const [ncasa, setNcasa] = useState('');
     const [cdseguranca, setCdseguranca] = useState('');
     const [validade, setValidade] = useState('');
+    const [titular, setTitular ] = useState('');
+    const [ncartao,setNcartao] = useState('');
 
 
 
@@ -103,7 +105,7 @@ export default function PerfilCliente() {
                             <div>
                                 <div className='bloco-input'>
                                     <label>Telefone</label>
-                                    <input type='text' value={telefone} onChange={e => seTelefone(e.target.value)}/>
+                                    <input type='text' value={telefone} onChange={e => setTelefone(e.target.value)}/>
                                 </div>
 
                                 <div className='bloco-input'>
@@ -123,12 +125,12 @@ export default function PerfilCliente() {
                             <div id='bloco-senha'>
                                 <div className='bloco-input'>
                                     <label>Senha</label>
-                                    <input type='text' placeholder=''/>
+                                    <input type='text' value={senha} onChange={e => setSenha(e.target.value)}/>
                                 </div>
 
                                 <div className='bloco-input'>
                                     <label>Confime senha</label>
-                                    <input type='text' placeholder=''/>
+                                    <input type='text' value={confirmarsenha} onChange={e => setConfirmarsenha(e.target.value)}/>
                                 </div>
                             </div>
                         </div>
@@ -152,24 +154,24 @@ export default function PerfilCliente() {
                             <div>
                                 <div className='bloco-input'>
                                     <label>Logradouro</label>
-                                    <input type='text' placeholder=''/>
+                                    <input type='text' value={logradouro} onChange={e => setLogradouro(e.target.value)}/>
                                 </div>
                                 
                                 <div className='bloco-input'>
                                     <label>Bairro</label>
-                                    <input type='text' placeholder=''/>
+                                    <input type='text'value={bairro} onChange={e => setBairro(e.target.value)}/>
                                 </div>
                             </div>
 
                             <div>
                                 <div className='bloco-input'>
                                     <label>Cidade</label>
-                                    <input type='text' placeholder=''/>
+                                    <input type='text' value={cidade} onChange={e => setCidade(e.target.value)}/>
                                 </div>
 
                                 <div className='bloco-input'>
                                     <label>Estado</label>
-                                    <input type='text' placeholder=''/>
+                                    <input type='text' value={estado} onChange={e => setEstado(e.target.value)}/>
                                 </div>
                             </div>
                             <div>
@@ -180,7 +182,7 @@ export default function PerfilCliente() {
                         <div className='area-interacao_1'>
                                 <div className='bloco-input'>
                                     <label>Complemento</label>
-                                    <input type='text' placeholder=''/>
+                                    <input type='text' value={complemento} onChange={e => setComplemento(e.target.value)}/>
                                 </div>
 
                                 <div className='bloco-input'>
@@ -201,24 +203,24 @@ export default function PerfilCliente() {
                             <div>
                                 <div className='bloco-input'>
                                     <label>Titular</label>
-                                    <input type='text' placeholder=''/>
+                                    <input type='text' value={titular} onChange={e => setTitular(e.target.value)}/>
                                 </div>
                                 
                                 <div className='bloco-input'>
                                     <label>Cód. de Segurança (CVV)</label>
-                                    <input type='text' placeholder=''/>
+                                    <input type='text' value={cdseguranca} onChange={e => setCdseguranca(e.target.value)}/>
                                 </div>
                             </div>
 
                             <div>
                                 <div className='bloco-input'>
                                     <label>Nº do Cartão</label>
-                                    <input type='text' placeholder=''/>
+                                    <input type='text' value={ncartao} onChange={e => setNcartao(e.target.value)}/>
                                 </div>
 
                                 <div className='bloco-input'>
                                     <label>Validade</label>
-                                    <input type='text' placeholder=''/>
+                                    <input type='text' value={validade} onChange={e => setValidade(e.target.value)}/>
                                 </div>
                             </div>
                         </div>
